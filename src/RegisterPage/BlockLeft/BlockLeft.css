@@ -2,8 +2,8 @@
     height: 100vh;
 }
 
-.topRow {
-    height: 20vh;
+.topRowRegister {
+    height: 10vh;
 }
 
 .titleCol {
@@ -67,11 +67,11 @@
     height: 5vh;
 }
 
-.loginBtn {
+.registerBtn {
     width: 100% !important;
     font-family: Montserrat;
     font-weight: 600;
-    background-color: #FFBDBB !important;
+    background-color: #183D76 !important;
     border: none !important;
 }
 

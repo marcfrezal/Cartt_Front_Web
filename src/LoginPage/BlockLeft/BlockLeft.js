@@ -1,7 +1,8 @@
 import React from "react";
 import './BlockLeft.css';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
-import Checkbox from '@material-ui/core/Checkbox';
+import { Link } from "react-router-dom";
+
 
 
 class BlockLeft extends React.Component {
@@ -50,7 +51,7 @@ class BlockLeft extends React.Component {
              </Row>
              <Row>
                <Col/>
-               <Col md={8} className="signInCol" > <div className="signInText">Nouveau ?</div> <div className="signInLink">Inscrivez vous</div></Col>
+               <Col md={8} className="signInCol" > <div className="signInText">Nouveau ?</div> <a href="/register" className="signInLink">Inscrivez vous</a></Col>
                <Col/>
              </Row>
           </Container>
