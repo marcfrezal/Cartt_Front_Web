@@ -79,14 +79,6 @@ class BlockLeft extends React.Component {
                 </Col>
                <Col/>
              </Row>
-             <Row>
-               <Col/>
-               <Col md={4} className="rememberCol">
-                Remember me
-               </Col>
-               <Col md={4} className="forgetCol" >Forgot password ?</Col>
-               <Col/>
-             </Row>
              <Row >
                <Col/>
                <Col md={8} className="btnCol">
@@ -96,7 +88,7 @@ class BlockLeft extends React.Component {
              </Row>
              <Row>
                <Col/>
-               <Col md={8} className="signInCol"><a href="/register" className="signInLink">Retourner sur le site</a></Col>
+               <Col md={8} className="signInCol"><a href="/" className="signInLink">Retourner sur le site</a></Col>
                <Col/>
              </Row>
           </Container>

@@ -1,13 +1,13 @@
 .squ1 {
     position: absolute;
-    height: 12vh;
-    width: 12vh;
+    height: 16vh;
+    width: 16vh;
     border-radius: 2vh;
     background-color: #BBFFE5 ;
 
     z-index: 900;
-    margin-top: 30px;
-    margin-left: 63vh;
+    margin-top: 5vh;
+    margin-left: 65vh;
 
     /* The animation part: */
     animation-name: spin2;
@@ -23,7 +23,7 @@
     background-color: #BAC9FF ;
     border-radius: 2vh;
     z-index: 900;
-    margin-top: 200px;
+    margin-top: 35vh;
     /* The animation part: */
     animation-name: spin2;
     animation-duration: 35000ms;
@@ -37,7 +37,8 @@
     width: 9vh;
     background-color: #FFBDBB ;
     border-radius: 2vh;
-    margin-left: 10px;
+    margin-left: 10vh;
+    margin-top: 3vh;
     z-index: 900;
 
     /* The animation part: */
@@ -53,9 +54,8 @@
     width: 25vh;
     background-color: #FFDEA5 ;
     border-radius: 2vh;
-    margin-left: 10px;
     z-index: 900;
-    margin-top: 500px;
+    margin-top: 67vh;
     margin-left: 50vh;
 
     /* The animation part: */
@@ -72,7 +72,7 @@
     background-color: #BAC9FF ;
     border-radius: 2vh;
     z-index: 900;
-    margin-top: 300px;
+    margin-top: 43vh;
     margin-left: 63vh;
 
     /* The animation part: */
@@ -89,8 +89,8 @@
     background-color: #BBFFE5 ;
     border-radius: 2vh;
     z-index: 900;
-    margin-top: 500px;
-    margin-left: 200px;
+    margin-top: 70vh;
+    margin-left: 25vh;
     /* The animation part: */
     animation-name: spin;
     animation-duration: 35000ms;
@@ -104,8 +104,8 @@
     width: 18vh;
     background-color: #FFBDBB ;
     border-radius: 2vh;
-    margin-left: 200px;
-    margin-top: 200px;
+    margin-left: 30vh;
+    margin-top: 24vh;
     z-index: 900;
 
     /* The animation part: */
@@ -124,7 +124,7 @@
     background-color: #FFDEA5 ;
     border-radius: 2vh;
     z-index: 900;
-    margin-top: 680px;
+    margin-top: 86vh;
 
     /* The animation part: */
     animation-name: spin;
@@ -137,7 +137,7 @@
     position: absolute;
     height: 45vh;
     width: 45vh;
-    background-color: #FFDEA5;
+    background-color: #FFBDBB ;
     border-radius: 2vh;
     margin-left: 33vh;
     margin-top: 20vh;
@@ -155,8 +155,8 @@
     width: 22vh;
     background-color:  #BAC9FF ;
     border-radius: 2vh;
-    margin-top: 560px;
-    margin-left: 100px;
+    margin-top: 73vh;
+    margin-left: 15vh;
     opacity: 0.3;
 
     /* The animation part: */
@@ -168,13 +168,13 @@
 
 .squ3-3-3 {
     position: absolute;
+    background-color: #BBFFE5;
     height: 18vh;
     width: 18vh;
-    background-color: #FFBDBB ;
     border-radius: 2vh;
-    margin-top: 600px;
-    margin-left: 510px;
-    opacity: 0.5;
+    margin-top: 78vh;
+    margin-left: 63vh;
+    opacity: 0.3;
     /* The animation part: */
         /* The animation part: */
         animation-name: spin2;
@@ -188,10 +188,10 @@
     position: absolute;
     height: 20vh;
     width:20vh;
-    background-color: #BBFFE5;
+    background-color: #FFDEA5;
     border-radius: 2vh;
-    margin-top: 100px;
-    margin-left: 30px;
+    margin-top: 10vh;
+    margin-left: 6vh;
     opacity: 0.4;
 
     /* The animation part: */
@@ -207,8 +207,8 @@
     width: 14vh;
     background-color: #FFDEA5 ;
     border-radius: 2vh;
-    margin-top: 390px;
-    margin-left: 70px;
+    margin-top: 50vh;
+    margin-left: 10vh;
 
     /* The animation part: */
     animation-name: spin2;

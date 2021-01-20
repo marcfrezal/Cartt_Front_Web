@@ -1,8 +1,8 @@
 .loginRow {
-    max-height : 100vh;
+    height : 100vh;
 }
 
 .imageBack12 {
     background-image: linear-gradient(to bottom, #bac9ff, #d9c2f5, #f0bde3, #fcbbcf, #ffbdbb);
-    max-height: 100vh;
+    height: 100vh;
 }

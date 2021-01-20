@@ -8,7 +8,7 @@ class Login extends React.Component {
     render() {
       return (
           <Container fluid>
-              <Row className="logiRow">
+              <Row className="registerRow">
                 <Col>
                   <BlockLeft/>
                 </Col>

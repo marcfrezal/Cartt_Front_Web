@@ -1,8 +1,8 @@
-.loginRow {
-    max-height : 100vh;
+.registerRow {
+    height : 100vh;
 }
 
 .imageBack11 {
-    background-image: linear-gradient(to bottom, #bbffe5, #6ccece, #179bb8, #00689a, #0e3570);
-    max-height: 100vh;
+    background-image: linear-gradient(to top, #bbffe5, #9ff6f5, #95eaff, #a1dbff, #bac9ff);
+    height: 100vh;
 }

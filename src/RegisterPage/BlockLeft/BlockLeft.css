@@ -3,7 +3,7 @@
 }
 
 .topRowRegister {
-    height: 10vh;
+    height: 12vh;
 }
 
 .titleCol {
@@ -106,7 +106,7 @@
 
 }
 
-/*Tablet*/
+/*Tablet Portrait*/
 @media (min-width: 768px) and (max-width: 992px)  {  
     .signInText {
         font-size: 1vh;
@@ -129,6 +129,153 @@
         font-size: 1vh;
         height: 4vh;
     }
+
+    .squ1 {
+        display : none;
+       }
+       
+       .squ2 {
+           display : none;
+   
+       }
+       
+       .squ3 {
+           display : none;
+   
+       }
+       
+       .squ4 {
+           display : none;
+   
+       }
+       
+       .squ1-1 {
+           display : none;
+   
+       }
+       
+       .squ2-2 {
+           display : none;
+   
+       }
+       
+       .squ3-3 {
+           display : none;
+   
+       }
+       
+       .squ4-4 {
+           display : none;
+   
+       }
+       
+       .squ1-1-1 {
+           display : none;
+   
+       }
+       
+       .squ2-2-2 {
+          display : none;
+       }
+       
+       .squ3-3-3 {
+          display : none;
+       }
+       
+       .squ4-4-4 {
+        display : none;
+   
+       }
+       
+       .squJoker {
+          display : none;
+       }
+}
+
+/*Tablet Paysage*/
+@media (min-width: 1024px) and (max-height: 770px)  {  
+    .signInText {
+        font-size: 1vh;
+    }
+
+    .signInCol {
+        height : 3vh;
+    }
+
+    .signInLink {
+        font-size: 1vh;
+    } 
+
+    .forgetCol {
+        font-size: 0.9vh;
+        height: 4vh;
+    }
+
+    .rememberCol {
+        font-size: 1vh;
+        height: 4vh;
+    }
+
+    .squ1 {
+        display : none;
+       }
+       
+       .squ2 {
+           display : none;
+   
+       }
+       
+       .squ3 {
+           display : none;
+   
+       }
+       
+       .squ4 {
+           display : none;
+   
+       }
+       
+       .squ1-1 {
+           display : none;
+   
+       }
+       
+       .squ2-2 {
+           display : none;
+   
+       }
+       
+       .squ3-3 {
+           display : none;
+   
+       }
+       
+       .squ4-4 {
+           display : none;
+   
+       }
+       
+       .squ1-1-1 {
+           display : none;
+   
+       }
+       
+       .squ2-2-2 {
+          display : none;
+       }
+       
+       .squ3-3-3 {
+          display : none;
+       }
+       
+       .squ4-4-4 {
+        display : none;
+   
+       }
+       
+       .squJoker {
+          display : none;
+       }
 }
 
 /*Desktop*/
