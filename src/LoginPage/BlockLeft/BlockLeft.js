@@ -79,7 +79,7 @@ class BlockLeft extends React.Component {
           <div className="btnCol">
             <Button onClick={() => updateLogin({variables : {login : {email : props.username , password : props.password}}}).catch(err => console.log(err))} className="loginBtn">connexion</Button>
           </div>
-          <p classeName="errorMess">Erreur. Mauvais username/e-mail ou mot de passe.</p>
+          <p className="errorMess">Erreur. Mauvais username/e-mail ou mot de passe.</p>
         </div>
       )
     } else if (data && data.login == true) {

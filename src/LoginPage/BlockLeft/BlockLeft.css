@@ -104,6 +104,10 @@
     text-align: center;
 }
 
+.errorMess {
+    color : red;
+    font-size: 1.5vh;
+}
 /*Phones*/
 @media (min-width: 576px) { 
 
