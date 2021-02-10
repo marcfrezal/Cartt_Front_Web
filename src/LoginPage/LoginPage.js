@@ -4,6 +4,7 @@ import './LoginPage.css';
 import BlockLeft from './BlockLeft/BlockLeft';
 import BlockRight from './BlockRight/BlockRight'
 
+
 class Login extends React.Component {
     render() {
       return (
