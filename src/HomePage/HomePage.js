@@ -8,6 +8,7 @@ import Block1 from "./Block1/Block1"
 import Block2 from "./Block2/Block2"
 import Block3 from "./Block3/Block3"
 import Block4 from "./Block4/Block4"
+import SalesHistory from "./../components/SalesHistory"
 
 class Home extends React.Component {
     render() {
@@ -15,6 +16,9 @@ class Home extends React.Component {
           <Container fluid>
               <Row>
                 <HeadBand/>
+              </Row>
+              <Row>
+                <SalesHistory/>
               </Row>
               <Row>
                 <Block1/>
