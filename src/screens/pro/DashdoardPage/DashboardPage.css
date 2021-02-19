@@ -1,0 +1,24 @@
+.topRow {
+    height: 35vh;
+    background-color: blue;
+}
+
+.topRowLeftColulm {
+    background-color: aqua;
+}
+
+.topRowRightColumn {
+    background-color: azure;
+}
+
+.bottomRow {
+    height: 65vh;
+}
+
+.bottomLeftCol {
+    background-color: white
+}
+
+.bottomRightCol {
+    background-color: blueviolet
+}
