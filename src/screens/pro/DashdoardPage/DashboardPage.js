@@ -3,6 +3,9 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import SalesHistory from '../../../components/SalesHistory/SalesHistory'
+import MounthlyNumbers from '../../../components/MounthlyNumbers/MounthlyNumbers'
+import LastTransactions from '../../../components/LastTransactions/LastTransactions'
+import Growth from '../../../components/Growth/Growth'
 // import HeadBand from "./HeadBand/HeadBand";
 import './DashboardPage.css'
 
@@ -12,10 +15,10 @@ class Dashboard extends React.Component {
           <Container fluid>
             <Row className='topRow'>
               <Col  className='topRowLeftColumn'>
-              Derniere transactions
+                <LastTransactions/>
               </Col>
               <Col className='topRowRightColumn'>
-              les chiffre du mois 
+                <MounthlyNumbers/>
               </Col>
             </Row>
             <Row className='bottomRow'>
@@ -23,7 +26,7 @@ class Dashboard extends React.Component {
                 <SalesHistory/>
               </Col>
               <Col className='bottomRightCol'>
-                Graphique
+                <Growth/>
               </Col>
             </Row>
           </Container>
