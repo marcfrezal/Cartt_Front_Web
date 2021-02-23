@@ -1,0 +1,23 @@
+.actionBar {
+    height: 5vh;
+}
+
+.searchRow {
+    background-color: blue;
+    height: 15vh;
+    align-items: center;
+
+}
+
+.bodyRow {
+    background-color: red;
+    height: 65vh;
+}
+
+.head {
+    height: 15vh;
+}
+
+/* .bodyCol {
+    align-items: ;
+} */
