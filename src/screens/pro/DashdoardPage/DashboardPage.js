@@ -4,9 +4,9 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import SalesHistory from '../../../components/pro/SalesHistory/SalesHistory';
 import Sidebar from '../../../components/common/Sidebar/Sidebar';
-import MounthlyNumbers from '../../../components/MounthlyNumbers/MounthlyNumbers'
-import LastTransactions from '../../../components/LastTransactions/LastTransactions'
-import Growth from '../../../components/Growth/Growth'
+import MounthlyNumbers from '../../../components/pro/MounthlyNumbers/MounthlyNumbers'
+import LastTransactions from '../../../components/pro/LastTransactions/LastTransactions'
+import Growth from '../../../components/pro/Growth/Growth'
 // import HeadBand from "./HeadBand/HeadBand";
 import './DashboardPage.css'
 
