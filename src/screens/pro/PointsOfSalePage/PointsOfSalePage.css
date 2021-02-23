@@ -3,14 +3,14 @@
 }
 
 .searchRow {
-    background-color: blue;
+    /* background-color: blue; */
     height: 15vh;
     align-items: center;
 
 }
 
 .bodyRow {
-    background-color: red;
+    /* background-color: red; */
     height: 65vh;
 }
 

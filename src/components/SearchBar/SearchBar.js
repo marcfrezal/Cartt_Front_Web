@@ -2,9 +2,9 @@ import React from "react";
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import './SearchBar.css'
 import { InputGroup, FormControl, Button } from "react-bootstrap";
+import CategoryBar from "../CategoryBar/CategoryBar";
 
 class SearchBar extends React.Component {
 
@@ -19,8 +19,9 @@ class SearchBar extends React.Component {
             </InputGroup.Append>
           </InputGroup>
         </Row>
+        <Row className="divider"/>
         <Row >
-            category
+            <CategoryBar/>
         </Row>
       </Container>
     );
