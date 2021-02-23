@@ -1,7 +1,7 @@
 .imageBack1 {
     margin-top: 2vh;
     height: 110vh;
-    background-image: url('../../home-b1.png');
+    background-image: url('../../../../assets/launch-page/home-b1.png');
     -webkit-background-size: cover; /* pour anciens Chrome et Safari */
     background-size: cover; /* version standardisée */
 }

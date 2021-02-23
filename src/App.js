@@ -1,7 +1,7 @@
 import './App.css';
-import Home from '../src/HomePage/HomePage';
-import Login from '../src/LoginPage/LoginPage';
-import Register from '../src/RegisterPage/RegisterPage';
+import Home from '../src/screens/launch-page/HomePage/HomePage';
+import Login from '../src/screens/launch-page/LoginPage/LoginPage';
+import Register from '../src/screens/launch-page/RegisterPage/RegisterPage';
 import Dashboard from '../src/screens/pro/DashdoardPage/DashboardPage';
 import React from "react";
 import {

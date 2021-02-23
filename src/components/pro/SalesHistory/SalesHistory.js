@@ -42,15 +42,6 @@ class SalesHistory extends React.Component {
     }
   }
 
-  // styles = StyleSheet.create({
-  //   item: {
-
-  //   },
-  // })
-  // function fetchTransactions() {
-  //   response = fetch("").then()
-  // }
-
 export default SalesHistory;
 
 

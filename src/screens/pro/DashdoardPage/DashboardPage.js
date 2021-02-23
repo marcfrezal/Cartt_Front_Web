@@ -2,14 +2,15 @@ import React from "react";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import SalesHistory from '../../../components/SalesHistory/SalesHistory'
-// import HeadBand from "./HeadBand/HeadBand";
+import SalesHistory from '../../../components/pro/SalesHistory/SalesHistory';
+import Sidebar from '../../../components/common/Sidebar/Sidebar';
 import './DashboardPage.css'
 
 class Dashboard extends React.Component {
     render() {
       return (
           <Container fluid>
+            <Sidebar/>
             <Row className='topRow'>
               <Col  className='topRowLeftColumn'>
               Derniere transactions
