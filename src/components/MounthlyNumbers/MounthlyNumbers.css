@@ -1,0 +1,30 @@
+.blockLeftContainer {
+    height: 100vh;
+}
+
+.titleCol {
+    height : 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #183D76;
+    font-weight: 900;
+    font-size: 5vh;
+    font-family: Montserrat;
+}
+
+.body {
+
+}
+
+.number {
+    color: #183D76;
+    font-weight: 900;
+    font-size: 7vh;
+
+}
+
+.categoty {
+    font-size: 4px;
+
+}

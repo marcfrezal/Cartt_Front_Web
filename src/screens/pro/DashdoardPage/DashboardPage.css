@@ -1,14 +1,14 @@
 .topRow {
     height: 35vh;
-    background-color: blue;
+    /* background-color: blue; */
 }
 
 .topRowLeftColulm {
-    background-color: aqua;
+    /* background-color: aqua; */
 }
 
 .topRowRightColumn {
-    background-color: azure;
+    /* background-color: azure  ; */
 }
 
 .bottomRow {
@@ -20,5 +20,5 @@
 }
 
 .bottomRightCol {
-    background-color: blueviolet
+    /* background-color: blueviolet */
 }

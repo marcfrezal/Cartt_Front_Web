@@ -16,12 +16,15 @@
 .transactionItem {
     color: grey;
     height: 10vh;
-    
 }
 
 .itemContainer {
     height: 5vh;
-    background-color: grey;
+    margin-bottom: 1vh;
+    background-color: #C4C4C4;
+    border-radius: 1vh;
+    
+    align-content: center;
 }
 
 .itemRow {
@@ -29,11 +32,7 @@
 
 }
 
-.name {
-    background-color: red;
-
-}
-.date {
-    background-color: red;
-
+.text {
+    font-size: 20px;
+    color: black;
 }
