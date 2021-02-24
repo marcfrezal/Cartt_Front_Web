@@ -16,8 +16,8 @@ class Dashboard extends React.Component {
         <Container fluid>
           <Sidebar/>
           <Row>
-            <Col md={1} xs={1} lg={1} sm={1} style={{backgroundColor :  "#f4f7ff"}}></Col>
-            <Col style={{backgroundColor :  "#f4f7ff"}}>
+            <Col md={1} xs={1} lg={1} sm={1} style={{backgroundColor :  "#f9fafd"}}></Col>
+            <Col style={{backgroundColor :  "#f9fafd"}}>
               <Container fluid>
                 <Row className='topRow'>
                   <Col className='topRowLeftColumn'>

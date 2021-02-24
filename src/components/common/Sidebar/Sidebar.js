@@ -8,50 +8,83 @@ import { FaBars } from 'react-icons/fa';
 import { FaChartLine } from 'react-icons/fa';
 import { FaCog } from 'react-icons/fa';
 import { FaSignOutAlt } from 'react-icons/fa';
-
+import { FaStoreAlt } from 'react-icons/fa';
+import { Link } from "react-router-dom";
 
 class Sidebar extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      dashboard: false,
+      customers: false,
+      shops : false,
+      settings : false
+    };
+  }
+
+  componentDidMount() {
+    if (window.location.pathname === "/dashboard") {
+      this.setState({
+        dashboard : true
+      })
+    } else if (window.location.pathname === "/points-of-sale") {
+      this.setState({
+        shops : true
+      })
+    }
+  }
+
     render() {
       return (
-          <Container className="sideBarBody">
-              <Row>
+          <Container className="sideBarBody ">
+              <Row  className="sideBarRow">
                 <Col className="sideBarCol">
                   <div className="sideBarBurger">
-                    <FaBars className="sideBarIcon"/>
+                    <FaBars className="sideBarIconBurger"/>
                   </div>
                 </Col>
               </Row>
-              <Row>
+              <Row className="sideBarRow">
                 <Col className="sideBarCol">
-                  <div className="sideBarItem">
-                    <FaChartLine className="sideBarIcon"/>
-                  </div>
+                  <Link to="/dashboard" className={this.state.dashboard ? 'sideBarItemActive' : 'sideBarItem'} >
+                    <div className="sideBarIcon">
+                      <FaChartLine />
+                    </div>
+                  </Link>
                 </Col>
               </Row>
-              <Row >
+              <Row className="sideBarRow">
                 <Col className="sideBarCol">
-                  <div className="sideBarItem">
-                    <FaUsers className="sideBarIcon"/>
-                  </div>
+                  <Link to="/points-of-sale" className={this.state.shops ? 'sideBarItemActive' : 'sideBarItem'} >
+                    <div className="sideBarIcon">
+                      <FaStoreAlt/>
+                    </div>
+                  </Link>
                 </Col>
               </Row>
-              <Row >
+              <Row className="sideBarRow">
                 <Col className="sideBarCol">
-                  <div className="sideBarItem">
-                    <FaCog className="sideBarIcon"/>
-                  </div>
+                  <Link to="/" className="sideBarItem">
+                      <div className="sideBarIcon">
+                        <FaCog/>
+                      </div>
+                  </Link>
                 </Col>
               </Row>
-              <Row >
+              <Row className="sideBarRow">
                 <Col className="sideBarCol">
+                  <div>{this.state.dashboard}</div>
+                  
                 </Col>
               </Row>
-              <Row >
+              <Row className="sideBarRow">
                 <Col className="sideBarCol">
+                  <div>{this.state.dashboard}</div>
+                  
                 </Col>
               </Row>
-              <Row >
+              <Row className="sideBarRow">
                 <Col className="sideBarCol">
                   <div className="sideBarItem">
                     <FaSignOutAlt className="sideBarIcon"/>
@@ -62,5 +95,7 @@ class Sidebar extends React.Component {
       );
     }
   }
+
+
 
 export default Sidebar;
