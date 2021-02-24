@@ -1,7 +1,7 @@
 import React from "react";
 import './HeadBand.css';
 import { Container, Row, Col, Button, Image } from 'react-bootstrap';
-import Cartt from '../../../../assets/common/Cartt.png';
+import Cartt from '../../../assets/common/Cartt.png';
 import { Link } from "react-router-dom";
 
 class HeadBand extends React.Component {

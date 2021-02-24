@@ -13,25 +13,32 @@ import './DashboardPage.css'
 class Dashboard extends React.Component {
     render() {
       return (
-          <Container fluid>
-            <Sidebar/>
-            <Row className='topRow'>
-              <Col  className='topRowLeftColumn'>
-                <LastTransactions/>
-              </Col>
-              <Col className='topRowRightColumn'>
-                <MounthlyNumbers/>
-              </Col>
-            </Row>
-            <Row className='bottomRow'>
-              <Col className='bottomLeftCol'>
-                <SalesHistory/>
-              </Col>
-              <Col className='bottomRightCol'>
-                <Growth/>
-              </Col>
-            </Row>
-          </Container>
+        <Container fluid>
+          <Sidebar/>
+          <Row>
+            <Col md={1} xs={1} lg={1} sm={1} style={{backgroundColor :  "#f4f7ff"}}></Col>
+            <Col style={{backgroundColor :  "#f4f7ff"}}>
+              <Container fluid>
+                <Row className='topRow'>
+                  <Col className='topRowLeftColumn'>
+                    <LastTransactions/>
+                  </Col>
+                  <Col className='topRowRightColumn'>
+                    <MounthlyNumbers/>
+                  </Col>
+                </Row>
+                <Row className='bottomRow'>
+                  <Col className='bottomLeftCol'>
+                    <SalesHistory/>
+                  </Col>
+                  <Col className='bottomRightCol'>
+                    <Growth/>
+                  </Col>
+                </Row>
+              </Container>
+            </Col>
+          </Row>
+        </Container>
       );
     }
   }

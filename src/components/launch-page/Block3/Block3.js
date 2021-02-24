@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import React from "react";
 import './Block3.css';
 import { Container, Row, Col, Image } from 'react-bootstrap';
-import Stores from '../../../../assets/launch-page/draw-1.png'
-import Draw2 from '../../../../assets/launch-page/draw-2.png'
-import Draw3 from '../../../../assets/launch-page/draw-3.png'
+import Stores from '../../../assets/launch-page/draw-1.png'
+import Draw2 from '../../../assets/launch-page/draw-2.png'
+import Draw3 from '../../../assets/launch-page/draw-3.png'
 
 
 

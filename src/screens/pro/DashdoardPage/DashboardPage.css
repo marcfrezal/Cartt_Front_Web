@@ -1,24 +1,33 @@
 .topRow {
     height: 35vh;
+    background-color:  #f4f7ff;
+
     /* background-color: blue; */
 }
 
 .topRowLeftColulm {
+    background-color:  #f4f7ff;
+
     /* background-color: aqua; */
 }
 
 .topRowRightColumn {
+    background-color:  #f4f7ff;
+
     /* background-color: azure  ; */
 }
 
 .bottomRow {
-    height: 65vh;
+    background-color:  #f4f7ff;
+
 }
 
 .bottomLeftCol {
-    background-color: white
+    background-color:  #f4f7ff;
 }
 
 .bottomRightCol {
+    background-color:  #f4f7ff;
+
     /* background-color: blueviolet */
 }

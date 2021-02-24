@@ -1,7 +1,7 @@
 import React from "react";
 import './Block1.css';
 import { Container, Row, Col, Image} from 'react-bootstrap';
-import Stores from '../../../../assets/launch-page/stores-logo.png'
+import Stores from '../../../assets/launch-page/stores-logo.png'
 
 
 class Block1 extends React.Component {
