@@ -18,7 +18,7 @@ class PointsOfSale extends React.Component {
       return (
           <Container fluid style={{backgroundColor :  "#f9fafd"}}>
             <Sidebar/>
-            <Row >
+            <Row>
             <Col xs={border}/>
             <Col xs={body} >
               <Row className="head"/>

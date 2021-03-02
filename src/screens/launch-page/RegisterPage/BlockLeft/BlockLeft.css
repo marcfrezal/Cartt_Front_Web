@@ -28,13 +28,6 @@
 }
 
 
-.userNamePassword {
-    height : 5vh;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-}
-
 .rememberCol {
     height : 5vh;
     font-size: 1.6vh;
@@ -129,66 +122,7 @@
         height: 4vh;
     }
 
-    .squ1 {
-        display : none;
-       }
-       
-       .squ2 {
-           display : none;
-   
-       }
-       
-       .squ3 {
-           display : none;
-   
-       }
-       
-       .squ4 {
-           display : none;
-   
-       }
-       
-       .squ1-1 {
-           display : none;
-   
-       }
-       
-       .squ2-2 {
-           display : none;
-   
-       }
-       
-       .squ3-3 {
-           display : none;
-   
-       }
-       
-       .squ4-4 {
-           display : none;
-   
-       }
-       
-       .squ1-1-1 {
-           display : none;
-   
-       }
-       
-       .squ2-2-2 {
-          display : none;
-       }
-       
-       .squ3-3-3 {
-          display : none;
-       }
-       
-       .squ4-4-4 {
-        display : none;
-   
-       }
-       
-       .squJoker {
-          display : none;
-       }
+
 }
 
 /*Tablet Paysage*/
@@ -215,66 +149,7 @@
         height: 4vh;
     }
 
-    .squ1 {
-        display : none;
-       }
-       
-       .squ2 {
-           display : none;
-   
-       }
-       
-       .squ3 {
-           display : none;
-   
-       }
-       
-       .squ4 {
-           display : none;
-   
-       }
-       
-       .squ1-1 {
-           display : none;
-   
-       }
-       
-       .squ2-2 {
-           display : none;
-   
-       }
-       
-       .squ3-3 {
-           display : none;
-   
-       }
-       
-       .squ4-4 {
-           display : none;
-   
-       }
-       
-       .squ1-1-1 {
-           display : none;
-   
-       }
-       
-       .squ2-2-2 {
-          display : none;
-       }
-       
-       .squ3-3-3 {
-          display : none;
-       }
-       
-       .squ4-4-4 {
-        display : none;
-   
-       }
-       
-       .squJoker {
-          display : none;
-       }
+    
 }
 
 /*Desktop*/

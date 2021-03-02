@@ -223,64 +223,7 @@
 
 /*Tablet*/
 @media (min-width: 768px) and (max-width: 992px)  {  
-    .squ1 {
-     display : none;
-    }
     
-    .squ2 {
-        display : none;
-
-    }
-    
-    .squ3 {
-        display : none;
-
-    }
-    
-    .squ4 {
-        display : none;
-
-    }
-    
-    .squ1-1 {
-        display : none;
-
-    }
-    
-    .squ2-2 {
-        display : none;
-
-    }
-    
-    .squ3-3 {
-        display : none;
-
-    }
-    
-    .squ4-4 {
-        display : none;
-
-    }
-    
-    .squ1-1-1 {
-        display : none;
-
-    }
-    
-    .squ2-2-2 {
-        margin-top: 700px;
-    }
-    
-    .squ3-3-3 {
-        margin-left: 30px;
-    }
-    
-    .squ4-4-4 {
-
-    }
-    
-    .squJoker {
-    }
 
 }
 

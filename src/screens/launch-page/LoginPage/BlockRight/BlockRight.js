@@ -6,7 +6,7 @@ import { Container, Row, Col, Image} from 'react-bootstrap';
 class BlockRight extends React.Component {
     render() {
       return (
-          <Container fluid >
+          <Container>
              <Row>
                 <div className="squ1 "></div>  
                 <div className="squ2 "></div>
