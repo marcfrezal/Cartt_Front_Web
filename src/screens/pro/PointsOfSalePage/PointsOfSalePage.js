@@ -7,7 +7,6 @@ import { Button } from "react-bootstrap";
 import PointOfSaleList from '../../../components/PointOfSaleList/PointOfSaleList'
 import SearchBar from '../../../components/SearchBar/SearchBar'
 
-// border * 2 + body must eq 12
 var border = 2;
 var body = 8
 
@@ -19,10 +18,15 @@ class PointsOfSale extends React.Component {
             <Col xs={border}/>
             <Col xs={body} >
               <Row className="head"/>
-              <Row className='actionBar'>
-                  <Col xs={10}/>
-                  <Col xs={1}>
-                  <Button variant="primary">CREATE</Button>
+              <Row className='posTopRow'>
+                  <Col xs={10} className="posTitle">
+                    Mes Points de ventes
+                  </Col>
+                  <Col xs={2} className >
+                    <Button variant="primary"
+                      style={{marginTop: 10}}>
+                      CREER UN PDV
+                    </Button>
                   </Col>
               </Row>
               <Row className='searchRow'>

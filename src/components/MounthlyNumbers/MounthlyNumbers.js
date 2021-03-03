@@ -11,20 +11,20 @@ class MounthlyNumbers extends React.Component {
 
   render() {
     return (
-      <Container className="blockLeftContainer" fluid>
+      <Container className="mnContainer" fluid>
         <Row>
-          <Col className='titleCol'>Chiffres du mois</Col>
+          <Col className='mnTitle'>Chiffres du mois</Col>
         </Row>
         <Row className='body'>
-          <Col>
+          <Col md={4}>
             <Row className='number'>{numbers.new_customers}</Row>
             <Row className='category'>Nouveaux Clients</Row>
           </Col>
-          <Col>
+          <Col md={4}>
             <Row className='number'>{numbers.transactions}</Row>
             <Row className='category'>Transactions</Row>
           </Col>
-          <Col>
+          <Col md={4}>
             <Row className='number'>{numbers.total_ca}</Row>
             <Row className='category'>Total CA</Row>
           </Col>

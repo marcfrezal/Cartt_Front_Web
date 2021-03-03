@@ -8,11 +8,13 @@ import LastTransactions from '../../../components/LastTransactions/LastTransacti
 import Growth from '../../../components/Growth/Growth'
 // import HeadBand from "./HeadBand/HeadBand";
 import './DashboardPage.css'
+import Header from "../../../components/Header/Header";
 
 class Dashboard extends React.Component {
     render() {
       return (
           <Container fluid>
+              <Header title="Dashboard"/>
             <Row className='topRow'>
               <Col  className='topRowLeftColumn'>
                 <LastTransactions/>
