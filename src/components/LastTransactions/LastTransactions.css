@@ -12,12 +12,12 @@
 .body {
 }
 
-.transactonBody {
-    margin: 10px;
+.transactionBody {
+    margin-top: 10px;
+    margin-left: 25px;
 }
 
 .transactionItemRow1 {
-    margin: 10;
     justify-content: flex-start;
     align-items: center;
     color: #fff;
@@ -25,21 +25,20 @@
 }
 
 .transactionItemRow2 {
-    margin-left: 10px;
     justify-content: flex-start;
     align-items: center;
     color: #fff;
-    font-size: 24px;
+    font-size: 18px;
 } 
 
 .transactionItemRow3 {
-    margin-left: 10px;
-    justify-content: flex-start;
-    align-items: center;
+    justify-content: flex-end;
+    align-items: flex-end;
     color: #fff;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 48px;
 }
+
 
 .card {
     height: 15vh;
@@ -49,12 +48,14 @@
 }
 
 .transaction {
-    background-color: #C4C4C4;
     margin-right: 1vh;
     height: 200px;
     Width:   310px;
     margin-block-end: 10vh;
     border-radius: 3vh;
-
     font-family: Montserrat;
+}
+
+.transactionDivider {
+    height: 50px;
 }

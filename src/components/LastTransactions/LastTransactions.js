@@ -20,9 +20,10 @@ class LastTransactions extends React.Component {
            style={{ backgroundImage: "url(" + YellowCard + ")" }}>
           <div className="transactionBody">
           
-          <Row md={2} className="transactionItemRow1"> {data.name}</Row>
-          <Row md={2} className="transactionItemRow2">{data.date}</Row>
-          <Row md={8} className="transactionItemRow3">{data.amount}€</Row>
+          <div  className="transactionItemRow1"> {data.name}</div>
+          <div  className="transactionItemRow2">{data.date}</div>
+          <div className="transactionDivider"/>
+          <div className="transactionItemRow3">{data.amount}€</div>
           </div>
       </div>
     )
@@ -32,7 +33,7 @@ class LastTransactions extends React.Component {
     return (
       <Container fluid>
         <Row className='titleCol'>
-         Dernières Transactions
+         Dernières cartes vendues
         </Row>
         <Row className='body' style={{scrollMarginRight:true}}>
           {/* <Carousel data={transactions} renderItem={this.renderTransaction}/> */}
