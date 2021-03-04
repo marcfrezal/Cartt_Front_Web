@@ -5,8 +5,8 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import './LastTransactions.css'
 import { Image, Carousel } from "react-bootstrap";
-import YellowCard from "../../assets/card-background/card-bg-yellow.png";
-import PinkCard from "../../assets/card-background/card-bg-pink.png";
+import YellowCard from "../../../assets/pro/card-background/card-bg-yellow.png";
+import PinkCard from "../../../assets/pro/card-background/card-bg-pink.png";
 
 var transactions = [{ name: 'Paul Vitry', date: '27/02/2020', amount: 1235, card_background:'../../assets/card-background/card-bg-yellow.png' },
 { name: 'Paul Vitry', date: '27/02/2020', amount: 1235, card_background:'../../assets/card-background/card-bg-pink.png' },

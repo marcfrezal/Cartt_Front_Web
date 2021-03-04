@@ -24,7 +24,7 @@ class BlockLeft extends React.Component {
     render() {
       return (
           <Container className="blockLeftContainer" fluid>
-             <Row className="topRow">
+             <Row className="topRowLogin">
              </Row>
              <Row>
                <Col/>

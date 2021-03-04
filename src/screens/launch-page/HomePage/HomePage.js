@@ -3,11 +3,11 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import './HomePage.css';
-import HeadBand from "./HeadBand/HeadBand";
-import Block1 from "./Block1/Block1"
-import Block2 from "./Block2/Block2"
-import Block3 from "./Block3/Block3"
-import Block4 from "./Block4/Block4"
+import HeadBand from "../../../components/launch-page/HeadBand/HeadBand";
+import Block1 from "../../../components/launch-page/Block1/Block1"
+import Block2 from "../../../components/launch-page/Block2/Block2"
+import Block3 from "../../../components/launch-page/Block3/Block3"
+import Block4 from "../../../components/launch-page/Block4/Block4"
 
 class Home extends React.Component {
     render() {
