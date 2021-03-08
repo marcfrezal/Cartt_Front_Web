@@ -4,31 +4,39 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import './LastTransactions.css'
+import { Image, Carousel } from "react-bootstrap";
+import YellowCard from "../../../assets/pro/card-background/card-bg-yellow.png";
+import PinkCard from "../../../assets/pro/card-background/card-bg-pink.png";
 
-var transactions = [{ name: 'Paul Vitry', date: '27/02/2020', amount: 1235 },
-{ name: 'Paul Vitry', date: '27/02/2020', amount: 1235 },
-{ name: 'Paul Vitry', date: '27/02/2020', amount: 1235 },]
+var transactions = [{ name: 'Paul Vitry', date: '27/02/2020', amount: 1235, card_background:'../../assets/card-background/card-bg-yellow.png' },
+{ name: 'Paul Vitry', date: '27/02/2020', amount: 1235, card_background:'../../assets/card-background/card-bg-pink.png' },
+{ name: 'Paul Vitry', date: '27/02/2020', amount: 1235, card_background:'../../assets/card-background/card-bg-yellow.png' },]
 
 class LastTransactions extends React.Component {
 
-  renderTransaction(data) {
+  renderTransaction(data, index) {
     return (
-      <Col className='transaction' fluid>
-        <Col>{data.name}</Col>
-        <Col>{data.date}</Col>
-        <Col>{data.amount}€</Col>
-      </Col>
+      <div className='transaction'
+           style={{ backgroundImage: "url(" + YellowCard + ")" }}>
+          <div className="transactionBody">
+          
+          <div  className="transactionItemRow1"> {data.name}</div>
+          <div  className="transactionItemRow2">{data.date}</div>
+          <div className="transactionDivider"/>
+          <div className="transactionItemRow3">{data.amount}€</div>
+          </div>
+      </div>
     )
   }
 
   render() {
     return (
       <Container fluid>
-        <Row>
-          <Col className='titleCol'>Dernières Transactions</Col>
+        <Row className='titleCol'>
+         Dernières cartes vendues
         </Row>
-        <Row className='body'>
-          {/* <Carousel data={transactions} renderItem={renderTransaction(item, index)}/> */}
+        <Row className='body' style={{scrollMarginRight:true}}>
+          {/* <Carousel data={transactions} renderItem={this.renderTransaction}/> */}
           {transactions.map(transaction => this.renderTransaction(transaction))}
         </Row>
       </Container>

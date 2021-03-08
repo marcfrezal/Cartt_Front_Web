@@ -1,11 +1,22 @@
-.actionBar {
+.posTopRow {
     height: 5vh;
+    margin-bottom: 5vh;
 }
 
 .searchRow {
     /* background-color: blue; */
     height: 15vh;
     align-items: center;
+
+}
+
+.posTitle {
+    font-size: 4vh;
+    font-weight: bold;
+    color: #183D76;
+}
+
+.posBtnCreate {
 
 }
 

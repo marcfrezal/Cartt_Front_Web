@@ -35,11 +35,13 @@ class PointOfSale extends React.Component {
     return (
       <Row className="itenContainer">
         <Col md={1}/>
-        <Col md={6}>
+        <Col md={9}>
           <Row>{pos.name}</Row>
           <Row>{pos.location.address1}, {pos.location.postcode} {pos.location.city}</Row>
         
         </Col>
+        <Col>edit</Col>
+        <Col>delete</Col>
         <Col md={1} />
       </Row>
     )

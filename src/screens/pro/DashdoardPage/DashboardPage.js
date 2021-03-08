@@ -9,15 +9,19 @@ import LastTransactions from '../../../components/pro/LastTransactions/LastTrans
 import Growth from '../../../components/pro/Growth/Growth'
 // import HeadBand from "./HeadBand/HeadBand";
 import './DashboardPage.css'
+import Header from "../../../components/Header/Header";
 
 class Dashboard extends React.Component {
     render() {
       return (
         <Container fluid>
           <Sidebar/>
+         
           <Row>
             <Col md={1} xs={1} lg={1} sm={1} style={{backgroundColor :  "#f9fafd"}}></Col>
+           
             <Col style={{backgroundColor :  "#f9fafd"}}>
+            <Header title="Dashboard"/>
               <Container fluid>
                 <Row className='topRow'>
                   <Col className='topRowLeftColumn'>

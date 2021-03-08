@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import './SalesHistory.css';
+import Header from "../../Header/Header";
 
 var transactions = [{name: 'Paul Vitry', date:'27/02/2020', amount: 1235},
                     {name: 'Paul Vitry', date:'27/02/2020', amount: 1235},
@@ -27,7 +28,7 @@ class SalesHistory extends React.Component {
 
     render() {
       return (
-          <Container className="blockLeftContainer" fluid>
+          <Container className="salesHistoryContainer" fluid>
               <Row>
                 <Col className='titleCol'>Historique des transactions</Col>
               </Row>

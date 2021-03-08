@@ -1,19 +1,44 @@
 
 .titleCol {
-    height : 10vh;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     color: #183D76;
-    font-weight: 900;
-    font-size: 5vh;
+    font-weight: semi-bold;
+    font-size: 24px;
     font-family: Montserrat;
 }
 
 .body {
-    /* backgr   ound-color: blue; */
-
 }
+
+.transactionBody {
+    margin-top: 10px;
+    margin-left: 25px;
+}
+
+.transactionItemRow1 {
+    justify-content: flex-start;
+    align-items: center;
+    color: #fff;
+    font-size: 24px;
+}
+
+.transactionItemRow2 {
+    justify-content: flex-start;
+    align-items: center;
+    color: #fff;
+    font-size: 18px;
+} 
+
+.transactionItemRow3 {
+    justify-content: flex-end;
+    align-items: flex-end;
+    color: #fff;
+    font-weight: bold;
+    font-size: 48px;
+}
+
 
 .card {
     height: 15vh;
@@ -23,10 +48,14 @@
 }
 
 .transaction {
-    background-color: #C4C4C4;
     margin-right: 1vh;
-    height: 15vh;
-    Width:   20vh;
+    height: 200px;
+    Width:   310px;
     margin-block-end: 10vh;
+    border-radius: 3vh;
+    font-family: Montserrat;
+}
 
+.transactionDivider {
+    height: 50px;
 }
