@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import React from "react";
 import './Block2.css';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Image } from 'react-bootstrap';
 import { FaSearch } from 'react-icons/fa';
 import { FaGift } from 'react-icons/fa';
 import { FaHeart } from 'react-icons/fa';
+import Central from '../../../assets/common/Cartt.png';
 
 
 
@@ -12,7 +13,7 @@ class Block2 extends React.Component {
   
     render() {
       return (
-          <Container fluid className="blockContainer ">
+        /*  <Container fluid className="blockContainer ">
              <Row style={{backgroundColor : "transparent", height : "100vh"}}>
               <Col className="myCardCol">
                 <AnimatedCardExplore/>
@@ -24,10 +25,47 @@ class Block2 extends React.Component {
                 <AnimatedCardOffer/>
                </Col>
              </Row>
+          </Container>*/
+          <Container className="blockContainer2" fluid>
+              <Row>
+                <Col sm={12} lg={6} className="colBlockLeft2">
+                  <Container className="containerTextBlock2" fluid>
+                    <Row className="topTextBlockLeft2">
+                      <div className="myTextBlock2">
+                        Cartt.
+                      </div>
+                    </Row>
+                    <Row className="textBlockLeft2">
+                        <div className="myTextBlock2">
+                          Une solution clé en main pour <br/> une nouvelle façon d’offrir.
+                        </div>
+                    </Row>
+                    <Row className="underTextBlockLeft2">
+                      <div className="myTextBlock2">
+                        Chez Cartt, nous avons complètement repensé la <br/>façon d'acheter et d'offrir des cartes cadeaux. <br/>Nous vous proposons une application simple et intuitive <br/>dans laquelle vous allez pouvoir acheter <br/>et offrir les cartes cadeaux de vos enseignes préférées en seulement quelques instants!
+                      </div>
+                    </Row>
+                    </Container>
+                </Col>
+                <Col sm={12} lg={6} className="colBlockRight2">
+                  <Container className="blockContainer" fluid>
+                    <Row>
+                      <Col sm={12} lg={6}>
+                        <div src={Central} className="blockImg1 shadow"></div>
+                      </Col>
+                      <Col sm={12} lg={6}>
+                        <div className="blockImg2 shadow"></div>
+                      </Col>
+                    </Row>
+                  </Container>
+                </Col>
+              </Row>
           </Container>
       );
     }
   }
+
+
 
   function AnimatedCardExplore(props) {
     const [scroll, setScroll] = useState(false)

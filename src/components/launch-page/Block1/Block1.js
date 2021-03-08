@@ -1,9 +1,11 @@
 import React from "react";
 import './Block1.css';
 import { Container, Row, Col, Image} from 'react-bootstrap';
-import Stores from '../../../assets/launch-page/stores-logo.png'
+import Central from '../../../assets/common/Cartt.png'
+import { useState, useEffect } from "react";
 
 
+/*
 class Block1 extends React.Component {
     render() {
       return (
@@ -20,5 +22,23 @@ class Block1 extends React.Component {
       );
     }
   }
+        <div className="squ1-homepage shadow"></div>  
+            <div className="squ2 "></div>
+*/
+
+class Block1 extends React.Component {
+  render() {
+    return (
+      <Container className="backGroundBlock1" fluid>
+        <Image src={Central} className="centralHomePage"></Image>
+        <div className="squ1-homepage shadow"></div>
+        <div className="squ2-homepage shadow"></div>
+        <div className="squ3-homepage shadow"></div>
+        <div className="squ4-homepage shadow"></div>
+        <div className="squ5-homepage shadow"></div>
+      </Container>
+    );
+  }
+}
 
 export default Block1;

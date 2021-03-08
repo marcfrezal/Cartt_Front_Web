@@ -14,9 +14,6 @@ class Home extends React.Component {
       return (
           <Container fluid>
               <Row>
-                <HeadBand/>
-              </Row>
-              <Row>
                 <Block1/>
               </Row>
               <Row>
@@ -24,9 +21,6 @@ class Home extends React.Component {
               </Row>
               <Row>
                 <Block3/>
-              </Row>
-              <Row>
-                <Block4/>
               </Row>
           </Container>
       );

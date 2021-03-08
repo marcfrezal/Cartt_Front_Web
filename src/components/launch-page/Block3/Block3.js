@@ -9,7 +9,7 @@ import Draw3 from '../../../assets/launch-page/draw-3.png'
 
 
 class Block3 extends React.Component {
-  
+ /* 
     render() {
       return (
           <Container fluid className="blockContainer3">
@@ -27,8 +27,26 @@ class Block3 extends React.Component {
             </Row>
           </Container>
       );
+    }*/
+    render() {
+      return (
+          <Container fluid className="blockContainer3-1">
+            <Row className="blockRow3-1">
+              <Col>
+                <Row className="blockRow3-1-1">Pourquoi nous?</Row>
+                <Row className="blockRow3-1-2">Pratique, Simple, Rapide.</Row>
+                <Row className="blockRow3-1-3">Cartt est une application mobile  vous permettant d’acheter, <br/>d’offrir et de dépenser des cartes cadeaux d’une manière intuitive, rapide et facile. </Row>
+              </Col>
+            </Row>
+            <Row className="blockRow3-2">
+              
+            </Row>
+          </Container>
+      );
     }
   }
+
+
 
   function AnimatedIcon1(props) {
     const [scroll, setScroll] = useState(false)

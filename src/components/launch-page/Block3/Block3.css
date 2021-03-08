@@ -4,6 +4,50 @@
     background-size: cover; /* version standardisée */
 }
 
+.blockContainer3-1 {
+    height: 100vh;
+    margin-top: 100vh;
+}
+
+.blockRow3-1 {
+    height: 50vh;
+}
+
+.blockRow3-1-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    color : #0E3570;
+    font-family: Montserrat;
+}
+
+.blockRow3-1-2 {
+    color : #0E3570;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 4vh;
+    text-align: center;
+}
+
+.blockRow3-1-3 {
+    margin-top: 8vh;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color : grey;
+    font-family: Montserrat;
+    font-size: 2vh;
+}
+
+
+.blockRow3-2 {
+    background: linear-gradient(90deg, #BAC9FF 16.56%, rgba(133, 255, 211, 0.7) 85.64%);
+    height: 30vh;
+}
+
 .animatedDiv1 {
     height: 9vh;
     width: 9vh;
@@ -218,6 +262,13 @@
 
 /*Desktop*/
 @media (min-width: 992px) {  
+    .blockContainer3-1 {
+        margin-top: 0vh;
+    }
+
+    .blockRow3-1-3 {
+        margin-top: 0vh;
+    }
 
 }
 

@@ -40,26 +40,212 @@
     margin-left: 8vh;
 }
 
+.backGroundBlock1 {
+    background-color: white;
+    height: 100vh !important;
+    background-position: center center;
+    background-size: contain;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    position: relative !important;
+    overflow: hidden !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.centralHomePage{
+    position: absolute;
+    height: 45vh;
+    width: 80vh;
+}
+
+.squ1-homepage {
+    position: absolute;
+    height: 20vh;
+    width: 20vh;
+    border-radius: 2vh;
+    background-color:  #FFDEA5 ;
+
+    z-index: 900;
+    right: -10vh;
+    top: 70vh;
+
+    filter: blur(8px);
+    -webkit-filter: blur(4px);
+    /* The animation part: */
+    animation-name: spin;
+    animation-duration: 45000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.35)!important;
+}
+
+.squ2-homepage {
+    position: absolute;
+    height: 35vh;
+    width: 35vh;
+    border-radius: 2vh;
+    background-color: #BAC9FF;
+
+    z-index: 900;
+
+    margin-top: 50vh;
+    filter: blur(4px);
+    left: -150px !important;
+    -webkit-filter: blur(4px);
+    /* The animation part: */
+    animation-name: spin2;
+    animation-duration: 45000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.35)!important;
+}
+
+.squ3-homepage {
+    position: absolute;
+    height: 15vh;
+    width: 15vh;
+    border-radius: 2vh;
+    background-color: #BBFFE5 ;
+
+    z-index: 900;
+
+    top: 6vh;
+    left: 0vh;
+    /* The animation part: */
+    animation-name: spin;
+    animation-duration: 45000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.35)!important;
+}
+
+
+.squ4-homepage {
+    position: absolute;
+    height: 10vh;
+    width: 10vh;
+    border-radius: 2vh;
+    background-color: #FFBDBB;
+
+    z-index: 900;
+
+    top: 20vh;
+    margin-left: 30vh;
+
+    /* The animation part: */
+    animation-name: spin2;
+    animation-duration: 45000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.35)!important;
+}
+
+.squ5-homepage {
+    height: 4.5vh;
+    width: 4.5vh;
+    border-radius: 1vh;
+    background-color:#0E3570;
+
+
+    z-index: 900;
+    margin-left: 22vh;
+
+    /* The animation part: */
+    animation-name: spin;
+    animation-duration: 45000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
 /*Phones*/
 @media (min-width: 576px) { 
 
 }
 
 /*Tablet*/
-@media (min-width: 768px) and (max-width: 992px)  {  
-    .text1-1 {
-        font-size: 4.5vh;
+@media (min-width: 768px) and (max-width: 992px)  {
+    .squ1-homepage {
+        top: 70vh;
+        right: 0;
     }
 
-    .text1-2 {
-        font-size: 1.5vh;
+    .squ2-homepage {
+        margin-top: 45vh;
+        height: 35vh;
+        width: 35vh;
+        left: 10vh;
+    }
+
+    .squ3-homepage {
+        margin-top: 10vh;
+        margin-left: 10vh;
+    }
+
+    .squ4-homepage {
+        height: 12vh;
+        width: 12vh;
+        top: 3vh;
+        margin-left: 50vh;
+    }
+
+    .squ5-homepage {
+        top: 20vh;
+        margin-left: 43vh;
     }
 
 }
 
 /*Desktop*/
 @media (min-width: 992px) {  
+    .squ1-homepage {
+        height: 55vh;
+        width: 55vh;
+        left: 0px;
+        top: 70vh;
+    }
 
+    .squ2-homepage {
+        margin-top: 60vh;
+        margin-left: 150vh;
+        height: 45vh;
+        width: 45vh;
+    }
+
+    .squ3-homepage {
+        height: 25vh;
+        width: 25vh;
+        top: 9vh;
+        left: 20vh;
+    }
+
+    .squ4-homepage {
+        height: 12vh;
+        width: 12vh;
+        top: 10vh;
+        margin-left: 140vh;
+    }
+
+    .squ5-homepage {
+        margin-top: -20vh;
+        margin-left: 45vh;
+        height: 8vh;
+        width: 8vh;
+
+    }
+
+    .centralHomePage{
+        position: absolute;
+        height: 105vh;
+        width: 180vh;
+        top: 0vh;
+    }
+
+    .backGroundBlock1 {
+        background-color: white;
+        height: 140vh !important;
+    }
 }
 
 /*Large Desktops*/
