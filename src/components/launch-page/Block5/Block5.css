@@ -1,0 +1,327 @@
+.blockContainer5 {
+    margin-top: 80vh;
+    height: 100vh;
+    background-image: url('../../../assets/launch-page/block5.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.topTitle5 {
+    margin-top: 15vh;
+    display: flex;
+    align-items: center;
+    color : #0E3570;
+    font-family: Montserrat;
+}
+
+.title5 {
+
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    color : #0E3570;
+    font-family: Montserrat;
+    font-weight: 900;
+    font-size: 4vh;
+}
+
+.text5 {
+    color : #0E3570;
+    font-family: Montserrat;
+    font-size: 2vh;
+}
+
+.colLeft5 {
+    margin-top: 18vh;
+}
+
+.divFlo {
+    height: 15vh;
+    width: 15vh;
+    position: absolute;
+    color : #0E3570;
+    font-family: Montserrat;
+    font-weight: 900;
+    font-size: 2vh;
+    margin-top: 10vh;
+    margin-left: 3vh;
+    background-image: url('../../../assets/launch-page/flo.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 2vh;
+    display: flex;
+    justify-content: center;
+}
+
+.divArthur {
+    height: 15vh;
+    width: 15vh;
+    position: absolute;
+    color : #0E3570;
+    font-family: Montserrat;
+    font-weight: 900;
+    font-size: 2vh;
+    margin-top: 10vh;
+    margin-left: 25vh;
+    background-image: url('../../../assets/launch-page/arthur.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 2vh;
+    display: flex;
+    justify-content: center;
+}
+
+.divMarc {
+    height: 15vh;
+    width: 15vh;
+    position: absolute;
+    color : #0E3570;
+    font-family: Montserrat;
+    font-weight: 900;
+    font-size: 2vh;
+    margin-top: 35vh;
+    margin-left: 3vh;
+    background-image: url('../../../assets/launch-page/marc.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 2vh;
+    display: flex;
+    justify-content: center;
+}
+
+.divPaul {
+    height: 15vh;
+    width: 15vh;
+    position: absolute;
+    color : #0E3570;
+    font-family: Montserrat;
+    font-weight: 900;
+    font-size: 2vh;
+    margin-top: 35vh;
+    margin-left: 25vh;
+    background-image: url('../../../assets/launch-page/paul.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 2vh;
+    display: flex;
+    justify-content: center;
+}
+
+.divTais {
+    height: 15vh;
+    width: 15vh;
+    position: absolute;
+    color : #0E3570;
+    font-family: Montserrat;
+    font-weight: 900;
+    font-size: 2vh;
+    margin-top: 60vh;
+    margin-left: 3vh;
+    background-image: url('../../../assets/launch-page/tais.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 2vh;
+    display: flex;
+    justify-content: center;
+}
+
+.divMat {
+    height: 15vh;
+    width: 15vh;
+    position: absolute;
+    color : #0E3570;
+    font-family: Montserrat;
+    font-weight: 900;
+    font-size: 2vh;
+    margin-top: 60vh;
+    margin-left: 25vh;
+    background-image: url('../../../assets/launch-page/block2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 2vh;
+    display: flex;
+    justify-content: center;
+}
+
+.divRaph {
+    margin-left: 3vh;
+    height: 15vh;
+    width: 15vh;
+    position: absolute;
+    color : #0E3570;
+    font-family: Montserrat;
+    font-weight: 900;
+    font-size: 2vh;
+    margin-top: 85vh;
+    background-image: url('../../../assets/launch-page/raphael.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 2vh;
+    display: flex;
+    justify-content: center;
+}
+
+.colRight5 {
+    height: 100vh;
+}
+
+.flo {
+    height: 10vh;
+    width: 10vh;
+    margin-top: 16vh;
+    text-align: center;
+}
+
+.followUs {
+    background-image: url('../../../assets/launch-page/FollowUs.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 10vh;
+    width: 60%;
+    margin-top: 7vh;
+    margin-left: 8vh;
+}
+
+.linkedinIcon {
+    position: relative;
+    color: #FFE8BA;
+    font-size : 7vh;
+    margin-top: 2vh;
+    margin-left: 3vh;
+}
+
+.facebookIcon {
+    position: relative;
+    color: #FFE8BA;
+    font-size : 7vh;
+    margin-top: 2vh;
+    margin-left: 8vh;
+}
+
+.instagramIcon {
+    position: relative;
+    color:     #FFE8BA;
+    font-size : 7vh;
+    margin-top: 2vh;
+    margin-left: 8vh;
+}
+
+.instagramIcon:hover { 
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.facebookIcon:hover { 
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.linkedinIcon:hover { 
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+
+/*Phones*/
+@media (min-width: 576px) { 
+
+}
+
+
+/*Tablet*/
+@media (min-width: 768px) and (max-width: 992px)  { 
+
+}
+
+/*Desktop*/
+@media (min-width: 992px) {  
+    .blockContainer5 {
+        margin-top:8vh;
+    }
+
+    .topTitle5 {
+    margin-top: 10vh;
+        margin-left: 10vh;
+    }
+    
+    .title5 {
+        margin-left: 10vh;
+    }
+    
+    .text5 {
+        margin-left: 10vh;
+
+    }
+
+}
+
+/*Large Desktops*/
+@media (min-width: 1200px) {  
+
+    .divMarc {
+        margin-top: 20vh;
+        margin-left: 47vh;
+    }
+
+    .divPaul {
+        margin-top: 45vh;
+        margin-left: 47vh;
+    }
+
+    .divTais {
+        margin-top: 50vh;
+        margin-left: 10vh;
+    }
+
+    .divArthur{
+        margin-top: 25vh;
+    }
+
+    .divMat{
+        margin-top: 70vh;
+        margin-left: 40vh;
+    }
+
+    .divRaph{
+        margin-top: 75vh;
+    }
+
+    .followUs {
+        background-image: url('../../../assets/launch-page/FollowUs.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 10vh;
+        width: 20%;
+        margin-top: 3vh;
+        margin-left: 10vh;
+        transform: rotate(-10deg);
+    }
+
+    .linkedinIcon {
+        font-size : 5vh;
+        margin-top: 0vh;
+        margin-left: 10vh;
+    }
+    
+    .facebookIcon {
+        font-size : 5vh;
+        margin-top: 0vh;
+        margin-left: 4vh;
+    }
+    
+    .instagramIcon {
+        font-size : 5vh;
+        margin-top: 0vh;
+        margin-left: 4vh;
+    }
+}

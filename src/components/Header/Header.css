@@ -1,47 +1,8 @@
-/* .headerTitle {
+.headerTitle {
     font-size: 5vh;
     font-weight: bold;
     color: #183D76;
 
     font-family: Montserrat;
-} */
-
-/*Phones*/
-@media (max-width: 768px) { 
-    .headerTitle {
-        font-size: 25px !important;
-        font-weight: bold;
-        color: #183D76;
-    
-        font-family: Montserrat;
-    }
 }
 
-/*Tablet*/
-@media (min-width: 768px) and (max-width: 992px)  {
-    
-    .headerTitle {
-        font-size: 4vh !important;
-        font-weight: bold;
-        color: #183D76;
-    
-        font-family: Montserrat;
-    }
-}
-
-/*Desktop*/
-@media (min-width: 992px) {  
-    .headerTitle {
-        font-size: 4vh !important;
-        font-weight: bold;
-        color: #183D76;
-    
-        font-family: Montserrat;
-    }
-
-}
-
-/*Large Desktops*/
-@media (min-width: 1200px) {  
-
-}

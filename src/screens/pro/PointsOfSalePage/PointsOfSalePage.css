@@ -1,11 +1,14 @@
 
 .posRowBody {
-    margin-left: 4vw !important;
     background-color: green;
 }
 
 .head {
     height: 15vh;
+}
+
+.posBodyCol {
+    background-color: green;
 }
 
 /*Phones*/

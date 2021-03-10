@@ -35,7 +35,7 @@ class BlockLeft extends React.Component {
                <Col/>
                <Col md={8} >
                 <Form.Group className="userNameCol">
-                  <Form.Control onChange={this._handleUsername} type="email" placeholder="Nom d'utilisateur ou E-mail" />
+                  <Form.Control className="test" onChange={this._handleUsername} type="email" placeholder="Nom d'utilisateur ou E-mail" />
                 </Form.Group>
                </Col>
                <Col/>
@@ -44,7 +44,7 @@ class BlockLeft extends React.Component {
                <Col/>
                 <Col md={8}>
                  <Form.Group className="userNamePassword">
-                   <Form.Control onChange={this._handlePassword} type="password" placeholder="Mot de passe" />
+                   <Form.Control className="test" onChange={this._handlePassword} type="password" placeholder="Mot de passe" />
                  </Form.Group>
                 </Col>
                <Col/>

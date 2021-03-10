@@ -13,17 +13,10 @@ class PointsOfSale extends React.Component {
     render() {
       return (
           <Container fluid style={{backgroundColor :  "#f9fafd"}}>
-            <Sidebar/>
-            <Row className="posRowBody">
-            <Header title="Mes points de vente"/>
-            <Row className="head"/>
-
-            <Row className='bodyRow'>
-              <Col>
-                <PointOfSaleList/>
-              </Col>
-            </Row>
-            </Row>
+              <Sidebar/>
+              <Header title="Mes points de ventes"/>
+              <PointOfSaleList />
+           
           </Container>
       );
     }

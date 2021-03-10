@@ -11,22 +11,7 @@ var point_of_sales =  [
   {id: "123456", name: "Mon point de vente", location: {county: 'France', city:'Montpellier', postcode: '34000', address1: '23 Rue de Nul part', address2: ''}},
   {id: "123456", name: "Mon point de vente", location: {county: 'France', city:'Montpellier', postcode: '34000', address1: '23 Rue de Nul part', address2: ''}},
   {id: "123456", name: "Mon point de vente", location: {county: 'France', city:'Montpellier', postcode: '34000', address1: '23 Rue de Nul part', address2: ''}},
-  {id: "123456", name: "Mon point de vente", location: {county: 'France', city:'Montpellier', postcode: '34000', address1: '23 Rue de Nul part', address2: ''}},
-  {id: "123456", name: "Mon point de vente", location: {county: 'France', city:'Montpellier', postcode: '34000', address1: '23 Rue de Nul part', address2: ''}},
-  {id: "123456", name: "Mon point de vente", location: {county: 'France', city:'Montpellier', postcode: '34000', address1: '23 Rue de Nul part', address2: ''}},
-  {id: "123456", name: "Mon point de vente", location: {county: 'France', city:'Montpellier', postcode: '34000', address1: '23 Rue de Nul part', address2: ''}},
-  {id: "123456", name: "Mon point de vente", location: {county: 'France', city:'Montpellier', postcode: '34000', address1: '23 Rue de Nul part', address2: ''}},
-  {id: "123456", name: "Mon point de vente", location: {county: 'France', city:'Montpellier', postcode: '34000', address1: '23 Rue de Nul part', address2: ''}},
-  {id: "123456", name: "Mon point de vente", location: {county: 'France', city:'Montpellier', postcode: '34000', address1: '23 Rue de Nul part', address2: ''}},
-  {id: "123456", name: "Mon point de vente", location: {county: 'France', city:'Montpellier', postcode: '34000', address1: '23 Rue de Nul part', address2: ''}},
-  {id: "123456", name: "Mon point de vente", location: {county: 'France', city:'Montpellier', postcode: '34000', address1: '23 Rue de Nul part', address2: ''}},
-  {id: "123456", name: "Mon point de vente", location: {county: 'France', city:'Montpellier', postcode: '34000', address1: '23 Rue de Nul part', address2: ''}},
-  {id: "123456", name: "Mon point de vente", location: {county: 'France', city:'Montpellier', postcode: '34000', address1: '23 Rue de Nul part', address2: ''}},
-  {id: "123456", name: "Mon point de vente", location: {county: 'France', city:'Montpellier', postcode: '34000', address1: '23 Rue de Nul part', address2: ''}},
-  {id: "123456", name: "Mon point de vente", location: {county: 'France', city:'Montpellier', postcode: '34000', address1: '23 Rue de Nul part', address2: ''}},
-  {id: "123456", name: "Mon point de vente", location: {county: 'France', city:'Montpellier', postcode: '34000', address1: '23 Rue de Nul part', address2: ''}},
-  {id: "123456", name: "Mon point de vente", location: {county: 'France', city:'Montpellier', postcode: '34000', address1: '23 Rue de Nul part', address2: ''}},
-  {id: "123456", name: "Mon point de vente", location: {county: 'France', city:'Montpellier', postcode: '34000', address1: '23 Rue de Nul part', address2: ''}},
+
 ]
 
 class PointOfSale extends React.Component {

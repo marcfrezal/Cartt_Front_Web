@@ -1,0 +1,113 @@
+.blockContainer7 {
+    margin-top: 50vh;
+    height: 100vh;
+    background-image: url('../../../assets/launch-page/footer.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.row1-7 {
+    height: 33%;
+}
+
+.row2-7 {
+    height: 33%;
+}
+.row3-7 {
+    height: 33%;
+}
+
+.col2-7 {
+    text-align: center;
+}
+
+.col3-7 {
+    display: flex;
+    align-items: flex-end;
+}
+
+.col3-1-7 {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.topTitle7 {
+    margin-top: 7vh;
+    color : #0E3570;
+    font-family: Montserrat;
+}
+
+.title7 {
+    margin-top: 7vh;
+
+    margin-top: 3vh;
+    color : #0E3570;
+    font-family: Montserrat;
+    font-weight: 900;
+    font-size: 4vh;
+}
+
+.text7 {
+    margin-top: 7vh;
+
+    margin-top: 3vh;
+    color : #0E3570;
+    font-family: Montserrat;
+    font-size: 2vh;
+    margin-bottom: 3vh;
+}
+
+.email7 {
+    width: 50% !important;
+}
+
+.form7 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sendMail7 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1vh;
+    border-radius: 3px;
+    width: 37px;
+    height: 37px;
+    background-color: #183D76;
+}
+
+.mailIcon7 {
+    color: white;
+}
+
+.footerText {
+    color: lightgray;
+}
+
+/*Phones*/
+@media (min-width: 576px) { 
+
+}
+
+
+/*Tablet*/
+@media (min-width: 768px) and (max-width: 992px)  { 
+
+}
+
+/*Desktop*/
+@media (min-width: 992px) { 
+    .blockContainer7 {
+        margin-top: 0vh;
+    }
+    .form7 {
+        margin-top: 5vh;
+    }
+}
+
+/*Large Desktops*/
+@media (min-width: 1200px) {  
+}

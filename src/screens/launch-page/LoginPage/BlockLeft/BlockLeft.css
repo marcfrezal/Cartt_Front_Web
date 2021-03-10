@@ -28,9 +28,8 @@
     align-items: flex-end;
 }
 
-
 .userNamePassword {
-    height : 5vh;
+    height : 10vh;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -68,11 +67,16 @@
 }
 
 .loginBtn {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
     width: 100% !important;
     font-family: Montserrat;
     font-weight: 600;
     background-color: #FFBDBB !important;
     border: none !important;
+    height: 100%!important;
+    font-size: 2vh !important;
 }
 
 .loginBtn:hover {
@@ -108,6 +112,13 @@
     color : red;
     font-size: 1.5vh;
 }
+
+.test {
+    height: 50% !important;
+    width: 100% !important;
+    font-size: 1vw !important;
+}
+
 /*Phones*/
 @media (min-width: 576px) { 
 
