@@ -1,7 +1,7 @@
 import React from "react";
 import Container from 'react-bootstrap/Container';
 import './Header.css'
-import { Col, Row, Button } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 
 class Header extends React.Component {
 
@@ -9,11 +9,10 @@ class Header extends React.Component {
     return (
       <Container fluid>
         <Row>
-          <Col sm={8} md={9} class="headerTitle">
-            {this.props.title}
+          <Col md={9}>
+            <div class="headerTitle">{this.props.title}</div>
           </Col>
-          <Col sm={6} md={3} style={{backgroundColor: 'grey'}}>
-            <Button title="créer un point de vente" className="createPos"/>
+          <Col md={3} style={{backgroundColor: 'grey'}}>
           </Col>
         </Row>
       </Container>

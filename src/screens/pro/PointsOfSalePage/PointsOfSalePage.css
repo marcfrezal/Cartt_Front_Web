@@ -1,34 +1,30 @@
-.posTopRow {
-    height: 5vh;
-    margin-bottom: 5vh;
-}
 
-.searchRow {
-    /* background-color: blue; */
-    height: 15vh;
-    align-items: center;
-
-}
-
-.posTitle {
-    font-size: 4vh;
-    font-weight: bold;
-    color: #183D76;
-}
-
-.posBtnCreate {
-
-}
-
-.bodyRow {
-    /* background-color: red; */
-    height: 65vh;
+.posRowBody {
+    margin-left: 4vw !important;
+    background-color: green;
 }
 
 .head {
     height: 15vh;
 }
 
-/* .bodyCol {
-    align-items: ;
-} */
+/*Phones*/
+@media (min-width: 576px) { 
+
+}
+
+/*Tablet*/
+@media (min-width: 768px) and (max-width: 992px)  {
+    
+
+}
+
+/*Desktop*/
+@media (min-width: 992px) {  
+
+}
+
+/*Large Desktops*/
+@media (min-width: 1200px) {  
+
+}
