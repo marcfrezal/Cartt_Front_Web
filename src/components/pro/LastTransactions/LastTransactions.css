@@ -1,0 +1,61 @@
+
+.titleCol {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: #183D76;
+    font-weight: semi-bold;
+    font-size: 24px;
+    font-family: Montserrat;
+}
+
+.body {
+}
+
+.transactionBody {
+    margin-top: 10px;
+    margin-left: 25px;
+}
+
+.transactionItemRow1 {
+    justify-content: flex-start;
+    align-items: center;
+    color: #fff;
+    font-size: 24px;
+}
+
+.transactionItemRow2 {
+    justify-content: flex-start;
+    align-items: center;
+    color: #fff;
+    font-size: 18px;
+} 
+
+.transactionItemRow3 {
+    justify-content: flex-end;
+    align-items: flex-end;
+    color: #fff;
+    font-weight: bold;
+    font-size: 48px;
+}
+
+
+.card {
+    height: 15vh;
+    width: 20vh;
+    /* background-color: #c4c4c4; */
+
+}
+
+.transaction {
+    margin-right: 1vh;
+    height: 200px;
+    Width:   310px;
+    margin-block-end: 10vh;
+    border-radius: 3vh;
+    font-family: Montserrat;
+}
+
+.transactionDivider {
+    height: 50px;
+}

@@ -1,0 +1,160 @@
+.blockLeftContainer {
+    height: 100vh;
+}
+
+.topRowLogin {
+    height: 25vh;
+}
+
+.titleCol {
+    height : 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #183D76;
+    font-weight: 900;
+    font-size: 5vh;
+    font-family: Montserrat;
+}
+
+.spaceRow {
+    height: 5vh;
+}
+
+.userNameCol {
+    height : 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.userNamePassword {
+    height : 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.rememberCol {
+    height : 5vh;
+    font-size: 1.6vh;
+    font-weight: 500;
+    color: #183D76;
+    font-family: Montserrat;
+}
+
+.forgetCol {
+    
+    height : 5vh;
+    text-align: end;
+    font-size: 1.5vh;
+    font-weight: 500;
+    color: #183D76;
+    text-decoration: underline;
+    font-family: Montserrat;
+}
+
+.forgetCol:hover {
+    opacity: 0.5;
+    cursor :pointer;
+}
+
+.btnCol {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5vh;
+}
+
+.loginBtn {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    font-family: Montserrat;
+    font-weight: 600;
+    background-color: #FFBDBB !important;
+    border: none !important;
+    height: 100%!important;
+    font-size: 2vh !important;
+}
+
+.loginBtn:hover {
+    background-color: #ebaba9 !important ;
+    border: none;
+}
+
+.signInCol {
+    height : 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.signInText {
+    font-size: 1.5vh;
+    color : darkgrey;
+    margin-right: 1vh;
+}
+
+.signInLink {
+    font-size: 1.5vh;
+    font-weight: 500;
+    color: #183D76;
+    text-decoration: underline;
+} 
+
+.errorLogin {
+    text-align: center;
+}
+
+.errorMess {
+    color : red;
+    font-size: 1.5vh;
+}
+
+.test {
+    height: 50% !important;
+    width: 100% !important;
+    font-size: 1vw !important;
+}
+
+/*Phones*/
+@media (min-width: 576px) { 
+
+}
+
+/*Tablet*/
+@media (min-width: 768px) and (max-width: 992px)  {  
+    .signInText {
+        font-size: 1vh;
+    }
+
+    .signInCol {
+        height : 3vh;
+    }
+
+    .signInLink {
+        font-size: 1vh;
+    } 
+
+    .forgetCol {
+        font-size: 0.9vh;
+        height: 4vh;
+    }
+
+    .rememberCol {
+        font-size: 1vh;
+        height: 4vh;
+    }
+}
+
+/*Desktop*/
+@media (min-width: 992px) {  
+
+}
+
+/*Large Desktops*/
+@media (min-width: 1200px) {  
+
+}

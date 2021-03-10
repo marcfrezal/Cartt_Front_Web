@@ -1,0 +1,34 @@
+.posTopRow {
+    height: 5vh;
+    margin-bottom: 5vh;
+}
+
+.searchRow {
+    /* background-color: blue; */
+    height: 15vh;
+    align-items: center;
+
+}
+
+.posTitle {
+    font-size: 4vh;
+    font-weight: bold;
+    color: #183D76;
+}
+
+.posBtnCreate {
+
+}
+
+.bodyRow {
+    /* background-color: red; */
+    height: 65vh;
+}
+
+.head {
+    height: 15vh;
+}
+
+/* .bodyCol {
+    align-items: ;
+} */

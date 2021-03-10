@@ -1,0 +1,160 @@
+.blockContainer6 {
+    margin-top: 110vh;
+    height: 100vh;
+}
+
+.squ1-6 {
+    position: absolute;
+    height: 60vh;
+    width: 60vh;
+    border-radius: 2vh;
+    background-color:      #85FFD3;
+    z-index: 900;
+    transform: rotate(30deg);
+
+    animation-name: spin2;
+    animation-duration: 45000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.35)!important;
+}
+
+.squ2-6 {
+    position: absolute;
+    height: 20vh;
+    width: 20vh;
+    border-radius: 2vh;
+    background-color:  #FFBDBD;
+    z-index: 900;
+    transform: rotate(-20deg);
+    top: 80px;
+    left: 60px;
+
+    animation-name: spin;
+    animation-duration: 45000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.35)!important;
+}
+
+.squ3-6 {
+    position: absolute;
+    height: 15vh;
+    width: 15vh;
+    border-radius: 2vh;
+    background-color:  #BAC9FF;
+    z-index: 900;
+    transform: rotate(-40deg);
+    top: 75vh;
+    right: 0vh;
+
+    animation-name: spin2;
+    animation-duration: 45000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.35)!important;
+}
+
+.squimg-6 {
+    position: absolute;
+    height: 60vh;
+    width: 60vh;
+    border-radius: 2vh;
+    z-index: 900;
+    background-image: url('../../../assets/launch-page/mockup-6.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.topTitle6 {
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    color : #0E3570;
+    font-family: Montserrat;
+}
+
+.title6 {
+    margin-top: 5vh;
+    height: 15vh;
+    display: flex;
+    margin-bottom: 10vh;
+    align-items: center;
+    color : #0E3570;
+    font-family: Montserrat;
+    font-weight: 900;
+    font-size: 4vh;
+}
+
+.text6 {
+    height: 10vh;
+    margin-bottom: 5vh;
+    display: flex;
+    align-items: center;
+    color : grey;
+    font-family: Montserrat;
+    font-size: 2vh;
+}
+
+.colRight6 {
+    top: -15vh;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/*Phones*/
+@media (min-width: 576px) { 
+
+}
+
+
+/*Tablet*/
+@media (min-width: 768px) and (max-width: 992px)  { 
+
+}
+
+/*Desktop*/
+@media (min-width: 992px) {  
+
+}
+
+/*Large Desktops*/
+@media (min-width: 1200px) {  
+    .blockContainer6 {
+        margin-top: 10vh;
+        height: 100vh;
+    }
+
+    .squ3-6 {
+        position: absolute;
+        height: 15vh;
+        width: 15vh;
+        border-radius: 2vh;
+        background-color:  #BAC9FF;
+        z-index: 900;
+        transform: rotate(-40deg);
+        top: 75vh;
+        right: 10vh;
+    }
+
+    .squimg-6 {
+        height: 80vh;
+        width: 80vh;
+    }
+    
+    .title6 {
+        margin-top: 0vh;
+        margin-bottom: 5vh;
+    }
+    
+    .text6 {
+        height: 0vh;
+    }
+    
+    .colRight6 {
+        top: 0vh;
+    }
+}

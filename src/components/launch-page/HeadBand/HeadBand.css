@@ -1,0 +1,128 @@
+.headBandContainer {
+    left: 0;
+    right: 0;
+    background-color: transparent;
+    height: 10vh;
+    position : fixed;
+    z-index: 999;
+}
+
+.mainNav {
+    height: 9vh;
+    background-image: url('../../../assets/launch-page/Cartt.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    border-radius: 2vh;
+    top: -20px;
+    left: -10px;
+}
+
+.logNav{
+    height: 12vh;
+    width: 7vh;
+    position: relative;
+    border-radius: 10vh;
+    top: -45px;
+    right: -110px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.round1 {
+    position: relative;
+    top: 50px;
+    height: 5vh;
+    width: 5vh;
+    border-radius: 100vh;
+    background-color: #BAC9FF;
+}
+
+.round2 {
+    position: relative;
+    top: 4.5px;
+    margin-left: 4px;
+    height: 4vh;
+    width: 4vh;
+    border-radius: 100vh;
+    background-color: #0E3570;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logIcon {
+    color: white;
+
+}
+
+.colNav {
+    background-color: transparent;
+}
+
+/*Phones*/
+@media (min-width: 576px) { 
+
+}
+
+/*Tablet*/
+@media (min-width: 768px) and (max-width: 992px) {  
+
+}
+
+/*Desktop*/
+@media (min-width: 992px) {  
+
+}
+
+/*Large Desktops*/
+@media (min-width: 1200px) {  
+    .mainNav {
+        height: 10vh;
+        width: 25vh;
+        background-image: url('../../../assets/launch-page/Cartt.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: relative;
+        border-radius: 2vh;
+        top : -2vh;
+        left: -15vh;
+        background-color: white;
+        background-position-y: 10px;
+        background-position-x: center;
+    }
+
+    .mainNav:hover {
+        cursor: pointer;
+    }
+
+    .logNav{
+        height: 12vh;
+        width: 7vh;
+        position: relative;
+        border-radius: 10vh;
+        top: -45px;
+        right: -70vh;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+    }
+
+    .logNav:hover {
+        cursor: pointer;
+    }
+
+    .round2 {
+        position: relative;
+        top: 3.5px;
+        margin-left: 4px;
+        height: 4vh;
+        width: 4vh;
+        border-radius: 100vh;
+        background-color: #0E3570;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

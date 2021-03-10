@@ -1,0 +1,78 @@
+.sideBarBody {
+    z-index: 999;
+    background-color:#f9fafd;
+    width: 5vw !important;
+    position: fixed;
+    left: 0 !important;
+    height: 100% !important;
+    background-color: red;
+}
+
+.sideBarCol {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sideBarRow {
+    height: 14.3% !important;
+    background-color: #f9fafd;
+}
+
+.sideBarItem {
+    height: 5vh;
+    width: 5vh;
+    border-radius: 1vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    transition: 0.3s;
+    color: lightgrey !important;
+}
+
+.sideBarBurger {
+    height: 5vh;
+    width: 5vh;
+    border-radius: 1vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    transition: 0.3s;
+    color: lightgrey;
+}
+
+.sideBarIconBurger:hover {
+    cursor: pointer;
+    font-size: 2.6vh;
+}
+
+.sideBarItem:hover {
+    color: white !important;
+    background-color: #BAC9FF;
+    cursor: pointer;
+}
+
+.sideBarIcon {
+    font-size : 2.2vh;
+}
+
+.sideBarIconActive {
+    font-size : 2.2vh;
+}
+
+.sideBarIconBurger {
+    font-size : 2.2vh;
+}
+
+.sideBarItemActive {
+    height: 5vh;
+    width: 5vh;
+    border-radius: 1vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    transition: 0.3s;
+    color: white !important;
+    background-color: #BAC9FF;
+    cursor: pointer;
+}

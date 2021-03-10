@@ -1,7 +1,9 @@
 import './App.css';
-import Home from '../src/HomePage/HomePage';
-import Login from '../src/LoginPage/LoginPage';
-import Register from '../src/RegisterPage/RegisterPage';
+import Home from '../src/screens/launch-page/HomePage/HomePage';
+import Login from '../src/screens/launch-page/LoginPage/LoginPage';
+import Register from '../src/screens/launch-page/RegisterPage/RegisterPage';
+import Dashboard from '../src/screens/pro/DashdoardPage/DashboardPage';
+import PointsOfSale from '../src/screens/pro/PointsOfSalePage/PointsOfSalePage';
 import React from "react";
 import {
   BrowserRouter,
@@ -30,7 +32,8 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
-            <Route exact path="/dashboard" />
+            <Route exact path="/dashboard" component={Dashboard} />
+            <Route exact path="/points-of-sale" component={PointsOfSale} />
           </Switch>
       </BrowserRouter>
     </ApolloProvider>

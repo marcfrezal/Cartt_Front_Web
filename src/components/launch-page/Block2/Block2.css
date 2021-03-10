@@ -1,0 +1,312 @@
+.blockContainer {
+    margin-top: 650px;
+    height: 120vh;
+    width: 95% !important;
+    background-image: -webkit-linear-gradient(80deg, transparent 50%,#FFDEA5  50%);
+    background-size: cover; /* version standardisée */
+    border-radius: 2vh;
+}
+
+.blockImg2 {
+    height: 60vh;
+    width: 100%;
+    margin-top: 5vh;
+    border-radius: 2vh;
+    background-image: url('../../../assets/launch-page/mockup-1.jpg');
+    background-size: cover;
+    background-position: center center;
+}
+
+.blockImg1 {
+    height: 30vh;
+    width: 100%;
+    margin-top: 10vh;
+    border-radius: 2vh;
+    background-image: url('../../../assets/launch-page/block2.jpg');
+    background-size: cover;
+    background-position: center center;
+}
+
+.blockContainer2 {
+    margin-top: 20vh;
+    height: 100vh;
+}
+
+.colBlockRight2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+}
+
+.colBlockLeft2 {
+    height: 80vh;
+}
+
+.topTextBlockLeft2 {
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    color : #0E3570;
+    font-family: Montserrat;
+}
+
+.textBlockLeft2 {
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    color : #0E3570;
+    font-family: Montserrat;
+    font-weight: 900;
+    font-size: 4vh;
+}
+
+.underTextBlockLeft2 {
+    height: 55vh;
+    display: flex;
+    align-items: center;
+    color : grey;
+    font-family: Montserrat;
+    font-size: 2vh;
+}
+
+.myCard-end {
+    width: 70% !important;
+    height: 70vh !important;
+    border-radius: 2vh;
+    background-image: -webkit-linear-gradient(80deg,  #0E3570 70% , transparent 30%);
+}
+
+.myCardCol {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rowIcon {
+    height:25%;
+    margin-top: 2vh;
+}
+
+.colIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.roundedIcon {
+    margin-top: 12vh;
+    height: 9vh;
+    width: 9vh;
+    border-radius: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+.rowTitle {
+    height: 25%;
+}
+
+.colTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color : white;
+    font-weight: 900;
+    font-size: 3vh;
+    font-family: Montserrat;
+}
+
+.colText {
+    display: flex;
+    justify-content: center;
+    color : white;
+    font-size: 2vh;
+    text-align: center;
+    margin-right: 35px;
+    margin-left: 35px;
+    font-family: Montserrat;
+
+}
+
+.searchIcon {
+    size: 2vh !important;
+    color: #FFE8BA;
+    font-size : 3vh;
+}
+
+.chooseIcon {
+    size: 2vh !important;
+    color: #FFBDBC;
+    font-size : 3vh;
+}
+
+.offerIcon {
+    size: 2vh !important;
+    color: #a5f2d4;
+    font-size : 3vh;
+
+} 
+
+.animate__animate .animate__fadeInUp {
+    --animate-duration: 20s !important;
+    --animate-delay : 20s !important;
+  }
+
+
+
+
+/*Phones*/
+@media (min-width: 576px) { 
+
+}
+
+/*Tablet*/
+@media (min-width: 768px) and (max-width: 992px)  {
+    
+    .colBlockRight2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    
+    .colBlockLeft2 {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .topTextBlockLeft2 {
+        height: 10vh;
+        display: flex;
+        align-items: flex-end;
+        color : #0E3570;
+        font-family: Montserrat;
+    }
+    
+    .textBlockLeft2 {
+        height: 18vh;
+        display: flex;
+        align-items: center;
+        color : #0E3570;
+        font-family: Montserrat;
+        font-weight: 900;
+        font-size: 4vh;
+    }
+    
+    .underTextBlockLeft2 {
+        height: 35vh;
+        display: flex;
+        align-items: flex-start;
+        color : grey;
+        font-family: Montserrat;
+        font-size: 2vh;
+    }
+
+    .myTextBlock2 {
+        margin-left: 5vh;
+    }
+
+    .blockContainer {
+        margin-top: 50vh;
+        height: 20vh;
+    }
+
+    .blockImg2 {
+        height: 60vh;
+        width: 90%;
+        margin-top: 5vh;
+        border-radius: 2vh;
+        margin-left: 3vh;
+
+    }
+
+    .blockImg1 {
+        height: 30vh;
+        width: 90%;
+        margin-left: 3vh;
+
+        margin-top: 10vh;
+        border-radius: 2vh;
+    }
+
+}
+
+/*Desktop*/
+@media (min-width: 992px) {  
+    .colBlockRight2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    
+    .colBlockLeft2 {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .topTextBlockLeft2 {
+        height: 10vh;
+        display: flex;
+        align-items: flex-end;
+        color : #0E3570;
+        font-family: Montserrat;
+    }
+    
+    .textBlockLeft2 {
+        height: 18vh;
+        display: flex;
+        align-items: center;
+        color : #0E3570;
+        font-family: Montserrat;
+        font-weight: 900;
+        font-size: 4vh;
+    }
+    
+    .underTextBlockLeft2 {
+        height: 35vh;
+        display: flex;
+        align-items: flex-start;
+        color : grey;
+        font-family: Montserrat;
+        font-size: 2vh;
+    }
+
+    .myTextBlock2 {
+        margin-left: 10vh;
+    }
+
+    .blockContainer {
+        margin-top: -10px;
+        height: 80vh;
+    }
+
+    .blockImg2 {
+        height: 60vh;
+        width: 100%;
+        margin-top: 10vh;
+        border-radius: 2vh;
+    }
+
+    .blockImg1 {
+        height: 30vh;
+        width: 100%;
+        margin-top: 10vh;
+        border-radius: 2vh;
+    }
+
+
+
+}
+
+/*Large Desktops*/
+@media (min-width: 1200px) {  
+
+}

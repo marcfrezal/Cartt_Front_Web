@@ -1,0 +1,311 @@
+.blockContainer3 {
+    margin-top: 200px;
+    height: 150vh;
+    background-size: cover; /* version standardisée */
+}
+
+.blockContainer3-1 {
+    height: 100vh;
+    margin-top: 100vh;
+}
+
+.blockRow3-1 {
+    height: 50vh;
+}
+
+.blockRow3-1-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    color : #0E3570;
+    font-family: Montserrat;
+}
+
+.blockRow3-1-2 {
+    color : #0E3570;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 4vh;
+    text-align: center;
+}
+
+.blockRow3-1-3 {
+    margin-top: 8vh;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color : grey;
+    font-family: Montserrat;
+    font-size: 2vh;
+}
+
+
+.blockRow3-2 {
+    display: flex;
+    background: linear-gradient(90deg, #BAC9FF 16.56%, rgba(133, 255, 211, 0.7) 85.64%);
+    height: 250vh;
+    align-items: flex-start;
+}
+
+.animatedDiv1 {
+    height: 9vh;
+    width: 9vh;
+    background-color: #FFBDBB ;
+    border-radius: 2vh;
+    margin-left: 10px;
+    z-index: 900;
+
+    /* The animation part: */
+    animation-name: spin;
+    animation-duration: 20000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.animatedTitle1 {
+    z-index: 901;
+    position: absolute;
+    font-weight: 700;
+    font-family: Montserrat;
+    color: #0E3570;
+    font-size: 4vh;
+    margin-left: 3vh;
+    margin-top: 4vh;
+}
+
+.animatedText1 {
+    font-weight: 600;
+    font-family: Montserrat;
+    color: #798597;
+    font-size: 2vh;
+    margin-left: 3vh;
+    margin-top: 3vh;
+}
+
+.animatedDiv2 {
+    height: 7vh;
+    width: 7vh;
+    background-color: #BAC9FF ;
+    border-radius: 2vh;
+    margin-left: 10px;
+    z-index: 900;
+    margin-top: 30px;
+    margin-left: 3vh;
+
+    /* The animation part: */
+    animation-name: spin2;
+    animation-duration: 20000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.animatedTitle2 {
+    z-index: 901;
+    position: absolute;
+    font-weight: 700;
+    font-family: Montserrat;
+    color: #0E3570;
+    font-size: 4vh;
+    margin-left: 5vh;
+    margin-top: 4vh;
+}
+
+.animatedText2 {
+    font-weight: 600;
+    font-family: Montserrat;
+    color: #798597;
+    font-size: 2vh;
+    margin-left: 5vh;
+    margin-top: 8vh;
+}
+
+.animatedDiv3 {
+    height: 15vh;
+    width: 15vh;
+    background-color: #BBFFE5 ;
+    border-radius: 2vh;
+    margin-left: 10px;
+    z-index: 900;
+    margin-top: 30px;
+
+    /* The animation part: */
+    animation-name: spin;
+    animation-duration: 10000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.animatedTitle3 {
+    z-index: 901;
+    position: absolute;
+    font-weight: 700;
+    font-family: Montserrat;
+    color: #0E3570;
+    font-size: 4vh;
+    margin-left: 3vh;
+    margin-top: 8vh;
+}
+
+.animatedText3 {
+    font-weight: 600;
+    font-family: Montserrat;
+    color: #798597;
+    font-size: 2vh;
+    margin-left: 3vh;
+    margin-top: 4vh;
+}
+
+.img1 {
+    height: 50%;
+    width: 50%;
+}
+
+.img2 {
+    height: 65%;
+    width: 40%;
+}
+
+.img3 {
+    height: 45%;
+    width: 50%;
+}
+
+@keyframes spin {
+    from {transform:rotate(360deg);}
+    to {transform:rotate(0deg);}
+}
+
+@keyframes spin2 {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+
+@keyframes spin3 {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+
+/*Phones*/
+@media (min-width: 576px) { 
+
+}
+
+/*Tablet*/
+@media (min-width: 768px) and (max-width: 992px)  {  
+
+    
+    .blockContainer {
+        height: 200vh;
+    }
+    
+    .animatedTitle {
+        z-index: 999;
+        position: absolute;
+        font-weight: 700;
+        font-family: Montserrat;
+        color: #0E3570;
+        font-size: 3vh;
+    
+    }
+
+    .animatedDiv1 {
+        height: 8vh;
+        width: 8vh;
+    }
+
+    .img1 {
+        height: 25%;
+        width: 60%;
+        margin-top: 80px;
+    }
+
+    .animatedTitle1 {
+        font-size: 3vh;
+    }
+    
+    .animatedText1 {
+        font-size: 1.5vh;
+        margin-top: 12vh;
+    }
+
+    .img2 {
+        height: 35%;
+        width: 48%;
+        margin-top: 60px;
+    }
+
+    .animatedTitle2 {
+        font-size: 3vh;
+    }
+    
+    .animatedText2 {
+        font-size: 1.5vh;
+        margin-top: 12vh;
+    }
+
+    .img3 {
+        height: 24%;
+        width: 60%;
+        margin-top: 120px;
+    }
+
+    .animatedTitle3 {
+        font-size: 3vh;
+    }
+    
+    .animatedText3 {
+        font-size: 1.5vh;
+        margin-top: 6vh;
+    }
+}
+
+/*Desktop*/
+@media (min-width: 992px) {  
+    .blockContainer3-1 {
+        margin-top: 0vh;
+    }
+
+    .blockRow3-1-3 {
+        margin-top: 0vh;
+    }
+
+    .blockRow3-2 {
+        background: linear-gradient(90deg, #BAC9FF 16.56%, rgba(133, 255, 211, 0.7) 85.64%);
+        height: 45vh;
+    }
+
+    .myCard-end {
+        width: 65% !important;
+        height: 55vh !important;
+        border-radius: 2vh;
+        background-image: -webkit-linear-gradient(80deg,  #0E3570 70% , transparent 30%);
+    }
+
+    .rowIcon {
+        height:25%;
+        margin-top: 5vh;
+    }
+
+    .roundedIcon {
+        margin-top: 3vh;
+        height: 9vh;
+        width: 9vh;
+        border-radius: 10vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+    }
+
+    .myCardCol {
+        top: -130px;
+    }
+}
+
+/*Large Desktops*/
+@media (min-width: 1200px) {  
+
+}
