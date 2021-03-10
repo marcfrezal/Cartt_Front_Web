@@ -1,8 +1,81 @@
-.itenContainer {
-    height: 6vh;
-    margin-bottom: 1vh;
-    background-color: #C4C4C4;
+.posListItemContainer {
+    margin-bottom: 2vh;
+    background-color: blue;
     border-radius: 1vh;
     
     align-content: center;
+}
+
+.posItemImage {
+    height: 10vh;
+    background-image: "url(" + "../../../assets/pro/card-background/card-bg-pink.png" + ")";
+    border-radius: 5px;
+    top: -5px;
+}
+
+.posList {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    height: 80vh;
+}
+
+.posItemTitle {
+    font-size: 20px !important;
+    color: #183D76 !important;
+    font-family: Montserrat;
+    font-weight: 500;
+}
+
+.posItemAddress {
+    font-size: 13px;
+    color: #183D76;
+    font-family: Montserrat;
+    margin-bottom: 10px;
+}
+
+.posItemIcon {
+    display: flex;
+    justify-content: center;
+}
+
+/*Phones*/
+@media (min-width: 576px) { 
+
+}
+
+/*Tablet*/
+@media (min-width: 768px) and (max-width: 992px)  {
+    .posItemTitle {
+        margin-left: 20px;
+    }
+
+    .posItemAddress {
+        margin-left: 20px;
+    }
+
+
+}
+
+/*Desktop*/
+@media (min-width: 992px) {  
+    .posItemTitle {
+        margin-left: 20px;
+    }
+
+    .posItemAddress {
+        margin-left: 20px;
+    }
+
+    .posItemImage {
+        height: 10vh;
+        background-image: "url(" + "../../../assets/pro/card-background/card-bg-pink.png" + ")";
+        border-radius: 5px;
+        top: 0;
+    }
+    
+}
+
+/*Large Desktops*/
+@media (min-width: 1200px) {  
+
 }

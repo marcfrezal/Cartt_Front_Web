@@ -5,6 +5,10 @@
     font-family: Montserrat;
 }
 
+.posHeaderAction {
+    margin-top: 5px;  
+}
+
 
 /*Phones*/
 @media (max-width: 768px) { 
@@ -17,9 +21,6 @@
         top: 1vh;
     }
 
-    .createPosBtn {
-        align-self: center;
-    }
 }
 
 /*Tablet*/
@@ -33,6 +34,10 @@
         height: 10vh;
         font-family: Montserrat;
     }
+
+    .posHeaderAction {
+        margin-top: 10px;  
+    }
 }
 
 /*Desktop*/
@@ -45,6 +50,9 @@
         font-family: Montserrat;
     }
 
+    .posHeaderAction {
+        margin-top: 10px;  
+    }
 }
 
 /*Large Desktops*/
