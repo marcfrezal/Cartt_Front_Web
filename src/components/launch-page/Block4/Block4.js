@@ -7,21 +7,21 @@ import { useState, useEffect } from "react";
 class Block4 extends React.Component {
     render() {
       return (
-          <Container className="blockContainer4" fluid>
-             <Row className="rowTitle">
-               <Col>
-                 <AnimatedTitle/>
-                 <AnimatedDecoTitle/>
-               </Col>
-             </Row>
-             <Row>
-               <Col style={{display : "flex", justifyContent : "center"}}>
-                 <div className="colCard shadow">
-                   <p className="text" >Vous etes gérant d'une magasin? Propriétaire d'un commerce? Rejoignez-nous afin de profiter de notre offre dédié aux professionels. Une plateforme simple d'utilisation vous permettant de bénéficier d'un système de cartes cadeaux propre à votre enseigne!</p>
-                   <p className="link" > Découvrir l'application ➜</p>
-                 </div>
-               </Col>
-             </Row>
+          <Container fluid className="blockContainer4">
+            <Row>
+              <Col lg={6} sm={12}className="colRight4">
+                <div className="topTitle4">A vous de jouer</div>
+                <div className="title4">Une solution pensée pour faciliter <br/>la vie des professionels </div>
+                <div className="text4">Cartt est destiné aux particuliers mais aussi et surtout aux professionels : <br/>une palette d’outils mis à votre disposition <br/>pour intégrer au mieux notre solution dans votre commerce.</div>
+                <div className="btnFollow">Nous rejoindre &nbsp; ➔</div>
+              </Col>
+              <Col lg={6} sm={12} className="colLeft4">
+                <div className="squ1-4 shadow"></div>
+                <div className="squ2-4 shadow"></div>
+                <div className="squ3-4 shadow"></div>
+                <div className="squimg-4 "></div>
+              </Col>
+            </Row>
           </Container>
       );
     }

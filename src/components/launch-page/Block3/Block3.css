@@ -44,8 +44,10 @@
 
 
 .blockRow3-2 {
+    display: flex;
     background: linear-gradient(90deg, #BAC9FF 16.56%, rgba(133, 255, 211, 0.7) 85.64%);
-    height: 30vh;
+    height: 250vh;
+    align-items: flex-start;
 }
 
 .animatedDiv1 {
@@ -270,6 +272,37 @@
         margin-top: 0vh;
     }
 
+    .blockRow3-2 {
+        background: linear-gradient(90deg, #BAC9FF 16.56%, rgba(133, 255, 211, 0.7) 85.64%);
+        height: 45vh;
+    }
+
+    .myCard-end {
+        width: 65% !important;
+        height: 55vh !important;
+        border-radius: 2vh;
+        background-image: -webkit-linear-gradient(80deg,  #0E3570 70% , transparent 30%);
+    }
+
+    .rowIcon {
+        height:25%;
+        margin-top: 5vh;
+    }
+
+    .roundedIcon {
+        margin-top: 3vh;
+        height: 9vh;
+        width: 9vh;
+        border-radius: 10vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+    }
+
+    .myCardCol {
+        top: -130px;
+    }
 }
 
 /*Large Desktops*/

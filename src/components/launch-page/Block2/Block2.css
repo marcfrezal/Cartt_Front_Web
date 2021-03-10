@@ -71,12 +71,10 @@
 }
 
 .myCard-end {
-    background-color: white;
-    width: 40vh !important;
-    height: 60vh;
+    width: 70% !important;
+    height: 70vh !important;
     border-radius: 2vh;
-    margin-bottom: 2vh;
-    margin-top: 3vh;
+    background-image: -webkit-linear-gradient(80deg,  #0E3570 70% , transparent 30%);
 }
 
 .myCardCol {
@@ -86,7 +84,8 @@
 }
 
 .rowIcon {
-    height: 25%;
+    height:25%;
+    margin-top: 2vh;
 }
 
 .colIcon {
@@ -96,12 +95,14 @@
 }
 
 .roundedIcon {
+    margin-top: 12vh;
     height: 9vh;
     width: 9vh;
     border-radius: 10vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: white;
 }
 
 .rowTitle {
@@ -112,7 +113,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color : #0E3570;
+    color : white;
     font-weight: 900;
     font-size: 3vh;
     font-family: Montserrat;
@@ -121,19 +122,18 @@
 .colText {
     display: flex;
     justify-content: center;
-    color : #798597;
+    color : white;
     font-size: 2vh;
     text-align: center;
     margin-right: 35px;
     margin-left: 35px;
-    font-weight: 600;
     font-family: Montserrat;
 
 }
 
 .searchIcon {
     size: 2vh !important;
-    color: #BAC9FF;
+    color: #FFE8BA;
     font-size : 3vh;
 }
 
@@ -284,7 +284,7 @@
     }
 
     .blockContainer {
-        margin-top: 0px;
+        margin-top: -10px;
         height: 80vh;
     }
 
@@ -301,6 +301,8 @@
         margin-top: 10vh;
         border-radius: 2vh;
     }
+
+
 
 }
 

@@ -5,29 +5,12 @@ import { Container, Row, Col, Image } from 'react-bootstrap';
 import Stores from '../../../assets/launch-page/draw-1.png'
 import Draw2 from '../../../assets/launch-page/draw-2.png'
 import Draw3 from '../../../assets/launch-page/draw-3.png'
-
+import { FaSearch } from 'react-icons/fa';
+import { FaGift } from 'react-icons/fa';
+import { FaHeart } from 'react-icons/fa';
 
 
 class Block3 extends React.Component {
- /* 
-    render() {
-      return (
-          <Container fluid className="blockContainer3">
-            <Row style={{ height : "33%"}}>
-              <AnimatedIcon1/>
-              <AnimatedText1/>
-            </Row>
-            <Row style={{height : "33%"}}>
-              <AnimatedText2/>
-              <AnimatedIcon2/>
-            </Row>
-            <Row style={{ height : "33%"}}>
-              <AnimatedIcon3/>
-              <AnimatedText3/>
-            </Row>
-          </Container>
-      );
-    }*/
     render() {
       return (
           <Container fluid className="blockContainer3-1">
@@ -38,16 +21,113 @@ class Block3 extends React.Component {
                 <Row className="blockRow3-1-3">Cartt est une application mobile  vous permettant d’acheter, <br/>d’offrir et de dépenser des cartes cadeaux d’une manière intuitive, rapide et facile. </Row>
               </Col>
             </Row>
-            <Row className="blockRow3-2">
-              
+            <Row className="blockRow3-2 ">
+                <Col sm={12} lg={4} className="myCardCol">
+                  <AnimatedCardExplore/>
+                </Col>
+                <Col sm={12} lg={4}className="myCardCol">
+                  <AnimatedCardChoose/>
+                </Col>
+                <Col sm={12} lg={4}className="myCardCol">
+                  <AnimatedCardOffer/>
+              </Col>
             </Row>
           </Container>
       );
     }
   }
 
+  function AnimatedCardExplore(props) {
+    const [scroll, setScroll] = useState(false)
+    useEffect(() => {
+      window.addEventListener("scroll", () => {
+        setScroll(window.scrollY < 200)
+      })
+    }, [])
+    return (
+      <Container className={scroll ? "myCard-end animate__animated animate__fadeOut " : "myCard-end animate__animated animate__fadeInUp animate__slow"}>
+      <Row className="rowIcon">
+        <Col className="colIcon">
+          <div className="roundedIcon shadow"> 
+            <FaSearch className="searchIcon"/>
+          </div>
+        </Col>
+      </Row>
+      <Row className="rowTitle">
+        <Col className="colTitle"> 
+          Explorer...
+        </Col>
+      </Row>
+      <Row className="rowText">
+        <Col className="colText">
+          Parcourez notre catalogue d'enseignes et de marques afin de trouver celle qui pourra combler vos envies... Il y en a pour tout les gouts!
+        </Col>
+      </Row>
+      </Container>
+    )
+  }
 
+  function AnimatedCardChoose(props) {
+    const [scroll, setScroll] = useState(false)
+    useEffect(() => {
+      window.addEventListener("scroll", () => {
+        setScroll(window.scrollY < 200)
+      })
+    }, [])
+    return (
+      <Container className={scroll ? "myCard-end animate__animated animate__fadeOut animate__delay-5s" : "myCard-end animate__animated animate__fadeInUp animate__slow"}>
+      <Row className="rowIcon">
+        <Col className="colIcon">
+          <div className="roundedIcon shadow">
+            <FaHeart className="chooseIcon"/>
+          </div>
+        </Col>
+      </Row>
+      <Row className="rowTitle">
+        <Col className="colTitle"> 
+          Choisir...
+        </Col>
+      </Row>
+      <Row className="rowText">
+        <Col className="colText">
+          Une fois la perle rare trouvée, rendez-vous sur son espace Cartt afin de voir ce qu'elle a à vous offrir!
+        </Col>
+      </Row>
+    </Container>
+    )
+  }
 
+  function AnimatedCardOffer(props) {
+    const [scroll, setScroll] = useState(false)
+    useEffect(() => {
+      window.addEventListener("scroll", () => {
+        setScroll(window.scrollY < 200)
+      })
+    }, [])
+    return (
+      <Container className={scroll ? "myCard-end animate__animated animate__fadeOut animate__delay-5s" : "myCard-end animate__animated animate__fadeInUp animate__slow"}>
+      <Row className="rowIcon">
+        <Col className="colIcon">
+          <div className="roundedIcon shadow">
+            <FaGift className="offerIcon"/>
+          </div>
+        </Col>
+      </Row>
+      <Row className="rowTitle">
+        <Col className="colTitle"> 
+          Offrir!
+        </Col>
+      </Row>
+      <Row className="rowText">
+        <Col className="colText">
+          Votre choix est fait? Parfait! Il ne vous reste plus qu'a l'offrir à la personne de votre choix directement depuis votre compte Cartt!
+        </Col>
+      </Row>
+    </Container>
+    )
+  }
+  
+/*
   function AnimatedIcon1(props) {
     const [scroll, setScroll] = useState(false)
     useEffect(() => {
@@ -136,5 +216,5 @@ class Block3 extends React.Component {
                 <div className="animatedText3"> Recevez votre carte cadeau directement sur votre téléphone, présentez-la au commerçant lors de vos achats, il scanne et hop! Le tour est joué!</div>      
       </Col>
     )
-  }
+  }*/
 export default Block3;

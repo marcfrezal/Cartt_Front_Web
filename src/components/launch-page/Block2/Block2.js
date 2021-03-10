@@ -13,19 +13,6 @@ class Block2 extends React.Component {
   
     render() {
       return (
-        /*  <Container fluid className="blockContainer ">
-             <Row style={{backgroundColor : "transparent", height : "100vh"}}>
-              <Col className="myCardCol">
-                <AnimatedCardExplore/>
-               </Col>
-               <Col className="myCardCol">
-                <AnimatedCardChoose/>
-               </Col>
-               <Col className="myCardCol">
-                <AnimatedCardOffer/>
-               </Col>
-             </Row>
-          </Container>*/
           <Container className="blockContainer2" fluid>
               <Row>
                 <Col sm={12} lg={6} className="colBlockLeft2">
