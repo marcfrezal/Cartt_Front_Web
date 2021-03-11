@@ -5,9 +5,8 @@ import Col from 'react-bootstrap/Col';
 import './PointsOfSalePage.css'
 import PointOfSaleList from '../../../components/pro/PointOfSaleList/PointOfSaleList';
 import Sidebar from '../../../components/common/Sidebar/Sidebar';
-import Header from './Header/Header'
 import { Modal, Button } from "react-bootstrap";
-
+import Header from '../../../components/pro/Header/Header'
 
 
 class PointsOfSale extends React.Component {
@@ -20,65 +19,68 @@ class PointsOfSale extends React.Component {
   }
 
   showCreateStoreModal = () => {
-    console.log("/////////////////// show")
-    this.setState({visible: true})
+    // console.log("/////////////////// show")
+    // this.setState({visible: true})
   }
 
   hideCreateStoreModal = () => {
-    console.log("/////////////////////// hide")
-    this.setState({ visible: false })
+    // console.log("/////////////////////// hide")
+    // this.setState({ visible: false })
   }
 
-    render() {
-      return (
-          <Container fluid style={{backgroundColor :  "#f9fafd"}}>
-              <Sidebar/>
-              <Row>
-              <Col xs={1} lg={1}></Col>
-              <Col xs={11} lg={11}>
-                <Header
-                  title="Mes points de ventes"
-                  onPress={this.showCreateStoreModal}/>
-                <PointOfSaleList />
-              </Col>
-              </Row>
-              <CreateStoreModal
-                show={false}
-                onHide={this.hideCreateStoredeModal}
-              />
-          </Container>
-      );
-    }
-  }
-
-  function CreateStoreModal(props) {
+  render() {
     return (
-      <Modal
-        {...props}
-        size="lg"
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
-      >
-        <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">
-            Modal heading
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <h4>Centered Modal</h4>
-          <p>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-            consectetur ac, vestibulum at eros.
-          </p>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button onClick={props.onHide}>Close</Button>
-        </Modal.Footer>
-      </Modal>
+      <Container fluid style={{ backgroundColor: "#f9fafd" }}>
+        <Sidebar />
+
+        <Row>
+          <Col xs={1} lg={1}></Col>
+          <Col xs={11} lg={11}>
+            <Header
+              title="Mes points de ventes"
+              actionTitle="Créer un point de vente"
+              onPress={this.showCreateStoreModal} />
+            <PointOfSaleList />
+          </Col>
+        </Row>
+
+        <CreateStoreModal
+          show={false}
+          onHide={this.hideCreateStoredeModal}
+        />
+      </Container>
     );
   }
+}
 
-  
+function CreateStoreModal(props) {
+  return (
+    <Modal
+      {...props}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">
+          Modal heading
+          </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <h4>Centered Modal</h4>
+        <p>
+          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
+          consectetur ac, vestibulum at eros.
+          </p>
+      </Modal.Body>
+      <Modal.Footer>
+        <Button onClick={props.onHide}>Close</Button>
+      </Modal.Footer>
+    </Modal>
+  );
+}
+
+
 
 export default PointsOfSale;

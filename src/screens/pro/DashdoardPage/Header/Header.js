@@ -10,11 +10,10 @@ class Header extends React.Component {
       <Container fluid>
         <Row>
           <Col xs={12} sm={7} md={7} lg={9}>
-            <div class="posHeaderTitle">{this.props.title}</div>
+          <div class="HeaderTitle">{this.props.title}</div>
           </Col>
-          <Col xs={12} sm={5} md={5} lg={3}>
-            <Button className="float-right posHeaderAction"
-              onPress={this.props.onPress()}>Créer un point de vente</Button>
+          <Col xs={12} sm={5} md={5} lg={3} style={{backgroundColor: 'grey'}}>
+            <Button title="Séléctionné un pdv" className="createPos"/>
           </Col>
         </Row>
       </Container>

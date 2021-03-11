@@ -1,0 +1,69 @@
+.infosStoreEnseigneContainer {
+    height: 100vh;
+    background-color: #f9fafd;
+}
+
+.infoStoreEnseignCard {
+    background-color: white;
+    border-radius: 20px;
+    width:35vh;
+    height: 20vh;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.infoStoreEnseignCol {
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.infosStoreEnsigneCenter  {
+    justify-content: center;
+}
+
+.infosItemTitle {
+    color: #0E3570;
+    font-size: 15px;
+
+}
+
+.infosItemNumber {
+    color: #0E3570;
+    font-size: 55px;
+    font-weight: 800;
+    justify-content: center;
+    display: flex;
+}
+
+/*Phones*/
+@media (min-width: 576px) { 
+
+}
+
+/*Tablet*/
+@media (min-width: 768px) and (max-width: 992px)  {
+    .infoStoreEnseignCard {
+        width:35vw;
+        height: 30vh;
+    }
+
+}
+
+/*Desktop*/
+@media (min-width: 992px) {  
+    .infoStoreEnseignCard {
+        width:35vw;
+        height: 35vh;
+    }
+}
+
+/*Large Desktops*/
+@media (min-width: 1200px) {  
+    .infoStoreEnseignCard {
+        width:35vw;
+        height: 235h;
+    }
+}

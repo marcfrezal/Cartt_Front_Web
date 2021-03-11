@@ -1,0 +1,17 @@
+.profileInfosContainer {
+    height: 35vh;
+}
+
+.profileInfosPicture {
+    background-image: url('../../../../assets/pro/card-background/card-bg-pink.png');
+    border-radius: 15px;
+    height: 175px;
+    width: 175px;
+}
+
+.profileInfosPictureCol {
+    justify-content: center;
+    /* align-items: center; */
+    display: flex;
+}
+
