@@ -14,18 +14,17 @@ class PointsOfSale extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      visible: false,
+      show: true,
     };
   }
 
   showCreateStoreModal = () => {
     // console.log("/////////////////// show")
-    // this.setState({visible: true})
+    // this.setState({show: true});
   }
 
   hideCreateStoreModal = () => {
-    // console.log("/////////////////////// hide")
-    // this.setState({ visible: false })
+    this.setState({ show: false });
   }
 
   render() {
@@ -39,47 +38,51 @@ class PointsOfSale extends React.Component {
             <Header
               title="Mes points de ventes"
               actionTitle="Créer un point de vente"
-              onPress={this.showCreateStoreModal} />
+              onPress={() => this.showCreateStoreModal()} />
             <PointOfSaleList />
           </Col>
         </Row>
 
-        <CreateStoreModal
-          show={false}
-          onHide={this.hideCreateStoredeModal}
+        <this.CreateStoreModal
+          show={this.state.show}
+          onHide={() => this.hideCreateStoreModal()}
         />
       </Container>
     );
   }
+
+
+  CreateStoreModal(props) {
+    return (
+      <Modal
+        {...props}
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-vcenter">
+            Modal heading
+            </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <h4>Centered Modal</h4>
+          <p>
+            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
+            consectetur ac, vestibulum at eros.
+            </p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button onClick={props.onHide}>Close</Button>
+        </Modal.Footer>
+      </Modal>
+    );
+  }
+
 }
 
-function CreateStoreModal(props) {
-  return (
-    <Modal
-      {...props}
-      size="lg"
-      aria-labelledby="contained-modal-title-vcenter"
-      centered
-    >
-      <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">
-          Modal heading
-          </Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
-        <h4>Centered Modal</h4>
-        <p>
-          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-          consectetur ac, vestibulum at eros.
-          </p>
-      </Modal.Body>
-      <Modal.Footer>
-        <Button onClick={props.onHide}>Close</Button>
-      </Modal.Footer>
-    </Modal>
-  );
-}
+
 
 
 
