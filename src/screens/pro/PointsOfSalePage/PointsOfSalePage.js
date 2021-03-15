@@ -5,8 +5,9 @@ import Col from 'react-bootstrap/Col';
 import './PointsOfSalePage.css'
 import PointOfSaleList from '../../../components/pro/PointOfSaleList/PointOfSaleList';
 import Sidebar from '../../../components/common/Sidebar/Sidebar';
-import { Modal, Button } from "react-bootstrap";
+import { Modal, Button, Form } from "react-bootstrap";
 import Header from '../../../components/pro/Header/Header'
+
 
 
 class PointsOfSale extends React.Component {
@@ -14,18 +15,28 @@ class PointsOfSale extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      show: true,
+      create_show: false,
+      name: "",
+      line1: "",
+      city: "",
+      country: "",
+      hours: "",
     };
   }
 
-  showCreateStoreModal = () => {
-    // console.log("/////////////////// show")
-    // this.setState({show: true});
+  _showCreateStoreModal = () => {
+    this.setState({ create_show: true });
   }
 
-  hideCreateStoreModal = () => {
-    this.setState({ show: false });
+  _hideCreateStoreModal = () => {
+    this.setState({ create_show: false });
   }
+
+  _handleStoreName = (e) => {
+    this.setState({ name: e.target.value })
+  }
+
+
 
   render() {
     return (
@@ -36,17 +47,18 @@ class PointsOfSale extends React.Component {
           <Col xs={1} lg={1}></Col>
           <Col xs={11} lg={11}>
             <Header
-              title="Mes points de ventes"
+              title="Mes points de vente"
               actionTitle="Créer un point de vente"
-              onPress={() => this.showCreateStoreModal()} />
+              onPress={() => this._showCreateStoreModal()} />
             <PointOfSaleList />
           </Col>
         </Row>
 
         <this.CreateStoreModal
-          show={this.state.show}
-          onHide={() => this.hideCreateStoreModal()}
+          show={this.state.create_show}
+          onHide={() => this._hideCreateStoreModal()}
         />
+
       </Container>
     );
   }
@@ -62,22 +74,68 @@ class PointsOfSale extends React.Component {
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
-            Modal heading
+            Nouveau point de vente :
             </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <h4>Centered Modal</h4>
-          <p>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-            consectetur ac, vestibulum at eros.
-            </p>
+
+          {/* Pourquoi pas mettre un nom public et privé */}
+          <Form.Group controlId="formGridText">
+            <Form.Label>Nom de la boutique</Form.Label>
+            <Form.Control className="posModalInput"
+              placeholder="Nom de la boutique" />
+          </Form.Group>
+
+          <Form.Group controlId="formGridText">
+            <Form.Label>Slogan</Form.Label>
+            <Form.Control className="posModalInput"
+              placeholder="Faites vous plaisir chez ..." />
+          </Form.Group>
+
+          <Form.Group controlId="formGridAddress1">
+            <Form.Label>Address</Form.Label>
+            <Form.Control className="posModalInput"
+              placeholder="1234 Main St" />
+          </Form.Group>
+
+          <Form.Group controlId="formGridAddress2">
+            <Form.Label>Address 2</Form.Label>
+            <Form.Control className="posModalInput"
+              placeholder="Apartment, studio, or floor" />
+          </Form.Group>
+
+          <Form.Row>
+            <Form.Group xs={12} sm={4} as={Col} controlId="formGridCity">
+              <Form.Label>City</Form.Label>
+              <Form.Control className="posModalInput" />
+            </Form.Group>
+
+            <Form.Group xs={12} sm={4} as={Col} controlId="formGridState">
+              <Form.Label>State</Form.Label>
+              <Form.Control className="posModalInput"
+                as="select" defaultValue="Choose...">
+                <option>Choose...</option>
+                <option>...</option>
+              </Form.Control>
+            </Form.Group>
+
+            <Form.Group xs={12} sm={4} as={Col} controlId="formGridZip">
+              <Form.Label>Zip</Form.Label>
+              <Form.Control className="posModalInput" />
+            </Form.Group>
+          </Form.Row>
+
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={props.onHide}>Close</Button>
+
+          <Button as={Col} className="cancel">Annuler</Button>
+          <Button as={Col} className="validate"
+            onClick={props.onHide}>Valider</Button>
         </Modal.Footer>
       </Modal>
     );
+
+
   }
 
 }

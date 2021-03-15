@@ -11,6 +11,30 @@
     background-color: green;
 }
 
+.test {
+    height: 50% !important;
+    width: 100% !important;
+    font-size: 1vw !important;
+}
+
+.posModalInput {
+    border-radius: 10px !important;
+}
+
+
+.cancel {
+    background-color: #FF0D0D !important;
+    border-color: #FF0D0D !important;
+    border-radius: 10px !important;
+}
+
+.validate {
+    background-color: #183D76 !important;
+    border-color: #183D76 !important;
+    border-radius: 10px !important;
+    align-content: center;
+}
+
 /*Phones*/
 @media (min-width: 576px) { 
 
