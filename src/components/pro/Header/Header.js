@@ -9,7 +9,7 @@ class Header extends React.Component {
     return (
       <Container fluid>
         <Row>
-          <Col xs={6} style={{backgroundColor : "red"}}>
+          <Col xs={6}>
             <div class="posHeaderTitle">{this.props.title}</div>
           </Col>
           <Col xs={12} sm={5} md={5} lg={3}>

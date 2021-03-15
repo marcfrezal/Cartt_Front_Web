@@ -1,0 +1,60 @@
+.containerGrowth {
+    height: 48vh;
+    background-color: white;
+    border-radius: 2vh;
+    margin-bottom: 5vh;
+}
+
+.growthTitle {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    color: black;
+    font-weight: 700;
+    font-size: 2.6vh;
+    font-family: Montserrat;
+}
+
+/*Phones*/
+@media (min-width: 576px) { 
+
+}
+
+/*Tablet*/
+@media (min-width: 768px) and (max-width: 992px)  {  
+    .signInText {
+        font-size: 1vh;
+    }
+
+    .signInCol {
+        height : 3vh;
+    }
+
+    .signInLink {
+        font-size: 1vh;
+    } 
+
+    .forgetCol {
+        font-size: 0.9vh;
+        height: 4vh;
+    }
+
+    .rememberCol {
+        font-size: 1vh;
+        height: 4vh;
+    }
+}
+
+/*Desktop*/
+@media (min-width: 992px) {  
+    .containerGrowth {
+        margin-bottom: 0vh;
+    }
+}
+
+/*Large Desktops*/
+@media (min-width: 1200px) {  
+    .containerGrowth {
+        margin-bottom: 0vh;
+    }
+}
