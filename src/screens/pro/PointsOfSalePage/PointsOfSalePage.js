@@ -81,13 +81,13 @@ class PointsOfSale extends React.Component {
         <Modal.Body>
 
           {/* Pourquoi pas mettre un nom public et privé */}
-          <Form.Group controlId="formGridAddress1">
+          <Form.Group controlId="formGridText">
             <Form.Label>Nom de la boutique</Form.Label>
             <Form.Control className="posModalInput"
               placeholder="Nom de la boutique" />
           </Form.Group>
 
-          <Form.Group controlId="formGridAddress1">
+          <Form.Group controlId="formGridText">
             <Form.Label>Slogan</Form.Label>
             <Form.Control className="posModalInput"
               placeholder="Faites vous plaisir chez ..." />
