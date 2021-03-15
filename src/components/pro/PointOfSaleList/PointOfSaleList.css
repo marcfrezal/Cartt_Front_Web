@@ -35,6 +35,8 @@
 .posItemIcon {
     display: flex;
     justify-content: center;
+    align-items: center;
+    color: lightgray;
 }
 
 /*Phones*/

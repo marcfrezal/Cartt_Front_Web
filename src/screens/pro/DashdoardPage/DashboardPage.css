@@ -31,3 +31,23 @@
 
     /* background-color: blueviolet */
 }
+
+.containerDashboard {
+}
+
+.headerDashboard {
+    background-color: green;
+    margin-left: 5% !important;
+}
+
+.rowDashboard1 {
+    height: 46vh!important;
+    background-color: green;
+    margin-left: 5% !important;
+}
+
+.rowDashboard2 {
+    height: 46vh!important;
+    background-color: green;
+    margin-left: 5% !important;
+}

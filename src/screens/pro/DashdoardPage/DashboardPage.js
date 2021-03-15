@@ -9,14 +9,27 @@ import LastTransactions from '../../../components/pro/LastTransactions/LastTrans
 import Growth from '../../../components/pro/Growth/Growth'
 // import HeadBand from "./HeadBand/HeadBand";
 import './DashboardPage.css'
-import Header from './Header/Header'
+import Header from '../../../components/pro/Header/Header'
 
 class Dashboard extends React.Component {
     render() {
       return (
         <Container fluid>
           <Sidebar/>
-         
+          <Row className="headerDashboard">
+            <Col>
+              <Header title="Dashboard" />
+            </Col>
+          </Row>
+          <Row className="rowDashboard1">
+            <Col>
+            </Col>
+          </Row>
+          <Row className="rowDashboard2">
+            <Col>
+            </Col>
+          </Row>
+         {/*
           <Row>
             <Col md={1} xs={1} lg={1} sm={1} style={{backgroundColor :  "#f9fafd"}}></Col>
            
@@ -41,7 +54,7 @@ class Dashboard extends React.Component {
                 </Row>
               </Container>
             </Col>
-          </Row>
+         </Row>*/}
         </Container>
       );
     }

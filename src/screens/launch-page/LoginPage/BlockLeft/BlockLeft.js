@@ -26,10 +26,8 @@ class BlockLeft extends React.Component {
           <Container className="blockLeftContainer" fluid>
              <Row className="topRowLogin">
              </Row>
-             <Row>
-               <Col/>
-               <Col  className="titleCol">Bonjour</Col>
-               <Col/>
+             <Row className="titleCol">
+                <Col>Bonjour</Col>
              </Row>
              <Row>
                <Col/>
@@ -71,8 +69,17 @@ class BlockLeft extends React.Component {
 
   function LogMe(props) {
 
-    const [ updateLogin, {data, error : mutationError} ] = useMutation(LOGIN);
+    const [ updateLogin, {data, error : mutationError, loading : mutationLoading} ] = useMutation(LOGIN);
     
+    if (mutationLoading) {
+      return (
+        <div className="errorLogin">
+          <div className="btnCol">
+            <Button className="loginBtn">Patientez...</Button>
+          </div>
+        </div>
+      )
+    }
     if (mutationError) {
       return (
         <div className="errorLogin">
@@ -82,7 +89,8 @@ class BlockLeft extends React.Component {
           <p className="errorMess">Erreur. Mauvais username/e-mail ou mot de passe.</p>
         </div>
       )
-    } else if (data && data.login == true) {
+    }
+    if (data && data.login.role == "SELLER") {
       return <Redirect to='/dashboard'/>;
     }
 
