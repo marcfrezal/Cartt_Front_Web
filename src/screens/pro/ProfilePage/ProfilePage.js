@@ -19,11 +19,11 @@ class Profile extends React.Component {
   }
 
   _showModifyPasswordModal = () => {
-    this.setState({modify_password_show: true});
+    this.setState({ modify_password_show: true });
   }
 
   _hideModifyPasswordModal = () => {
-    this.setState({modify_password_show: false});
+    this.setState({ modify_password_show: false });
   }
 
   render() {
@@ -31,31 +31,31 @@ class Profile extends React.Component {
       <Container fluid style={{ backgroundColor: "#f9fafd" }}>
         <Sidebar />
         <Row>
-          <Col xs={1} lg={1}/>
+          <Col xs={1} lg={1} />
           <Col xs={11} lg={11}>
 
             <Header
               title='Profil'
               actionTitle='Modifier mon mot de passe'
               onPress={() => this._showModifyPasswordModal()}
-               />
-            <div style={{height: 20}}/>
-            <ProfileInfos/>
+            />
+            <div style={{ height: 20 }} />
+            <ProfileInfos />
             {/* A voir avec les dimention des carré comment on les met #Container */}
-            <InfosStoreEnseigne/>
+            <InfosStoreEnseigne />
 
           </Col>
         </Row>
         <this.ModifyPasswordModal
           show={this.state.modify_password_show}
-          onHide= {() => this._hideModifyPasswordModal()} />
+          onHide={() => this._hideModifyPasswordModal()} />
       </Container>
     );
   }
 
   ModifyPasswordModal(props) {
     return (
-<Modal
+      <Modal
         {...props}
         size="lg"
         aria-labelledby="contained-modal-title-vcenter"
@@ -81,7 +81,7 @@ class Profile extends React.Component {
           </Form.Group>
 
           <Form.Group controlId="formGridPhone">
-            <Form.Label>Confirmez ouveau mot de passe :</Form.Label>
+            <Form.Label>Confirmez nouveau mot de passe :</Form.Label>
             <Form.Control className="posModalInput"
               type="password" />
           </Form.Group>
