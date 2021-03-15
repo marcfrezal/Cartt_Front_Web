@@ -1,9 +1,10 @@
 .mnContainer {
    
     background-color: #183D76;
-    border-radius: 30px;
+    border-radius: 2vh;
     padding: 30px;
     margin-top: 30px;
+    margin-bottom: 5vh;
 }
 
 .mnTitle {
@@ -13,10 +14,6 @@
     font-size: 25px;
     font-family: Montserrat;
     margin-left: 30px;
-}
-
-.body {
- 
 }
 
 .number {

@@ -14,7 +14,7 @@ import Header from '../../../components/pro/Header/Header'
 class Dashboard extends React.Component {
     render() {
       return (
-        <Container fluid>
+        <Container className="containerDashboard" fluid>
           <Sidebar/>
           <Row className="headerDashboard">
             <Col>
@@ -22,11 +22,19 @@ class Dashboard extends React.Component {
             </Col>
           </Row>
           <Row className="rowDashboard1">
-            <Col>
+            <Col sm={12} md={6} lg={6}>
+              <LastTransactions/>
+            </Col>
+            <Col sm={12} md={6} lg={6}>
+              <MounthlyNumbers/>
             </Col>
           </Row>
           <Row className="rowDashboard2">
-            <Col>
+            <Col sm={12} md={6} lg={6}>
+              <Growth/>
+            </Col>
+            <Col sm={12} md={6} lg={6}>
+              <SalesHistory/>
             </Col>
           </Row>
          {/*

@@ -11,6 +11,10 @@
     /* background-color: aqua; */
 }
 
+.colCardDashboard {
+    background-color: greenyellow;
+}
+
 .topRowRightColumn {
     background-color:  #f9fafd;
 
@@ -33,21 +37,21 @@
 }
 
 .containerDashboard {
+    height: 100vh;
+    background-color: #F9FAFD;
+
 }
 
 .headerDashboard {
-    background-color: green;
     margin-left: 5% !important;
 }
 
 .rowDashboard1 {
-    height: 46vh!important;
-    background-color: green;
+    background-color: #F9FAFD;
     margin-left: 5% !important;
 }
 
 .rowDashboard2 {
-    height: 46vh!important;
-    background-color: green;
+    background-color: #F9FAFD;
     margin-left: 5% !important;
 }

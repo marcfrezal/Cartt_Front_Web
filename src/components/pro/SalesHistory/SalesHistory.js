@@ -6,15 +6,27 @@ import Col from 'react-bootstrap/Col';
 import './SalesHistory.css';
 
 var transactions = [{ name: 'Paul Vitry', date: '27/02/2020', amount: 1235 },
-{ name: 'Paul Vitry', date: '27/02/2020', amount: 1235 },
-{ name: 'Paul Vitry', date: '27/02/2020', amount: 1235 },]
+                    { name: 'Paul Vitry', date: '27/02/2020', amount: 1235 },
+                    { name: 'Paul Vitry', date: '27/02/2020', amount: 1235 },
+                    { name: 'Paul Vitry', date: '27/02/2020', amount: 1235 },
+                    { name: 'Paul Vitry', date: '27/02/2020', amount: 1235 },
+                    { name: 'Paul Vitry', date: '27/02/2020', amount: 1235 },
+                    { name: 'Paul Vitry', date: '27/02/2020', amount: 1235 },
+                    { name: 'Paul Vitry', date: '27/02/2020', amount: 1235 },
+                    { name: 'Paul Vitry', date: '27/02/2020', amount: 1235 },
+                    { name: 'Paul Vitry', date: '27/02/2020', amount: 1235 },
+                    { name: 'Paul Vitry', date: '27/02/2020', amount: 1235 },
+                    { name: 'Paul Vitry', date: '27/02/2020', amount: 1235 },
+                    { name: 'Paul Vitry', date: '27/02/2020', amount: 1235 },
+                    { name: 'Paul Vitry', date: '27/02/2020', amount: 1235 },
+                    { name: 'Paul Vitry', date: '27/02/2020', amount: 1235 },]
 
 
 
 function getItem(data) {
   return (
-    <Container className='itemContainer' fluid>
-      <Row>
+    <Container className="itemRow" fluid>
+      <Row >   
         <Col className='text'>{data.name}</Col>
         <Col className='text'>{data.date}</Col>
         <Col className='text'>{data.amount}€</Col>
@@ -27,11 +39,11 @@ class SalesHistory extends React.Component {
 
   render() {
     return (
-      <Container className="salesHistoryContainer" fluid>
+      <Container className="salesHistoryContainer shadow" fluid>
         <Row>
           <Col className='titleCol'>Historique des transactions</Col>
         </Row>
-        <Row>
+        <Row className='itemContainer'>
           {transactions.map(transaction => getItem(transaction))}
         </Row>
       </Container>
