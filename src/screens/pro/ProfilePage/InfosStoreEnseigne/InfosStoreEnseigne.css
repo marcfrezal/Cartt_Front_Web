@@ -6,8 +6,8 @@
 .infoStoreEnseignCard {
     background-color: white;
     border-radius: 20px;
-    width:35vh;
-    height: 20vh;
+    width:100vw;
+    height: 25vh;
     margin-top: 20px;
     display: flex;
     justify-content: center;

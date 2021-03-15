@@ -7,8 +7,7 @@ import PointOfSaleList from '../../../components/pro/PointOfSaleList/PointOfSale
 import Sidebar from '../../../components/common/Sidebar/Sidebar';
 import { Modal, Button, Form } from "react-bootstrap";
 import Header from '../../../components/pro/Header/Header'
-import StoreImage from '../../../assets/pro/card-background/card-bg-yellow.png'
-import { FaEdit } from "react-icons/fa";
+
 
 
 class PointsOfSale extends React.Component {
