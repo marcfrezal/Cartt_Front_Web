@@ -8,6 +8,8 @@ import Sidebar from "../../../components/common/Sidebar/Sidebar";
 import ProfileInfos from "./ProfileInfos/ProfileInfos";
 import InfosStoreEnseigne from "./InfosStoreEnseigne/InfosStoreEnseigne";
 import { Button, Modal, Form } from "react-bootstrap";
+import { Formik } from 'formik';
+import * as yup from 'yup';
 
 class Profile extends React.Component {
 
@@ -54,6 +56,14 @@ class Profile extends React.Component {
   }
 
   ModifyPasswordModal(props) {
+
+
+    const schema = yup.object().shape({
+      actual_pwd: yup.string().required(),
+      new_pwd: yup.string().required(),
+      confirm_new_pwd: yup.string().required(),
+    });
+
     return (
       <Modal
         {...props}
@@ -68,31 +78,88 @@ class Profile extends React.Component {
         </Modal.Header>
         <Modal.Body>
 
-          <Form.Group controlId="email">
+        <Formik
+            validationSchema={schema}
+            initialValues={{
+              actual_pwd: "",
+              new_pwd: "",
+              confirm_new_pwd: "",
+            }}
+            onSubmit={(values, actions) => {
+              actions.setSubmitting(true);
+              setTimeout(() => {
+                alert(JSON.stringify(values, null, 2));
+                actions.resetForm({
+                  actual_pwd: "",
+                  new_pwd: "",
+                  confirm_new_pwd: "",
+                });
+                actions.setSubmitting(false);
+              }, 2000);
+            }}
+          >
+            {({
+              handleSubmit,
+              handleChange,
+              handleBlur,
+              values,
+              touched,
+              errors,
+              isSubmitting,
+            }) => (
+                <Form noValidate onSubmit={handleSubmit}>
+
+          <Form.Group controlId="actual_pwd">
             <Form.Label>Mot de passe actuel :</Form.Label>
             <Form.Control className="posModalInput"
-              type="password" />
+              type="password"
+              onChange={handleChange}
+              name="actual_pwd"
+              value={values.actual_pwd}
+              onBlur={handleBlur}
+              isValid={touched.actual_pwd && !errors.actual_pwd}
+              isInvalid={!!errors.actual_pwd} />
           </Form.Group>
 
           <Form.Group controlId="formGridPhone">
             <Form.Label>Nouveau mot de passe :</Form.Label>
             <Form.Control className="posModalInput"
-              type="password" />
+              type="password"
+              onChange={handleChange}
+              name="new_pwd"
+              value={values.new_pwd}
+              onBlur={handleBlur}
+              isValid={touched.new_pwd && !errors.new_pwd}
+              isInvalid={!!errors.new_pwd} />
           </Form.Group>
 
           <Form.Group controlId="formGridPhone">
             <Form.Label>Confirmez nouveau mot de passe :</Form.Label>
             <Form.Control className="posModalInput"
-              type="password" />
+              type="password"
+              onChange={handleChange}
+              name="comfirm_new_pwd"
+              value={values.comfirm_new_pwd}
+              onBlur={handleBlur}
+              isValid={touched.comfirm_new_pwd && !errors.comfirm_new_pwd}
+              isInvalid={!!errors.comfirm_new_pwd} />
           </Form.Group>
 
-        </Modal.Body>
-        <Modal.Footer>
+          <Row>
+                    <Button style={{ flex: 1 }}
+                      className="cancel"
+                      onClick={props.onHide}>Annuler</Button>
+                    <Button style={{ flex: 1 }}
+                      type='submit' disabled={isSubmitting}
+                      className="validate">Valider</Button>
+                  </Row>
 
-          <Button as={Col} className="cancel">Annuler</Button>
-          <Button as={Col} className="validate"
-            onClick={props.onHide}>Valider</Button>
-        </Modal.Footer>
+                </Form>
+              )}
+          </Formik>
+
+        </Modal.Body>
+
       </Modal>
     );
   }
