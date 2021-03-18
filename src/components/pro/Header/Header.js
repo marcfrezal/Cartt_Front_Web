@@ -10,7 +10,7 @@ class Header extends React.Component {
       <Container fluid>
         <Row>
           <Col xs={12} sm={7} md={7} lg={9}>
-            <div class="posHeaderTitle">{this.props.title}</div>
+            <div className="posHeaderTitle">{this.props.title}</div>
           </Col>
           <Col xs={12} sm={5} md={5} lg={3}>
             <Button
