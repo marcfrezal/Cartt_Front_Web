@@ -115,8 +115,6 @@ class PointsOfSale extends React.Component {
               zip: "",
             }}
             onSubmit={(values, actions) => {
-              console.log("/////////////////// submit")
-              console.log(values)
               actions.setSubmitting(true);
               setTimeout(() => {
                 alert(JSON.stringify(values, null, 2));
@@ -130,6 +128,7 @@ class PointsOfSale extends React.Component {
                   zip: "",
                 });
                 actions.setSubmitting(false);
+                props.onHide();
               }, 2000);
             }}
           >
@@ -232,13 +231,12 @@ class PointsOfSale extends React.Component {
                     </Form.Group>
                   </Form.Row>
                   <Row>
-                    
-                      <Button style={{flex: 1}}
-                        className="cancel"
-                        onClick={props.onHide}>Annuler</Button>
-                      <Button style={{flex: 1}} 
-                        type='submit' disabled={isSubmitting}
-                        className="validate">Valider</Button>
+                    <Button style={{flex: 1}}
+                      className="cancel"
+                      onClick={props.onHide}>Annuler</Button>
+                    <Button style={{flex: 1}} 
+                      type='submit' disabled={isSubmitting}
+                      className="validate">Valider</Button>
                   </Row>
                 </Form>
               )}

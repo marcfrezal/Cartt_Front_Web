@@ -12,7 +12,7 @@ import * as yup from 'yup';
 
 
 var point_of_sales = [
-  { id: "123456", name: "Mon SUUPPPERRRRR pdv", location: { country: 'France', city: 'Montpellier', postcode: '34000', address1: '23 Rue de la rue', address2: '' } },
+  { id: "123456", name: "Mon SUUPPPERRRRR pdv", slogan: "Mon super slogan", location: { country: 'France', city: 'Montpellier', postcode: '34000', address1: '23 Rue de la rue', address2: '' } },
   { id: "123456", name: "Mon point de vente", location: { country: 'France', city: 'Montpellier', postcode: '34000', address1: '23 Rue de Nul part', address2: '' } },
   { id: "123456", name: "Mon point de vente", location: { country: 'France', city: 'Montpellier', postcode: '34000', address1: '23 Rue de Nul part', address2: '' } },
   { id: "123456", name: "Mon point de vente", location: { country: 'France', city: 'Montpellier', postcode: '34000', address1: '23 Rue de Nul part', address2: '' } },
@@ -151,7 +151,7 @@ class PointOfSale extends React.Component {
       name: yup.string().required(),
       slogan: yup.string().required(),
       line1: yup.string().required(),
-      line2: yup.string().required(),
+      line2: yup.string(),
       city: yup.string().required(),
       country: yup.string(),
       zip: yup.string().required(),
@@ -175,17 +175,15 @@ class PointOfSale extends React.Component {
           <Formik
             validationSchema={schema}
             initialValues={{
-              name: "",
-              slogan: "",
-              line1: "",
-              line2: "",
-              city: "",
-              country: "",
-              zip: "",
+              name: props.item.name,
+              slogan: props.item.slogan,
+              line1: props.item.location.address1,
+              line2: props.item.location.address2,
+              city: props.item.location.city,
+              country: props.item.location.country,
+              zip: props.item.location.postcode,
             }}
             onSubmit={(values, actions) => {
-              console.log("/////////////////// submit")
-              console.log(values)
               actions.setSubmitting(true);
               setTimeout(() => {
                 alert(JSON.stringify(values, null, 2));
@@ -216,7 +214,7 @@ class PointOfSale extends React.Component {
                   <Form.Group controlId="validationFormik01">
                     <Form.Label>Nom de la boutique</Form.Label>
                     <Form.Control className="posModalInput"
-                      placeholder="Nom de la boutique"
+                      placeholder={values.name}
                       onChange={handleChange}
                       name="name"
                       value={values.name}
@@ -228,7 +226,7 @@ class PointOfSale extends React.Component {
                   <Form.Group controlId="validationFormik02">
                     <Form.Label>Slogan</Form.Label>
                     <Form.Control className="posModalInput"
-                      placeholder="Faites vous plaisir chez ..."
+                      placeholder={values.slogan}
                       onChange={handleChange}
                       name="slogan"
                       value={values.slogan}
@@ -240,7 +238,7 @@ class PointOfSale extends React.Component {
                   <Form.Group controlId="validationFormik03">
                     <Form.Label>Address</Form.Label>
                     <Form.Control className="posModalInput"
-                      placeholder="1234 Main St"
+                      placeholder={values.line1}
                       onChange={handleChange}
                       name="line1"
                       value={values.line1}
@@ -252,7 +250,7 @@ class PointOfSale extends React.Component {
                   <Form.Group controlId="validationFormik04">
                     <Form.Label>Address 2</Form.Label>
                     <Form.Control className="posModalInput"
-                      placeholder="Apartment, studio, or floor"
+                      placeholder={values.line2}
                       onChange={handleChange}
                       name="line2"
                       value={values.line2}
@@ -265,18 +263,19 @@ class PointOfSale extends React.Component {
                     <Form.Group xs={12} sm={4} as={Col} controlId="validationFormik05">
                       <Form.Label>City</Form.Label>
                       <Form.Control className="posModalInput"
+                        placeholder={values.city}
                         onChange={handleChange}
-                      name="city"
-                      value={values.city}
-                      onBlur={handleBlur}
-                      isValid={touched.city && !errors.city}
-                      isInvalid={!!errors.city}  />
+                        name="city"
+                        value={values.city}
+                        onBlur={handleBlur}
+                        isValid={touched.city && !errors.city}
+                        isInvalid={!!errors.city}  />
                     </Form.Group>
 
                     <Form.Group xs={12} sm={4} as={Col} controlId="validationFormik06">
                       <Form.Label>State</Form.Label>
                       <Form.Control className="posModalInput"
-                        as="select" defaultValue="Choose..."
+                        as="select" defaultValue={values.country}
                         onChange={handleChange}
                         name="country"
                         value={values.country}
@@ -291,6 +290,7 @@ class PointOfSale extends React.Component {
                     <Form.Group xs={12} sm={4} as={Col} controlId="validationFormik07">
                       <Form.Label>Zip</Form.Label>
                       <Form.Control className="posModalInput"
+                        placeholder={values.zip}
                         onChange={handleChange}
                         name="zip"
                         value={values.zip}
