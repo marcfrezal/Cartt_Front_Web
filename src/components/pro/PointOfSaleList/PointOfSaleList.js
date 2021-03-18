@@ -7,14 +7,16 @@ import './PointOfSaleList.css'
 import { ListGroup, Button, Modal, Form } from "react-bootstrap";
 import StoreImage from '../../../assets/pro/card-background/card-bg-yellow.png'
 import { FaEdit, FaTrash } from 'react-icons/fa';
+import { Formik } from 'formik';
+import * as yup from 'yup';
 
 
-var point_of_sales =  [
-  {id: "123456", name: "Mon SUUPPPERRRRR pdv", location: {country: 'France', city:'Montpellier', postcode: '34000', address1: '23 Rue de la rue', address2: ''}},
-  {id: "123456", name: "Mon point de vente", location: {country: 'France', city:'Montpellier', postcode: '34000', address1: '23 Rue de Nul part', address2: ''}},
-  {id: "123456", name: "Mon point de vente", location: {country: 'France', city:'Montpellier', postcode: '34000', address1: '23 Rue de Nul part', address2: ''}},
-  {id: "123456", name: "Mon point de vente", location: {country: 'France', city:'Montpellier', postcode: '34000', address1: '23 Rue de Nul part', address2: ''}},
-  {id: "123456", name: "Mon point de vente", location: {country: 'France', city:'Montpellier', postcode: '34000', address1: '23 Rue de Nul part', address2: ''}},
+var point_of_sales = [
+  { id: "123456", name: "Mon SUUPPPERRRRR pdv", location: { country: 'France', city: 'Montpellier', postcode: '34000', address1: '23 Rue de la rue', address2: '' } },
+  { id: "123456", name: "Mon point de vente", location: { country: 'France', city: 'Montpellier', postcode: '34000', address1: '23 Rue de Nul part', address2: '' } },
+  { id: "123456", name: "Mon point de vente", location: { country: 'France', city: 'Montpellier', postcode: '34000', address1: '23 Rue de Nul part', address2: '' } },
+  { id: "123456", name: "Mon point de vente", location: { country: 'France', city: 'Montpellier', postcode: '34000', address1: '23 Rue de Nul part', address2: '' } },
+  { id: "123456", name: "Mon point de vente", location: { country: 'France', city: 'Montpellier', postcode: '34000', address1: '23 Rue de Nul part', address2: '' } },
 
 ]
 
@@ -26,7 +28,7 @@ class PointOfSale extends React.Component {
       delete_show: false,
       edit_show: false,
       item: {
-        id: "", 
+        id: "",
         name: "",
         slogan: "",
         location: {
@@ -60,9 +62,11 @@ class PointOfSale extends React.Component {
     return (
       <ListGroup.Item className="posListItemContainer shadow">
         <Row>
-          <Col xs={12} md={2} 
-            style={{backgroundImage: "url(" + StoreImage +
-            ")"}} className='posItemImage'/>
+          <Col xs={12} md={2}
+            style={{
+              backgroundImage: "url(" + StoreImage +
+                ")"
+            }} className='posItemImage' />
           <Col xs={12} md={8}>
             <Row>
               <div className="posItemTitle">{pos.name}</div>
@@ -72,10 +76,10 @@ class PointOfSale extends React.Component {
             </Row>
           </Col>
           <Col xs={6} md={1} className="posItemIcon">
-              <FaTrash onClick={() => this._showDeleteStoreModal(pos)}/>   
+            <FaTrash onClick={() => this._showDeleteStoreModal(pos)} />
           </Col>
           <Col xs={6} md={1} className="posItemIcon">
-            <FaEdit onClick={() => this._showEditStoreModal(pos)}/>
+            <FaEdit onClick={() => this._showEditStoreModal(pos)} />
           </Col>
         </Row>
       </ListGroup.Item>
@@ -88,14 +92,14 @@ class PointOfSale extends React.Component {
         <ListGroup className="posList">
           {point_of_sales.map(pos => this.renderItem(pos))}
         </ListGroup>
-        <this.DeleteStoreModal 
+        <this.DeleteStoreModal
           show={this.state.delete_show}
           onHide={this._hideDeleteStoreModal}
-          item={this.state.item}/>
-        <this.EditStoreModal 
+          item={this.state.item} />
+        <this.EditStoreModal
           show={this.state.edit_show}
           onHide={this._hideEditStoreModal}
-          item={this.state.item}/>
+          item={this.state.item} />
       </Container>
     );
   }
@@ -115,20 +119,20 @@ class PointOfSale extends React.Component {
         </Modal.Header>
         <Modal.Body>
 
-        <Container className="posListItemContainer shadow">
-        <Row>
-          <Col xs={12} md={2} style={{backgroundImage: "url(" + StoreImage + ")"}} className='posItemImage'/>
-          <Col xs={12} md={8}>
+          <Container className="posListItemContainer shadow">
             <Row>
-              <div className="posItemTitle">{props.item.name}</div>
+              <Col xs={12} md={2} style={{ backgroundImage: "url(" + StoreImage + ")" }} className='posItemImage' />
+              <Col xs={12} md={8}>
+                <Row>
+                  <div className="posItemTitle">{props.item.name}</div>
+                </Row>
+                <Row>
+                  {console.log(props.item.location)}
+                  <div className="posItemAddress">{props.item.location.address1}, {props.item.location.postcode} {props.item.location.city}</div>
+                </Row>
+              </Col>
             </Row>
-            <Row>
-              {console.log(props.item.location)}
-              <div className="posItemAddress">{props.item.location.address1}, {props.item.location.postcode} {props.item.location.city}</div>
-            </Row>
-          </Col>
-        </Row>
-        </Container>
+          </Container>
 
         </Modal.Body>
         <Modal.Footer>
@@ -141,6 +145,19 @@ class PointOfSale extends React.Component {
   }
 
   EditStoreModal(props) {
+
+
+    const schema = yup.object().shape({
+      name: yup.string().required(),
+      slogan: yup.string().required(),
+      line1: yup.string().required(),
+      line2: yup.string().required(),
+      city: yup.string().required(),
+      country: yup.string(),
+      zip: yup.string().required(),
+    });
+
+
     return (
       <Modal
         {...props}
@@ -155,65 +172,151 @@ class PointOfSale extends React.Component {
         </Modal.Header>
         <Modal.Body>
 
-          {/* Pourquoi pas mettre un nom public et privé */}
-          <Form.Group controlId="formGridText">
-            <Form.Label>Nom de la boutique</Form.Label>
-            <Form.Control className="posModalInput"
-              placeholder={props.item.name} />
-          </Form.Group>
+          <Formik
+            validationSchema={schema}
+            initialValues={{
+              name: "",
+              slogan: "",
+              line1: "",
+              line2: "",
+              city: "",
+              country: "",
+              zip: "",
+            }}
+            onSubmit={(values, actions) => {
+              console.log("/////////////////// submit")
+              console.log(values)
+              actions.setSubmitting(true);
+              setTimeout(() => {
+                alert(JSON.stringify(values, null, 2));
+                actions.resetForm({
+                  name: "",
+                  slogan: "",
+                  line1: "",
+                  line2: "",
+                  city: "",
+                  country: "",
+                  zip: "",
+                });
+                actions.setSubmitting(false);
+              }, 2000);
+            }}
+          >
+            {({
+              handleSubmit,
+              handleChange,
+              handleBlur,
+              values,
+              touched,
+              errors,
+              isSubmitting,
+            }) => (
+                <Form noValidate onSubmit={handleSubmit}>
+                  {/* Pourquoi pas mettre un nom public et privé */}
+                  <Form.Group controlId="validationFormik01">
+                    <Form.Label>Nom de la boutique</Form.Label>
+                    <Form.Control className="posModalInput"
+                      placeholder="Nom de la boutique"
+                      onChange={handleChange}
+                      name="name"
+                      value={values.name}
+                      onBlur={handleBlur}
+                      isValid={touched.name && !errors.name}
+                      isInvalid={!!errors.name} />
+                  </Form.Group>
 
-          <Form.Group controlId="formGridText">
-            <Form.Label>Slogan</Form.Label>
-            <Form.Control className="posModalInput"
-              placeholder={props.item.slogan} />
-          </Form.Group>
+                  <Form.Group controlId="validationFormik02">
+                    <Form.Label>Slogan</Form.Label>
+                    <Form.Control className="posModalInput"
+                      placeholder="Faites vous plaisir chez ..."
+                      onChange={handleChange}
+                      name="slogan"
+                      value={values.slogan}
+                      onBlur={handleBlur}
+                      isValid={touched.slogan && !errors.slogan}
+                      isInvalid={!!errors.slogan}  />
+                  </Form.Group>
 
-          <Form.Group controlId="formGridAddress1">
-            <Form.Label>Address</Form.Label>
-            <Form.Control className="posModalInput"
-              placeholder={props.item.location.address1} />
-          </Form.Group>
+                  <Form.Group controlId="validationFormik03">
+                    <Form.Label>Address</Form.Label>
+                    <Form.Control className="posModalInput"
+                      placeholder="1234 Main St"
+                      onChange={handleChange}
+                      name="line1"
+                      value={values.line1}
+                      onBlur={handleBlur}
+                      isValid={touched.line1 && !errors.line1}
+                      isInvalid={!!errors.line1}  />
+                  </Form.Group>
 
-          <Form.Group controlId="formGridAddress2">
-            <Form.Label>Address 2</Form.Label>
-            <Form.Control className="posModalInput"
-              placeholder={props.item.location.address2} />
-          </Form.Group>
+                  <Form.Group controlId="validationFormik04">
+                    <Form.Label>Address 2</Form.Label>
+                    <Form.Control className="posModalInput"
+                      placeholder="Apartment, studio, or floor"
+                      onChange={handleChange}
+                      name="line2"
+                      value={values.line2}
+                      onBlur={handleBlur}
+                      isValid={touched.line2 && !errors.line2}
+                      isInvalid={!!errors.line2}  />
+                  </Form.Group>
 
-          <Form.Row>
-            <Form.Group xs={12} sm={4} as={Col} controlId="formGridCity">
-              <Form.Label>City</Form.Label>
-              <Form.Control className="posModalInput"
-              placeholder={props.item.location.city} />
-            </Form.Group>
+                  <Form.Row>
+                    <Form.Group xs={12} sm={4} as={Col} controlId="validationFormik05">
+                      <Form.Label>City</Form.Label>
+                      <Form.Control className="posModalInput"
+                        onChange={handleChange}
+                      name="city"
+                      value={values.city}
+                      onBlur={handleBlur}
+                      isValid={touched.city && !errors.city}
+                      isInvalid={!!errors.city}  />
+                    </Form.Group>
 
-            <Form.Group xs={12} sm={4} as={Col} controlId="formGridState">
-              <Form.Label>State</Form.Label>
-              <Form.Control className="posModalInput"
-                as="select" defaultValue={props.item.location.country}>
-                <option>Choose...</option>
-                <option>...</option>
-              </Form.Control>
-            </Form.Group>
+                    <Form.Group xs={12} sm={4} as={Col} controlId="validationFormik06">
+                      <Form.Label>State</Form.Label>
+                      <Form.Control className="posModalInput"
+                        as="select" defaultValue="Choose..."
+                        onChange={handleChange}
+                        name="country"
+                        value={values.country}
+                        onBlur={handleBlur}
+                        isValid={touched.country && !errors.country}
+                        isInvalid={!!errors.country} >
+                        <option>Choose...</option>
+                        <option>...</option>
+                      </Form.Control>
+                    </Form.Group>
 
-            <Form.Group xs={12} sm={4} as={Col} controlId="formGridZip">
-              <Form.Label>Zip</Form.Label>
-              <Form.Control className="posModalInput"
-              placeholder={props.item.location.postcode} />
-            </Form.Group>
-          </Form.Row>
+                    <Form.Group xs={12} sm={4} as={Col} controlId="validationFormik07">
+                      <Form.Label>Zip</Form.Label>
+                      <Form.Control className="posModalInput"
+                        onChange={handleChange}
+                        name="zip"
+                        value={values.zip}
+                        onBlur={handleBlur}
+                        isValid={touched.zip && !errors.zip}
+                        isInvalid={!!errors.zip}  />
+                    </Form.Group>
+                  </Form.Row>
+                  <Row>
+                    <Button style={{ flex: 1 }}
+                      className="cancel"
+                      onClick={props.onHide}>Annuler</Button>
+                    <Button style={{ flex: 1 }}
+                      type='submit' disabled={isSubmitting}
+                      className="validate">Valider</Button>
+                  </Row>
+
+                </Form>
+              )}
+          </Formik>
 
         </Modal.Body>
-        <Modal.Footer>
-
-          <Button as={Col} className="cancel">Annuler</Button>
-          <Button as={Col} className="validate"
-            onClick={props.onHide}>Valider</Button>
-        </Modal.Footer>
       </Modal>
     );
   }
-  
+
 }
 
 

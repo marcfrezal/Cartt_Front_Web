@@ -231,21 +231,20 @@ class PointsOfSale extends React.Component {
                         isInvalid={!!errors.zip}  />
                     </Form.Group>
                   </Form.Row>
-
-                  <div>
-                    <Button as={Col} className="cancel"
-                      onClick={props.onHide}>Annuler</Button>
-                    <Button type='submit' disabled={isSubmitting}
-                    >Valider</Button>
-                  </div>
+                  <Row>
+                    
+                      <Button style={{flex: 1}}
+                        className="cancel"
+                        onClick={props.onHide}>Annuler</Button>
+                      <Button style={{flex: 1}} 
+                        type='submit' disabled={isSubmitting}
+                        className="validate">Valider</Button>
+                  </Row>
                 </Form>
               )}
           </Formik>
         </Modal.Body>
-        <Modal.Footer>
-
-          
-        </Modal.Footer>
+    
       </Modal>
     );
 

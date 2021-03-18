@@ -26,13 +26,17 @@
     background-color: #FF0D0D !important;
     border-color: #FF0D0D !important;
     border-radius: 10px !important;
+    align-self: stretch;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .validate {
     background-color: #183D76 !important;
     border-color: #183D76 !important;
     border-radius: 10px !important;
-    align-content: center;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 /*Phones*/
