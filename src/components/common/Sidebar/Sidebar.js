@@ -32,6 +32,10 @@ class Sidebar extends React.Component {
       this.setState({
         shops : true
       })
+    } else if (window.location.pathname === "/profile") {
+      this.setState({
+        settings : true
+      })
     }
   }
 
@@ -65,7 +69,7 @@ class Sidebar extends React.Component {
               </Row>
               <Row className="sideBarRow">
                 <Col className="sideBarCol">
-                  <Link to="/" className="sideBarItem">
+                  <Link to="/profile" className={this.state.settings ? 'sideBarItemActive' : 'sideBarItem'} >
                       <div className="sideBarIcon">
                         <FaCog/>
                       </div>

@@ -9,9 +9,9 @@ class Growth extends React.Component {
 
   render() {
     return (
-      <Container className="blockLeftContainer" fluid>
+      <Container className="containerGrowth shadow" fluid>
         <Row>
-          <Col className='titleCol'>Croissance</Col>
+          <Col className='titleColGrowth'>Croissance</Col>
         </Row>
         <Row className='body'>
 

@@ -11,7 +11,7 @@ class MounthlyNumbers extends React.Component {
 
   render() {
     return (
-      <Container className="mnContainer" fluid>
+      <Container className="mnContainer shadow" fluid>
         <Row>
           <Col className='mnTitle'>Chiffres du mois</Col>
         </Row>

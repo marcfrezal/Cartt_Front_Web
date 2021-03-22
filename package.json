@@ -2,8 +2,7 @@
   "name": "front_web",
   "version": "0.1.0",
   "private": true,
-  "engines": {
-  },
+  "engines": {},
   "dependencies": {
     "@apollo/client": "^3.3.9",
     "@apollo/react-hooks": "^4.0.0",
@@ -14,6 +13,7 @@
     "animate.css": "^4.1.1",
     "apollo-boost": "^0.4.9",
     "bootstrap": "^4.5.3",
+    "formik": "^2.2.6",
     "graphql": "^15.5.0",
     "react": "^17.0.1",
     "react-animate-on-scroll": "^2.1.5",
@@ -23,7 +23,8 @@
     "react-icons": "^4.1.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
-    "web-vitals": "^0.2.4"
+    "web-vitals": "^0.2.4",
+    "yup": "^0.32.9"
   },
   "scripts": {
     "start": "PORT=80 react-scripts start",

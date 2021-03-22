@@ -1,34 +1,61 @@
-.posTopRow {
-    height: 5vh;
-    margin-bottom: 5vh;
-}
 
-.searchRow {
-    /* background-color: blue; */
-    height: 15vh;
-    align-items: center;
-
-}
-
-.posTitle {
-    font-size: 4vh;
-    font-weight: bold;
-    color: #183D76;
-}
-
-.posBtnCreate {
-
-}
-
-.bodyRow {
-    /* background-color: red; */
-    height: 65vh;
+.posRowBody {
+    background-color: green;
 }
 
 .head {
     height: 15vh;
 }
 
-/* .bodyCol {
-    align-items: ;
-} */
+.posBodyCol {
+    background-color: green;
+}
+
+.test {
+    height: 50% !important;
+    width: 100% !important;
+    font-size: 1vw !important;
+}
+
+.posModalInput {
+    border-radius: 10px !important;
+}
+
+
+.cancel {
+    background-color: #FF0D0D !important;
+    border-color: #FF0D0D !important;
+    border-radius: 10px !important;
+    align-self: stretch;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.validate {
+    background-color: #183D76 !important;
+    border-color: #183D76 !important;
+    border-radius: 10px !important;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+/*Phones*/
+@media (min-width: 576px) { 
+
+}
+
+/*Tablet*/
+@media (min-width: 768px) and (max-width: 992px)  {
+    
+
+}
+
+/*Desktop*/
+@media (min-width: 992px) {  
+
+}
+
+/*Large Desktops*/
+@media (min-width: 1200px) {  
+
+}

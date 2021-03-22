@@ -1,25 +1,18 @@
 .mnContainer {
    
     background-color: #183D76;
-    border-radius: 30px;
+    border-radius: 2vh;
     padding: 30px;
     margin-top: 30px;
-    -webkit-box-shadow: 3px 3px 5px 6px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
-    -moz-box-shadow:    3px 3px 5px 6px #ccc;  /* Firefox 3.5 - 3.6 */
-    box-shadow:         3px 3px 5px 6px #ccc;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
 }
 
 .mnTitle {
-    display: flex;
-    color: #fff;
-    font-weight: 900;
-    font-size: 25px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 2.5vh;
+    color:#FFF;
+    margin-top: 1vh;
     font-family: Montserrat;
-    margin-left: 30px;
-}
-
-.body {
- 
 }
 
 .number {
@@ -39,5 +32,35 @@
     font-family: Montserrat;
     align-items: center;
     justify-content: center;
+}
+
+
+/*Phones*/
+@media (min-width: 576px) { 
+
+}
+
+/*Tablet*/
+@media (min-width: 768px) and (max-width: 992px)  {  
+
+}
+
+/*Desktop*/
+@media (min-width: 992px) {  
+
+    .mnTitle {
+        text-align: center;
+        font-weight: 600;
+        font-size: 2.5vh;
+        color:#FFF;
+        margin-top: 0vh;
+        height: 5vh;
+        font-family: Montserrat;
+    }
+}
+
+/*Large Desktops*/
+@media (min-width: 1200px) {  
+
 }
 

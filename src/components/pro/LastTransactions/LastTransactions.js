@@ -9,35 +9,30 @@ import YellowCard from "../../../assets/pro/card-background/card-bg-yellow.png";
 import PinkCard from "../../../assets/pro/card-background/card-bg-pink.png";
 
 var transactions = [{ name: 'Paul Vitry', date: '27/02/2020', amount: 1235, card_background:'../../assets/card-background/card-bg-yellow.png' },
-{ name: 'Paul Vitry', date: '27/02/2020', amount: 1235, card_background:'../../assets/card-background/card-bg-pink.png' },
-{ name: 'Paul Vitry', date: '27/02/2020', amount: 1235, card_background:'../../assets/card-background/card-bg-yellow.png' },]
+                    { name: 'Paul Vitry', date: '27/02/2020', amount: 1235, card_background:'../../assets/card-background/card-bg-pink.png' },
+                    { name: 'Paul Vitry', date: '27/02/2020', amount: 1235, card_background:'../../assets/card-background/card-bg-yellow.png' },]
 
 class LastTransactions extends React.Component {
 
   renderTransaction(data, index) {
     return (
-      <div className='transaction'
-           style={{ backgroundImage: "url(" + YellowCard + ")" }}>
-          <div className="transactionBody">
-          
-          <div  className="transactionItemRow1"> {data.name}</div>
-          <div  className="transactionItemRow2">{data.date}</div>
-          <div className="transactionDivider"/>
-          <div className="transactionItemRow3">{data.amount}€</div>
+          <div className="transactionBody">          
+            <div  className="transactionItemRow1"> {data.name}</div>
+            <div  className="transactionItemRow2">{data.date}</div>
+            <div className="transactionDivider"/>
+            <div className="transactionItemRow3">{data.amount}€</div>
           </div>
-      </div>
     )
   }
 
   render() {
     return (
       <Container fluid>
-        <Row className='titleCol'>
+        <Row className='lastTransactionTitle'>
          Dernières cartes vendues
         </Row>
-        <Row className='body' style={{scrollMarginRight:true}}>
-          {/* <Carousel data={transactions} renderItem={this.renderTransaction}/> */}
-          {transactions.map(transaction => this.renderTransaction(transaction))}
+        <Row className='bodyTransaction'>
+           {transactions.map(transaction => this.renderTransaction(transaction))} 
         </Row>
       </Container>
     );

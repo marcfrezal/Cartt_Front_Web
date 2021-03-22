@@ -7,10 +7,11 @@
 }
 
 .titleCol {
-    height : 10vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    height : 10vh;
     color: #183D76;
     font-weight: 900;
     font-size: 5vh;
@@ -116,7 +117,7 @@
 .test {
     height: 50% !important;
     width: 100% !important;
-    font-size: 1vw !important;
+    font-size: 1vh !important;
 }
 
 /*Phones*/
@@ -151,7 +152,9 @@
 
 /*Desktop*/
 @media (min-width: 992px) {  
-
+    .test {
+        font-size: 2vh !important;
+    }
 }
 
 /*Large Desktops*/

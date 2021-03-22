@@ -1,0 +1,61 @@
+.profileInfosContainer {
+    background-color: white !important;
+    border-radius: 20px;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.profileInfosTitle {
+    color: #0E3570 !important;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    font-family: Montserrat;
+}
+
+.profileEditRow {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 0px !important;
+}
+
+.profileEdit {
+
+    height: 25px;
+    width: 25px;
+
+}
+.profileInfosPictureCol {
+    justify-content: center;
+    display: flex;
+}
+
+
+.profileInfosPicture {
+    background-image: url('../../../../assets/pro/card-background/card-bg-pink.png');
+    border-radius: 15px;
+    height: 175px;
+    width: 175px;
+    /* align-self: center;
+    justify-self: center;
+    justify-content: center;
+    align-items: center; */
+}
+
+
+.profileName {
+    color: #0E3570 !important;
+    font-size: 25px;
+    font-weight: 400;
+    display: flex;
+    font-family: Montserrat;
+}
+
+.profileInfo {
+    color: #0E3570 !important;
+    font-size: 17px;
+    font-weight: 300;
+    display: flex;
+    font-family: Montserrat;
+}
+
