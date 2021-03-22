@@ -14,7 +14,7 @@ import {
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink  } from '@apollo/client';
 
 
-const url = 'http://x2022bankid1596095846000.francecentral.cloudapp.azure.com/'
+const url = 'http://api.dev.cartt.fr/'
 
 const httpLink = createHttpLink({ uri : url,  credentials: 'include'});
 

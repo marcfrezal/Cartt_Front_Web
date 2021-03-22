@@ -90,7 +90,7 @@ class BlockLeft extends React.Component {
         </div>
       )
     }
-    if (data && data.login.role == "SELLER") {
+    if (data && data.login.role === "SELLER") {
       return <Redirect to='/dashboard'/>;
     }
 

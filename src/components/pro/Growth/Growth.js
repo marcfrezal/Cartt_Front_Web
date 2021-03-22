@@ -11,7 +11,7 @@ class Growth extends React.Component {
     return (
       <Container className="containerGrowth shadow" fluid>
         <Row>
-          <Col className='titleCol'>Croissance</Col>
+          <Col className='titleColGrowth'>Croissance</Col>
         </Row>
         <Row className='body'>
 

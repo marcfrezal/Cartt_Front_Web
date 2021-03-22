@@ -2,10 +2,7 @@
   "name": "front_web",
   "version": "0.1.0",
   "private": true,
-  "engines": {
-    "npm": "7.0.3",
-    "node": "15.0.1"
-  },
+  "engines": {},
   "dependencies": {
     "@apollo/client": "^3.3.9",
     "@apollo/react-hooks": "^4.0.0",
@@ -30,7 +27,7 @@
     "yup": "^0.32.9"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "PORT=80 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

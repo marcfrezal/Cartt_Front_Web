@@ -17,7 +17,10 @@ var point_of_sales = [
   { id: "123456", name: "Mon point de vente", location: { country: 'France', city: 'Montpellier', postcode: '34000', address1: '23 Rue de Nul part', address2: '' } },
   { id: "123456", name: "Mon point de vente", location: { country: 'France', city: 'Montpellier', postcode: '34000', address1: '23 Rue de Nul part', address2: '' } },
   { id: "123456", name: "Mon point de vente", location: { country: 'France', city: 'Montpellier', postcode: '34000', address1: '23 Rue de Nul part', address2: '' } },
-
+  { id: "123456", name: "Mon point de vente", location: { country: 'France', city: 'Montpellier', postcode: '34000', address1: '23 Rue de Nul part', address2: '' } },
+  { id: "123456", name: "Mon point de vente", location: { country: 'France', city: 'Montpellier', postcode: '34000', address1: '23 Rue de Nul part', address2: '' } },
+  { id: "123456", name: "Mon point de vente", location: { country: 'France', city: 'Montpellier', postcode: '34000', address1: '23 Rue de Nul part', address2: '' } },
+  { id: "123456", name: "Mon point de vente", location: { country: 'France', city: 'Montpellier', postcode: '34000', address1: '23 Rue de Nul part', address2: '' } },
 ]
 
 class PointOfSale extends React.Component {
@@ -88,7 +91,7 @@ class PointOfSale extends React.Component {
 
   render() {
     return (
-      <Container fluid>
+      <Container fluid style={{overflow : "auto", marginTop : "3vh"}}>
         <ListGroup className="posList">
           {point_of_sales.map(pos => this.renderItem(pos))}
         </ListGroup>

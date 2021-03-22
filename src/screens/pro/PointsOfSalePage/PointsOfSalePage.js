@@ -37,15 +37,10 @@ class PointsOfSale extends React.Component {
     this.setState({ create_show: false });
   }
 
- 
-
-
-
   render() {
     return (
-      <Container fluid style={{ backgroundColor: "#f9fafd" }}>
+      <Container fluid style={{ height : "100vh", backgroundColor: "#f9fafd" }}>
         <Sidebar />
-
         <Row>
           <Col xs={1} lg={1}></Col>
           <Col xs={11} lg={11}>

@@ -28,7 +28,7 @@ class LastTransactions extends React.Component {
   render() {
     return (
       <Container fluid>
-        <Row className='titleCol'>
+        <Row className='lastTransactionTitle'>
          Dernières cartes vendues
         </Row>
         <Row className='bodyTransaction'>

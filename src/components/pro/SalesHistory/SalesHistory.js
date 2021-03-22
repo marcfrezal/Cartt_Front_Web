@@ -41,7 +41,7 @@ class SalesHistory extends React.Component {
     return (
       <Container className="salesHistoryContainer shadow" fluid>
         <Row>
-          <Col className='titleCol'>Historique des transactions</Col>
+          <Col className='salesHistTitle'>Historique des transactions</Col>
         </Row>
         <Row className='itemContainer'>
           {transactions.map(transaction => getItem(transaction))}

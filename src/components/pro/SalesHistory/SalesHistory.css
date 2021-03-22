@@ -40,6 +40,14 @@
     color: black;
 }
 
+.salesHistTitle {
+    text-align: center;
+    font-weight: 600;
+    font-size: 2.5vh;
+    margin-top: 1vh;
+    font-family: Montserrat;
+}
+
 /*Phones*/
 @media (min-width: 576px) { 
 
@@ -70,6 +78,10 @@
         overflow-y: scroll;
     }
 
+    .salesHistTitle {
+        height: 5vh;
+        margin-top: 2vh;
+    }
 
     .text {
         font-size: 2.2vh;
