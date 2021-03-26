@@ -3,7 +3,7 @@ import './BlockLeft.css';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import { useMutation, useLazyQuery } from '@apollo/react-hooks';
 import { Redirect} from "react-router-dom";
-import { LOGIN } from "./ApiBlockLeft";
+import { LOGIN } from "../../../../API/authentication/authentication";
 
 
 class BlockLeft extends React.Component {
@@ -99,6 +99,7 @@ class BlockLeft extends React.Component {
         <Button onClick={() => updateLogin({variables : {login : {email : props.username , password : props.password}}}).catch(err => console.log(err))} className="loginBtn">connexion</Button>
       </div>
     )
+    
   }
 
 

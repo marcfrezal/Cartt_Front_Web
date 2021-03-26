@@ -8,7 +8,7 @@ class BlockRight extends React.Component {
       return (
           <Container className="containerLoginRight">
              <Row>
-                <div className="squ1 "></div>  
+                {/*<div className="squ1 "></div>  
                 <div className="squ2 "></div>
                 <div className="squ3 "></div>  
                 <div className="squ4 "></div>
@@ -20,7 +20,7 @@ class BlockRight extends React.Component {
                 <div className="squ2-2-2 shadow"></div>
                 <div className="squ3-3-3 shadow"></div>  
                 <div className="squ4-4-4 shadow"></div>
-                <div className="squJoker "></div>
+      <div className="squJoker "></div> */}
              </Row>
           </Container>
       );

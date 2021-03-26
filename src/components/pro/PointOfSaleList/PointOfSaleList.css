@@ -1,32 +1,62 @@
 .posListItemContainer {
-    margin-bottom: 2vh;
-    border-radius: 1vh;
+    margin-bottom: 5vh;
     align-content: center;
+    height: 15vh;
+    background-color: #bac9ff88;
+    border : solid 3px #aab8e8;
+    border-top-right-radius: 1vh;
+    border-bottom-right-radius: 1vh;
+
 }
 
 .posItemImage {
-    height: 10vh;
-    background-image: "url(" + "../../../assets/pro/card-background/card-bg-pink.png" + ")";
-    border-radius: 5px;
-    top: -5px;
+    height: 15vh;
+    width: 20vh;
+    background-size: cover;
+    background-position: center center;
+}
+
+.colListStorePic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../../../assets/launch-page/Cartt.png');
+    background-size: cover;
+    background-position: center center;
 }
 
 .posList {
     margin-top: 40px;
-    margin-bottom: 20px;
     height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFF;
+    border-radius: 2vh;
+}
+
+.colListTitle {
+    display: flex;
+    align-items: flex-end;
+    height: 50%;
+}
+
+.colListText {
+    display: flex;
+    align-items: flex-start;
+    height: 50%;
 }
 
 .posItemTitle {
     font-size: 20px !important;
-    color: #183D76 !important;
+    color: white !important;
     font-family: Montserrat;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .posItemAddress {
     font-size: 13px;
-    color: #183D76;
+    color: white;
     font-family: Montserrat;
     margin-bottom: 10px;
 }
@@ -35,7 +65,40 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: lightgray;
+    color: white;
+}
+
+.colItemIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.posItemIcon:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.loadContainer {
+    color : lightgrey;
+    font-size: 4vh;
+
+    animation-name: spin2;
+    animation-duration: 1000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.errorContainer {
+    color : lightgrey;
+    font-size: 2vh;
+    font-family: Montserrat;
+}
+
+.containerStoresList{
+    width : 150vh; 
+    height : 70vh;
+    overflow : auto;
 }
 
 /*Phones*/

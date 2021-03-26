@@ -13,12 +13,6 @@ class Header extends React.Component {
             <div className="posHeaderTitle">{this.props.title}</div>
           </Col>
           <Col xs={12} sm={5} md={5} lg={3}>
-            <Button
-              className="float-right posHeaderAction"
-              onClick={() => this.props.onPress()}
-              >
-              {this.props.actionTitle}
-            </Button>
           </Col>
         </Row>
       </Container>
