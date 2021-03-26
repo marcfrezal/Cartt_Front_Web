@@ -1,0 +1,57 @@
+.topRow {
+    height: 35vh;
+    background-color: #f9fafd;
+
+    /* background-color: blue; */
+}
+
+.topRowLeftColulm {
+    background-color:  #f9fafd;
+
+    /* background-color: aqua; */
+}
+
+.colCardDashboard {
+    background-color: greenyellow;
+}
+
+.topRowRightColumn {
+    background-color:  #f9fafd;
+
+    /* background-color: azure  ; */
+}
+
+.bottomRow {
+    background-color:  #f9fafd;
+
+}
+
+.bottomLeftCol {
+    background-color: #f9fafd;
+}
+
+.bottomRightCol {
+    background-color:  #f9fafd;
+
+    /* background-color: blueviolet */
+}
+
+.containerDashboard {
+    height: 100vh;
+    background-color: #F9FAFD;
+
+}
+
+.headerDashboard {
+    margin-left: 5% !important;
+}
+
+.rowDashboard1 {
+    background-color: #F9FAFD;
+    margin-left: 5% !important;
+}
+
+.rowDashboard2 {
+    background-color: #F9FAFD;
+    margin-left: 5% !important;
+}
