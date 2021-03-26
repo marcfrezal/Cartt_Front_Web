@@ -1,5 +1,4 @@
 import React from "react";
-
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -9,19 +8,69 @@ import StoreImage from '../../../assets/pro/card-background/card-bg-yellow.png'
 import { FaEdit, FaTrash } from 'react-icons/fa';
 import { Formik } from 'formik';
 import * as yup from 'yup';
+import { useMutation, useQuery } from '@apollo/react-hooks';
+import { Redirect} from "react-router-dom";
+import {GETALLSTORES} from '../../../API/stores/stores';
+import { FaSyncAlt} from 'react-icons/fa';
+import Central from '../../../assets/common/Cartt.png';
 
+// var point_of_sales = [
+//   { id: "123456", name: "Mon SUUPPPERRRRR pdv", slogan: "Mon super slogan", location: { country: 'France', city: 'Montpellier', postcode: '34000', address1: '23 Rue de la rue', address2: '' } },
+//   { id: "123456", name: "Mon point de vente", location: { country: 'France', city: 'Montpellier', postcode: '34000', address1: '23 Rue de Nul part', address2: '' } },
+//   { id: "123456", name: "Mon point de vente", location: { country: 'France', city: 'Montpellier', postcode: '34000', address1: '23 Rue de Nul part', address2: '' } },
+//   { id: "123456", name: "Mon point de vente", location: { country: 'France', city: 'Montpellier', postcode: '34000', address1: '23 Rue de Nul part', address2: '' } },
+//   { id: "123456", name: "Mon point de vente", location: { country: 'France', city: 'Montpellier', postcode: '34000', address1: '23 Rue de Nul part', address2: '' } },
+//   { id: "123456", name: "Mon point de vente", location: { country: 'France', city: 'Montpellier', postcode: '34000', address1: '23 Rue de Nul part', address2: '' } },
+//   { id: "123456", name: "Mon point de vente", location: { country: 'France', city: 'Montpellier', postcode: '34000', address1: '23 Rue de Nul part', address2: '' } },
+//   { id: "123456", name: "Mon point de vente", location: { country: 'France', city: 'Montpellier', postcode: '34000', address1: '23 Rue de Nul part', address2: '' } },
+//   { id: "123456", name: "Mon point de vente", location: { country: 'France', city: 'Montpellier', postcode: '34000', address1: '23 Rue de Nul part', address2: '' } },
+// ]
 
-var point_of_sales = [
-  { id: "123456", name: "Mon SUUPPPERRRRR pdv", slogan: "Mon super slogan", location: { country: 'France', city: 'Montpellier', postcode: '34000', address1: '23 Rue de la rue', address2: '' } },
-  { id: "123456", name: "Mon point de vente", location: { country: 'France', city: 'Montpellier', postcode: '34000', address1: '23 Rue de Nul part', address2: '' } },
-  { id: "123456", name: "Mon point de vente", location: { country: 'France', city: 'Montpellier', postcode: '34000', address1: '23 Rue de Nul part', address2: '' } },
-  { id: "123456", name: "Mon point de vente", location: { country: 'France', city: 'Montpellier', postcode: '34000', address1: '23 Rue de Nul part', address2: '' } },
-  { id: "123456", name: "Mon point de vente", location: { country: 'France', city: 'Montpellier', postcode: '34000', address1: '23 Rue de Nul part', address2: '' } },
-  { id: "123456", name: "Mon point de vente", location: { country: 'France', city: 'Montpellier', postcode: '34000', address1: '23 Rue de Nul part', address2: '' } },
-  { id: "123456", name: "Mon point de vente", location: { country: 'France', city: 'Montpellier', postcode: '34000', address1: '23 Rue de Nul part', address2: '' } },
-  { id: "123456", name: "Mon point de vente", location: { country: 'France', city: 'Montpellier', postcode: '34000', address1: '23 Rue de Nul part', address2: '' } },
-  { id: "123456", name: "Mon point de vente", location: { country: 'France', city: 'Montpellier', postcode: '34000', address1: '23 Rue de Nul part', address2: '' } },
-]
+const PosList = () => {
+  const { data, error, loading} = useQuery(GETALLSTORES);
+
+  if (loading) {
+    return (
+      <div >
+        <FaSyncAlt className="loadContainer"/>
+      </div>
+    )
+  } else if (error) {
+    return (
+      <div className="errorContainer">
+        <p>Une erreur s'est produite lors du chargement des données.</p>
+      </div>
+    )
+  } else if (data && data.getStores.length !== 0) {
+    return (
+      <div className="containerStoresList" >
+        {data.getStores.map((pos, index) => (
+          <Container  fluid className="posListItemContainer">
+          <Row style={{height : "100%"}}>
+            <Col xs={12} md={2} className="colListStorePic">
+            </Col>
+            <Col xs={12} md={8}>
+              <Row  className="colListTitle">
+                <div className="posItemTitle">{pos.name}</div>
+              </Row>
+              <Row className="colListText">
+                <div className="posItemAddress">id : {pos._id}</div>
+              </Row>
+            </Col>
+          </Row>
+        </Container>
+        ))}
+      </div>
+    )
+  }
+  else {
+    return (
+      <div className="errorContainer">
+        <p>Vous n'avez aucuns magasins enregistrés.</p>
+      </div>
+    )
+  }
+};
 
 class PointOfSale extends React.Component {
 
@@ -45,69 +94,39 @@ class PointOfSale extends React.Component {
     };
   }
 
-  _showDeleteStoreModal = (pos) => {
-    this.setState({ delete_show: true, item: pos });
-  }
+  // _showDeleteStoreModal = (pos) => {
+  //   this.setState({ delete_show: true, item: pos });
+  // }
 
-  _hideDeleteStoreModal = () => {
-    this.setState({ delete_show: false });
-  }
+  // _hideDeleteStoreModal = () => {
+  //   this.setState({ delete_show: false });
+  // }
 
-  _showEditStoreModal = (pos) => {
-    this.setState({ edit_show: true, item: pos });
-  }
+  // _showEditStoreModal = (pos) => {
+  //   this.setState({ edit_show: true, item: pos });
+  // }
 
-  _hideEditStoreModal = () => {
-    this.setState({ edit_show: false });
-  }
-
-  renderItem(pos, showModal) {
-    return (
-      <ListGroup.Item className="posListItemContainer shadow">
-        <Row>
-          <Col xs={12} md={2}
-            style={{
-              backgroundImage: "url(" + StoreImage +
-                ")"
-            }} className='posItemImage' />
-          <Col xs={12} md={8}>
-            <Row>
-              <div className="posItemTitle">{pos.name}</div>
-            </Row>
-            <Row>
-              <div className="posItemAddress">{pos.location.address1}, {pos.location.postcode} {pos.location.city}</div>
-            </Row>
-          </Col>
-          <Col xs={6} md={1} className="posItemIcon">
-            <FaTrash onClick={() => this._showDeleteStoreModal(pos)} />
-          </Col>
-          <Col xs={6} md={1} className="posItemIcon">
-            <FaEdit onClick={() => this._showEditStoreModal(pos)} />
-          </Col>
-        </Row>
-      </ListGroup.Item>
-    )
-  }
+  // _hideEditStoreModal = () => {
+  //   this.setState({ edit_show: false });
+  // }
 
   render() {
     return (
-      <Container fluid style={{overflow : "auto", marginTop : "3vh"}}>
-        <ListGroup className="posList">
-          {point_of_sales.map(pos => this.renderItem(pos))}
-        </ListGroup>
-        <this.DeleteStoreModal
+      <Container fluid className="posList shadow">
+        <PosList/>
+        {/*<this.DeleteStoreModal
           show={this.state.delete_show}
           onHide={this._hideDeleteStoreModal}
           item={this.state.item} />
         <this.EditStoreModal
           show={this.state.edit_show}
           onHide={this._hideEditStoreModal}
-          item={this.state.item} />
-      </Container>
+          item={this.state.item} />*/}
+        </Container>
     );
   }
 
-  DeleteStoreModal(props) {
+  /*DeleteStoreModal(props) {
     return (
       <Modal
         {...props}
@@ -130,7 +149,6 @@ class PointOfSale extends React.Component {
                   <div className="posItemTitle">{props.item.name}</div>
                 </Row>
                 <Row>
-                  {console.log(props.item.location)}
                   <div className="posItemAddress">{props.item.location.address1}, {props.item.location.postcode} {props.item.location.city}</div>
                 </Row>
               </Col>
@@ -213,7 +231,7 @@ class PointOfSale extends React.Component {
               isSubmitting,
             }) => (
                 <Form noValidate onSubmit={handleSubmit}>
-                  {/* Pourquoi pas mettre un nom public et privé */}
+                  
                   <Form.Group controlId="validationFormik01">
                     <Form.Label>Nom de la boutique</Form.Label>
                     <Form.Control className="posModalInput"
@@ -319,8 +337,10 @@ class PointOfSale extends React.Component {
       </Modal>
     );
   }
-
+*/
 }
+
+
 
 
 export default PointOfSale;
