@@ -3,10 +3,41 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import './ProfileInfos.css'
-import { FaEdit } from "react-icons/fa";
+import { FaEdit, FaSyncAlt } from "react-icons/fa";
 import { Modal, Form, Button } from "react-bootstrap";
 import { Formik } from 'formik';
 import * as yup from 'yup';
+import { ME } from '../../../../API/user/user'
+import { useQuery } from "@apollo/client";
+
+
+const GetMe = () => {
+  const { data, error, loading} = useQuery(ME);
+
+  if (loading) {
+    console.log(loading)
+
+    return (
+      <div >
+        <FaSyncAlt className="loadContainer"/>
+      </div>
+    )
+  } else if (error) {
+    console.log(error)
+
+    return (
+      <div className="errorContainer">
+        <p>Une erreur s'est produite lors du chargement des données.</p>
+      </div>
+    )
+  } else if (data) {
+    console.log(data)
+    return (
+        <div>OKKKKK</div>
+    )
+  }
+
+};
 
 class ProfileInfos extends React.Component {
 
@@ -30,11 +61,13 @@ class ProfileInfos extends React.Component {
     this.setState({ profile_info_show: false });
   }
 
+  
+
   render() {
     return (
       <Container fluid className="profileInfosContainer shadow"
         style={{ marginBottom: 10 }}>
-
+        <GetMe/>
         <Row >
           <Col xs={10} className="profileInfosTitle">
           /* Informations Personel: */
@@ -213,7 +246,9 @@ class ProfileInfos extends React.Component {
       </Modal>
     );
   }
+
 }
+
 
 
 export default ProfileInfos;
