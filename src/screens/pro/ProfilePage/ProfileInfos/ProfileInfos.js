@@ -18,7 +18,7 @@ const GetMe = () => {
     console.log(loading)
 
     return (
-      <div >
+      <div style={{justifySelf: 'center', width: '100%', backgroundColor: 'blue'}}>
         <FaSyncAlt className="loadContainer"/>
       </div>
     )
@@ -33,7 +33,24 @@ const GetMe = () => {
   } else if (data) {
     console.log(data)
     return (
-        <div>OKKKKK</div>
+      <Row >
+          <Col xs={12} sm={5} md={4} lg={3} xl={2}
+            className='profileInfosPictureCol'>
+            <div className="profileInfosPicture">
+              Brand Photo
+            </div>
+          </Col>
+
+          <Col xs={12} sm={7} md={8} lg={9} xl={10}
+            className='profileInfosCol'>
+            <div className="profileName">
+              {data.me.firstname} {data.me.lastname}
+            </div>
+            <div className="profileInfo">{data.me.email}</div>
+            <div className="profileInfo">{data.me.birthDate}</div>
+            <div className="profileInfo">{data.me.phone}</div>
+          </Col>
+        </Row>
     )
   }
 
@@ -67,10 +84,9 @@ class ProfileInfos extends React.Component {
     return (
       <Container fluid className="profileInfosContainer shadow"
         style={{ marginBottom: 10 }}>
-        <GetMe/>
         <Row >
           <Col xs={10} className="profileInfosTitle">
-          /* Informations Personel: */
+        
           </Col>
           <Col xs={2} className="profileEditRow">
             <FaEdit className="profileEdit"
@@ -79,24 +95,7 @@ class ProfileInfos extends React.Component {
 
         </Row>
 
-        <Row >
-          <Col xs={12} sm={5} md={4} lg={3} xl={2}
-            className='profileInfosPictureCol'>
-            <div className="profileInfosPicture">
-              Brand Photo
-            </div>
-          </Col>
-
-          <Col xs={12} sm={7} md={8} lg={9} xl={10}
-            className='profileInfosCol'>
-            <div className="profileName">
-              {this.state.firstname} {this.state.lastname}
-            </div>
-            <div className="profileInfo">{this.state.email}</div>
-            <div className="profileInfo">{this.state.birthdate}</div>
-            <div className="profileInfo">{this.state.phone_number}</div>
-          </Col>
-        </Row>
+        <GetMe/>
 
         <this.UpdateProfileInfosModal
           show={this.state.profile_info_show}

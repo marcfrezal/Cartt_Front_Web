@@ -10,6 +10,5 @@ export const ME = gql`
                     email,
                     birthDate,
                     phone,
-                    currentBrand { _id, name }
                 }
             }`
