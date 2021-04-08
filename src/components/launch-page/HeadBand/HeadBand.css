@@ -9,7 +9,7 @@
 
 .mainNav {
     height: 9vh;
-    background-image: url('../../../assets/launch-page/Cartt.png');
+    background-image: url('../../../assets/common/Cartt.png');
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
@@ -81,7 +81,7 @@
     .mainNav {
         height: 10vh;
         width: 25vh;
-        background-image: url('../../../assets/launch-page/Cartt.png');
+        background-image: url('../../../assets/common/Cartt.png');
         background-repeat: no-repeat;
         background-size: contain;
         position: relative;

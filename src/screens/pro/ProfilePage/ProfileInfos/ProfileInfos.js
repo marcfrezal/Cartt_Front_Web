@@ -9,51 +9,60 @@ import { Formik } from 'formik';
 import * as yup from 'yup';
 import { ME } from '../../../../API/user/user'
 import { useQuery } from "@apollo/client";
-
+import dateFormat from 'dateformat';
 
 const GetMe = () => {
   const { data, error, loading} = useQuery(ME);
 
   if (loading) {
-    console.log(loading)
-
     return (
-      <div style={{justifySelf: 'center', width: '100%', backgroundColor: 'blue'}}>
+      <div style={{display : "flex", justifyContent : "center", alignItems : "center", width : "100%", color : "lightgray"}}>
         <FaSyncAlt className="loadContainer"/>
       </div>
     )
   } else if (error) {
-    console.log(error)
-
     return (
-      <div className="errorContainer">
+      <div style={{display : "flex", justifyContent : "center", alignItems : "center", width : "100%", color : "lightgray"}}>
         <p>Une erreur s'est produite lors du chargement des données.</p>
       </div>
     )
   } else if (data) {
+    let date = dateFormat(data.me.birthDate, "dd/mm/yyyy")
     console.log(data)
     return (
-      <Row >
-          <Col xs={12} sm={5} md={4} lg={3} xl={2}
-            className='profileInfosPictureCol'>
-            <div className="profileInfosPicture">
-              Brand Photo
-            </div>
+      <Container fluid>
+        <Row>
+          <Col xs={12} sm={5}>
+            <div className="profileInfosPicture"/>
           </Col>
-
-          <Col xs={12} sm={7} md={8} lg={9} xl={10}
-            className='profileInfosCol'>
-            <div className="profileName">
-              {data.me.firstname} {data.me.lastname}
+          <Col xs={12} sm={7}>
+            <div className="profileInfosUser">
+              <div className="fieldUser">
+                <div className="fieldUserTitle">Nom de famille : </div>
+                <div className="fieldUserInfo">{data.me.firstname}</div>
+              </div>
+              <div className="fieldUser">
+                <div className="fieldUserTitle">Prénom : </div>
+                <div className="fieldUserInfo">{data.me.lastname}</div>
+              </div>
+              <div className="fieldUser">
+                <div className="fieldUserTitle">Téléphone : </div>
+                <div className="fieldUserInfo">{data.me.phone}</div>
+              </div>
+              <div className="fieldUser">
+                <div className="fieldUserTitle">E-mail : </div>
+                <div className="fieldUserInfo">{data.me.email}</div>
+              </div>
+              <div className="fieldUser">
+                <div className="fieldUserTitle">Né(e) le : </div>
+                <div className="fieldUserInfo">{date}</div>
+              </div>
             </div>
-            <div className="profileInfo">{data.me.email}</div>
-            <div className="profileInfo">{data.me.birthDate}</div>
-            <div className="profileInfo">{data.me.phone}</div>
           </Col>
         </Row>
+      </Container>
     )
   }
-
 };
 
 class ProfileInfos extends React.Component {
@@ -82,25 +91,14 @@ class ProfileInfos extends React.Component {
 
   render() {
     return (
-      <Container fluid className="profileInfosContainer shadow"
-        style={{ marginBottom: 10 }}>
-        <Row >
-          <Col xs={10} className="profileInfosTitle">
-        
-          </Col>
-          <Col xs={2} className="profileEditRow">
-            <FaEdit className="profileEdit"
-              onClick={() => this._showUpdateProfileInfosModal()} />
-          </Col>
-
+      <Container fluid className="profileInfosContainer shadow">
+        <Row style={{height : "100%"}}>
+          <GetMe/>
         </Row>
-
-        <GetMe/>
-
-        <this.UpdateProfileInfosModal
+        {/* <this.UpdateProfileInfosModal
           show={this.state.profile_info_show}
           item={this.state}
-          onHide={() => this._hideUpdateProfileInfosModal()} />
+          onHide={() => this._hideUpdateProfileInfosModal()} /> */}
       </Container>
     );
   }

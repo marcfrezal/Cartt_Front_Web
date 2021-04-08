@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import SalesHistory from '../../../components/pro/SalesHistory/SalesHistory';
-import Sidebar from '../../../components/common/Sidebar/Sidebar';
+import SidebarAdm from '../../../components/common/SidebarAdmin/SidebarAdm';
 import MounthlyNumbers from '../../../components/pro/MounthlyNumbers/MounthlyNumbers'
 import LastTransactions from '../../../components/pro/LastTransactions/LastTransactions'
 import Growth from '../../../components/pro/Growth/Growth'
@@ -15,7 +15,7 @@ class Dashboard extends React.Component {
     render() {
       return (
         <Container className="containerDashboard" fluid>
-          <Sidebar/>
+          <SidebarAdm/>
           <Row className="headerDashboard">
             <Col>
               <Header title="Dashboard" />

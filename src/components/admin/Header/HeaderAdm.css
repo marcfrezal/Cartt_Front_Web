@@ -1,0 +1,73 @@
+.posHeaderTitleAdm {
+    font-size: 5vh;
+    font-weight: bold;
+    color: #e47c78;
+    font-family: Montserrat;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.posHeaderAdm {
+    font-size: 2vh;
+    color: #e47c78;
+    font-family: Montserrat;
+    font-weight: lighter;
+    font-style: italic;
+}
+
+
+.posHeaderAction {
+    margin-top: 5px;  
+}
+
+
+/*Phones*/
+@media (max-width: 768px) { 
+    .posHeaderTitle {
+        font-size: 25px !important;
+        margin-bottom: 10px;
+        font-weight: bold;
+        color: #183D76;
+        font-family: Montserrat;
+        top: 1vh;
+    }
+
+}
+
+/*Tablet*/
+@media (min-width: 768px) and (max-width: 992px)  {
+    
+    .posHeaderTitle {
+        font-size: 4vh !important;
+        font-weight: bold;
+        color: #183D76;
+    
+        height: 10vh;
+        font-family: Montserrat;
+    }
+
+    .posHeaderAction {
+        margin-top: 10px;  
+    }
+}
+
+/*Desktop*/
+@media (min-width: 992px) {  
+    .posHeaderTitle {
+        font-size: 5vh !important;
+        font-weight: bold;
+        color: #183D76;
+    
+        font-family: Montserrat;
+    }
+
+    .posHeaderAction {
+        margin-top: 10px;  
+    }
+}
+
+/*Large Desktops*/
+@media (min-width: 1200px) {  
+
+}

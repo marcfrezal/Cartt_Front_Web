@@ -42,6 +42,7 @@ const PosList = () => {
       </div>
     )
   } else if (data && data.getStores.length !== 0) {
+    console.log(data.getStores);
     return (
       <div className="containerStoresList" >
         {data.getStores.map((pos, index) => (
@@ -54,7 +55,7 @@ const PosList = () => {
                 <div className="posItemTitle">{pos.name}</div>
               </Row>
               <Row className="colListText">
-                <div className="posItemAddress">id : {pos._id}</div>
+                <div className="posItemAddress">{pos.location.adress1} {pos.location.postcode} {pos.location.city}</div>
               </Row>
             </Col>
           </Row>

@@ -1,0 +1,17 @@
+.rowHeaderProfil {
+    height: 10vh;
+}
+
+.rowUserInfos {
+    height: 50vh;
+}
+
+.rowInfosProfil {
+    background-color: blue;
+    height: 20vh;
+}
+
+.containerProfileInfos {
+    height: 100vh;
+    background-color: #f9fafd;
+}

@@ -4,7 +4,7 @@ import Col from 'react-bootstrap/Col';
 import {Button, Modal} from 'react-bootstrap';
 import React from "react";
 import { useState } from "react";
-import './Sidebar.css';
+import './SidebarAdm.css';
 import { FaBars } from 'react-icons/fa';
 import { FaChartLine } from 'react-icons/fa';
 import { FaCog } from 'react-icons/fa';
@@ -52,7 +52,7 @@ function LogoutModal () {
 
   return (
     <div>
-      <div className="sideBarItem" onClick={handleShow} >
+      <div className="sideBarItemAdm" onClick={handleShow} >
         <FaSignOutAlt className="sideBarIcon" alt="logout" />
       </div>
 
@@ -72,7 +72,7 @@ function LogoutModal () {
   );
 }
 
-class Sidebar extends React.Component {
+class SidebarAdm extends React.Component {
 
   constructor(props) {
     super(props);
@@ -85,15 +85,15 @@ class Sidebar extends React.Component {
   }
 
   componentDidMount() {
-    if (window.location.pathname === "/dashboard") {
+    if (window.location.pathname === "/adm/dashboard") {
       this.setState({
         dashboard : true
       })
-    } else if (window.location.pathname === "/points-of-sale") {
+    } else if (window.location.pathname === "/adm/points-of-sale") {
       this.setState({
         shops : true
       })
-    } else if (window.location.pathname === "/profile") {
+    } else if (window.location.pathname === "/adm/profile") {
       this.setState({
         settings : true
       })
@@ -102,17 +102,17 @@ class Sidebar extends React.Component {
 
     render() {
       return (
-          <Container className="sideBarBody ">
-              <Row  className="sideBarRow">
-                <Col className="sideBarCol">
+          <Container className="sideBarBodyAdm ">
+              <Row  className="sideBarRowAdm">
+                <Col className="sideBarColAdm">
                   <div className="sideBarBurger">
                     <FaBars className="sideBarIconBurger"/>
                   </div>
                 </Col>
               </Row>
               <Row className="sideBarRow">
-                <Col className="sideBarCol">
-                  <Link to="/dashboard" className={this.state.dashboard ? 'sideBarItemActive' : 'sideBarItem'} >
+                <Col className="sideBarColAdm">
+                  <Link to="/adm/dashboard" className={this.state.dashboard ? 'sideBarItemActiveAdm' : 'sideBarItemAdm'} >
                     <div className="sideBarIcon">
                       <FaChartLine />
                     </div>
@@ -120,8 +120,8 @@ class Sidebar extends React.Component {
                 </Col>
               </Row>
               <Row className="sideBarRow">
-                <Col className="sideBarCol">
-                  <Link to="/points-of-sale" className={this.state.shops ? 'sideBarItemActive' : 'sideBarItem'} >
+                <Col className="sideBarColAdm">
+                  <Link to="/adm/points-of-sale" className={this.state.shops ? 'sideBarItemActiveAdm' : 'sideBarItemAdm'} >
                     <div className="sideBarIcon">
                       <FaStoreAlt />
                     </div>
@@ -129,8 +129,8 @@ class Sidebar extends React.Component {
                 </Col>
               </Row>
               <Row className="sideBarRow">
-                <Col className="sideBarCol">
-                  <Link to="/profile" className={this.state.settings ? 'sideBarItemActive' : 'sideBarItem'} >
+                <Col className="sideBarColAdm">
+                  <Link to="/adm/profile" className={this.state.settings ? 'sideBarItemActiveAdm' : 'sideBarItemAdm'} >
                       <div className="sideBarIcon">
                         <FaCog className="fa-spin"/>
                       </div>
@@ -138,19 +138,15 @@ class Sidebar extends React.Component {
                 </Col>
               </Row>
               <Row className="sideBarRow">
-                <Col className="sideBarCol">
-                  <div>{this.state.dashboard}</div>
-                  
+                <Col className="sideBarColAdm">                  
                 </Col>
               </Row>
               <Row className="sideBarRow">
-                <Col className="sideBarCol">
-                  <div>{this.state.dashboard}</div>
-                
+                <Col className="sideBarColAdm">
                 </Col>
               </Row>
-              <Row className="sideBarRow">
-                <Col className="sideBarCol">
+              <Row className="sideBarRowAdm">
+                <Col className="sideBarColAdm">
                   <LogoutModal/>
                 </Col>
               </Row>
@@ -161,4 +157,4 @@ class Sidebar extends React.Component {
 
 
 
-export default Sidebar;
+export default SidebarAdm;

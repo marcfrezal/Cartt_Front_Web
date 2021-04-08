@@ -1,0 +1,79 @@
+.sideBarBodyAdm {
+    z-index: 999;
+    background-color:#ffeeee;
+    width: 5vw !important;
+    position: fixed;
+    left: 0 !important;
+    height: 100% !important;
+}
+
+.sideBarColAdm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#fff7f7;
+
+}
+
+.sideBarRowAdm {
+    height: 14.3% !important;
+    background-color:#fff7f7;
+}
+
+.sideBarItemAdm {
+    height: 5vh;
+    width: 5vh;
+    border-radius: 1vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    transition: 0.3s;
+    color: lightgrey !important;
+}
+
+.sideBarBurger {
+    height: 5vh;
+    width: 5vh;
+    border-radius: 1vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    transition: 0.3s;
+    color: lightgrey;
+}
+
+.sideBarIconBurger:hover {
+    cursor: pointer;
+    font-size: 2.6vh;
+}
+
+.sideBarItemAdm:hover {
+    color: white !important;
+    background-color: #FFBDBB;
+    cursor: pointer;
+}
+
+.sideBarIcon {
+    font-size : 2.2vh;
+}
+
+.sideBarIconActive {
+    font-size : 2.2vh;
+}
+
+.sideBarIconBurger {
+    font-size : 2.2vh;
+}
+
+.sideBarItemActiveAdm {
+    height: 5vh;
+    width: 5vh;
+    border-radius: 1vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    transition: 0.3s;
+    color: white !important;
+    background-color: #FFBDBB;
+    cursor: pointer;
+}

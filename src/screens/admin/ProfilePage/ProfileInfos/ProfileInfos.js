@@ -3,217 +3,225 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import './ProfileInfos.css'
-import { FaEdit } from "react-icons/fa";
+import { FaPen, FaSyncAlt } from "react-icons/fa";
 import { Modal, Form, Button } from "react-bootstrap";
-import { Formik } from 'formik';
-import * as yup from 'yup';
+import { ME } from '../../../../API/user/user';
+import { UPDATEUSER } from '../../../../API/user/user';
+import { useQuery, useMutation } from "@apollo/client";
+import dateFormat from 'dateformat';
+import { useState } from "react";
+
+function ValidateInfosUser(props)  {
+  const [ updateUser, {data, error : mutationError, loading : mutationLoading} ] = useMutation(UPDATEUSER);
+  let firstname = "";
+  let lastname = "";
+  let mail = "";
+  let phone = "";
+
+  if (props.newfirstname === "")
+    firstname = props.data.me.firstname;
+  else
+    firstname = props.newfirstname;
+  
+  if (props.newlastname === "")
+    lastname = props.data.me.lastname;
+  else
+    lastname = props.newlastname;
+
+  if (props.newphone === "")
+    phone = props.data.me.phone;
+  else
+    phone = props.newphone;
+
+  if (props.newfirstname === "")
+    firstname = props.data.me.firstname;
+  else
+    firstname = props.newfirstname;
+
+  if (mutationLoading) {
+    return (
+      <div className="errorLogin">
+        <div className="btnCol">
+          <Button style={{backgroundColor : "#0E3670", border : "none"}}>Patientez...</Button>
+        </div>
+      </div>
+    )
+  }
+  if (mutationError) {
+    return (
+      <div className="errorLogin">
+        <div className="btnCol">
+          <Button onClick={() => updateUser({variables : {user : {_id : props.data.me._id, firstname : firstname, lastname : lastname, phone : phone}}}).catch(err => console.log(err))} style={{backgroundColor : "#0E3670", border : "none"}}>Valider</Button>
+        </div>
+        <p className="errorMess">Erreur. Mauvais username/e-mail ou mot de passe.</p>
+      </div>
+    )
+  }
+  if (data) {
+    window.location.reload();
+  }
+  return (
+    <Button onClick={() => updateUser({variables : {user : {_id : props.data.me._id, firstname : firstname, lastname : lastname, phone : phone}}}).catch(err => console.log(err))} style={{backgroundColor : "#0E3670", border : "none"}} >Valider</Button>
+  )
+}
+
+const UpdateInfosUser = (props) => {
+  const { data, error, loading} = useQuery(ME);
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [tel, setTel] = useState('');
+  const [mail, setMail] = useState('');
+
+
+  if (loading) {
+    return (
+      <div style={{display : "flex", justifyContent : "center", alignItems : "center", width : "100%", color : "lightgray"}}>
+        <FaSyncAlt className="loadContainer"/>
+      </div>
+    )
+  } else if (error || data.me.role !== "ADMIN") {
+    return (
+      <div style={{display : "flex", justifyContent : "center", alignItems : "center", width : "100%", color : "lightgray"}}>
+        <p>Une erreur s'est produite lors du chargement des données ou alors vous n'avez pas les droits nécessaires.</p>
+      </div>
+    )
+  } else if (data) {
+    if (data.me.role !== "ADMIN") {
+      return (
+        <div style={{display : "flex", justifyContent : "center", alignItems : "center", width : "100%", color : "lightgray"}}>
+          <p>Vous n'avez pas accès à ces informations.</p>
+        </div>
+      )
+    }
+    return (
+      <Container fluid>
+        <Form.Group>
+          <Form.Label>Nom</Form.Label>
+          <Form.Control type="email" placeholder={data.me.firstname} onChange={e => setFirstName(e.target.value)} />
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Prénom</Form.Label>
+          <Form.Control type="email" placeholder={data.me.lastname} onChange={e => setLastName(e.target.value)}/>
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Téléphone</Form.Label>
+          <Form.Control type="email" placeholder={data.me.phone} onChange={e => setTel(e.target.value)} />
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Mail</Form.Label>
+          <Form.Control type="email" style={{color : "red !important"}} placeholder={data.me.email} onChange={e => setMail(e.target.value)}/>
+        </Form.Group>
+        <Modal.Footer>
+          <Button style={{backgroundColor : "#E50815", border : "none"}} onClick={props.handleClose}>
+            Fermer
+          </Button>
+          <ValidateInfosUser data={data} newmail={mail} newfirstname={firstName} newlastname={lastName} newphone={tel}/>
+        </Modal.Footer>
+      </Container>
+    )
+  }
+};
+
+function LogoutModal () {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  return (
+    <div>
+      <div className="profileInfosUpdateUserAdm">
+        <FaPen className="updateUserInfoIconAdm" onClick={handleShow} />
+      </div>
+
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Modifiez vos informations personnelles.</Modal.Title>
+        </Modal.Header>
+          <UpdateInfosUser handleClose={handleClose}/>
+      </Modal>
+    </div>
+  );
+}
+
+const GetMe = () => {
+  const { data, error, loading} = useQuery(ME);
+
+  console.log(data);
+  if (loading) {
+    return (
+      <div style={{display : "flex", justifyContent : "center", alignItems : "center", width : "100%", color : "lightgray"}}>
+        <FaSyncAlt className="loadContainer"/>
+      </div>
+    )
+  } else if (error || data.me.role !== "ADMIN") {
+    console.log(error);
+    return (
+      <div style={{display : "flex", justifyContent : "center", alignItems : "center", width : "100%", color : "lightgray"}}>
+        <p>Une erreur s'est produite lors du chargement des données ou alors vous n'avez pas les droits nécessaires.</p>
+      </div>
+    )
+  } else if (data) {
+    if (data.me.role !== "ADMIN") {
+      return (
+        <div style={{display : "flex", justifyContent : "center", alignItems : "center", width : "100%", color : "lightgray"}}>
+          <p>Vous n'avez pas accès à ces informations.</p>
+        </div>
+      )
+    }
+    let date = dateFormat(data.me.birthDate, "dd/mm/yyyy")
+    return (
+      <Container fluid>
+        <Row>
+          <Col xs={12} sm={5}>
+            <div className="profileInfosPictureAdm"/>
+          </Col>
+          <Col xs={12} sm={5}>
+            <div className="profileInfosUserAdm">
+              <div className="fieldUser">
+                <div className="fieldUserTitle">Nom de famille : </div>
+                <div className="fieldUserInfoAdm">{data.me.firstname}</div>
+              </div>
+              <div className="fieldUser">
+                <div className="fieldUserTitle">Prénom : </div>
+                <div className="fieldUserInfoAdm">{data.me.lastname}</div>
+              </div>
+              <div className="fieldUser">
+                <div className="fieldUserTitle">Téléphone : </div>
+                <div className="fieldUserInfoAdm">{data.me.phone}</div>
+              </div>
+              <div className="fieldUser">
+                <div className="fieldUserTitle">E-mail : </div>
+                <div className="fieldUserInfoAdm">{data.me.email}</div>
+              </div>
+              <div className="fieldUser">
+                <div className="fieldUserTitle">Né(e) le : </div>
+                <div className="fieldUserInfoAdm">{date}</div>
+              </div>
+            </div>
+          </Col>
+          <Col xs={12} sm={2}>
+            <LogoutModal/>
+          </Col>
+        </Row>
+      </Container>
+    )
+  }
+};
 
 class ProfileInfos extends React.Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      firstname: "Paul",
-      lastname: "Vitry",
-      email: "paul@email.com",
-      birthdate: "31/12/1998",
-      phone_number: "0698989898",
-      profile_info_show: false,
-    };
-  }
-
-  _showUpdateProfileInfosModal = () => {
-    this.setState({ profile_info_show: true });
-  }
-
-  _hideUpdateProfileInfosModal = () => {
-    this.setState({ profile_info_show: false });
-  }
-
   render() {
     return (
-      <Container fluid className="profileInfosContainer shadow"
-        style={{ marginBottom: 10 }}>
-
-        <Row >
-          <Col xs={10} className="profileInfosTitle">
-          /* Informations Personel: */
-          </Col>
-          <Col xs={2} className="profileEditRow">
-            <FaEdit className="profileEdit"
-              onClick={() => this._showUpdateProfileInfosModal()} />
-          </Col>
-
+      <Container fluid className="profileInfosContainer shadow">
+        <Row style={{height : "100%"}}>
+          <GetMe/>
         </Row>
-
-        <Row >
-          <Col xs={12} sm={5} md={4} lg={3} xl={2}
-            className='profileInfosPictureCol'>
-            <div className="profileInfosPicture">
-              Brand Photo
-            </div>
-          </Col>
-
-          <Col xs={12} sm={7} md={8} lg={9} xl={10}
-            className='profileInfosCol'>
-            <div className="profileName">
-              {this.state.firstname} {this.state.lastname}
-            </div>
-            <div className="profileInfo">{this.state.email}</div>
-            <div className="profileInfo">{this.state.birthdate}</div>
-            <div className="profileInfo">{this.state.phone_number}</div>
-          </Col>
-        </Row>
-
-        <this.UpdateProfileInfosModal
-          show={this.state.profile_info_show}
-          item={this.state}
-          onHide={() => this._hideUpdateProfileInfosModal()} />
       </Container>
     );
   }
-
-  UpdateProfileInfosModal(props) {
-
-    const schema = yup.object().shape({
-      firstname: yup.string().required(),
-      lastname: yup.string().required(),
-      email: yup.string().required(),
-      birthdate: yup.string().required(),
-      phone_number: yup.string().required(),
-    });
-
-    return (
-      <Modal
-        {...props}
-        size="lg"
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
-      >
-        <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">
-            Informations Personel :
-            </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-
-          <Formik
-            validationSchema={schema}
-            initialValues={{
-              firstname: props.item.firstname,
-              lastname: props.item.lastname,
-              email: props.item.email,
-              birthdate: props.item.birthdate,
-              phone_number: props.item.phone_number,
-            }}
-            onSubmit={(values, actions) => {
-              actions.setSubmitting(true);
-              setTimeout(() => {
-                alert(JSON.stringify(values, null, 2));
-                actions.resetForm({
-                  firstname: "",
-                  lastname: "",
-                  email: "",
-                  birthdate: "",
-                  phone_number: "",
-                });
-                actions.setSubmitting(false);
-              }, 2000);
-            }}
-          >
-            {({
-              handleSubmit,
-              handleChange,
-              handleBlur,
-              values,
-              touched,
-              errors,
-              isSubmitting,
-            }) => (
-                <Form noValidate onSubmit={handleSubmit}>
-
-                  <Form.Row>
-                    <Form.Group xs={12} sm={4} as={Col} controlId="formGridText">
-                      <Form.Label>Prénom :</Form.Label>
-                      <Form.Control className="posModalInput"
-                        placeholder={props.item.firstname}
-                        onChange={handleChange}
-                        name="firstname"
-                        value={values.firstname}
-                        onBlur={handleBlur}
-                        isValid={touched.firstname && !errors.firstname}
-                        isInvalid={!!errors.firstname} />
-                    </Form.Group>
-
-                    <Form.Group xs={12} sm={4} as={Col} controlId="formGridText">
-                      <Form.Label>Nom :</Form.Label>
-                      <Form.Control className="posModalInput"
-                        placeholder={props.item.lastname}
-                        onChange={handleChange}
-                        name="lastname"
-                        value={values.lastname}
-                        onBlur={handleBlur}
-                        isValid={touched.lastname && !errors.lastname}
-                        isInvalid={!!errors.lastname} />
-                    </Form.Group>
-
-                    <Form.Group xs={12} sm={4} as={Col} controlId="formGridBirthdate">
-                      <Form.Label>Date de naissance :</Form.Label>
-                      <Form.Control className="posModalInput"
-                        placeholder={props.item.birthdate}
-                        onChange={handleChange}
-                        name="birthdate"
-                        value={values.birthdate}
-                        onBlur={handleBlur}
-                        isValid={touched.birthdate && !errors.birthdate}
-                        isInvalid={!!errors.birthdate} />
-                    </Form.Group>
-
-                  </Form.Row>
-
-                  <Form.Group controlId="email">
-                    <Form.Label>Email :</Form.Label>
-                    <Form.Control className="posModalInput"
-                      placeholder={props.item.email}
-                      onChange={handleChange}
-                      name="email"
-                      value={values.email}
-                      onBlur={handleBlur}
-                      isValid={touched.email && !errors.email}
-                      isInvalid={!!errors.email} />
-                  </Form.Group>
-
-                  <Form.Group controlId="formGridPhone">
-                    <Form.Label>Téléphone :</Form.Label>
-                    <Form.Control className="posModalInput"
-                      placeholder={props.item.phone_number}
-                      onChange={handleChange}
-                      name="phone_number"
-                      value={values.phone_number}
-                      onBlur={handleBlur}
-                      isValid={touched.phone_number && !errors.phone_number}
-                      isInvalid={!!errors.phone_number} />
-                  </Form.Group>
-
-                  <Row>
-                    <Button style={{ flex: 1 }}
-                      className="cancel"
-                      onClick={props.onHide}>Annuler</Button>
-                    <Button style={{ flex: 1 }}
-                      type='submit' disabled={isSubmitting}
-                      className="validate">Valider</Button>
-                  </Row>
-
-                </Form>
-              )}
-          </Formik>
-
-        </Modal.Body>
-     
-      </Modal>
-    );
-  }
 }
+
 
 
 export default ProfileInfos;

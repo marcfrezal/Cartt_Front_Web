@@ -15,12 +15,11 @@ class InfosStoreEnseigne extends React.Component {
   render() {
     return (
       <Container fluid className="infosStoreEnseigneContainer">
-        <Row >
-          <Col xs={12} sm={6} className="infoStoreEnseignCol">
-            {this.renderItem("Point de vente", "0")}
-
+        <Row className="rowProfilInfosItemsPro">
+          <Col className="infoStoreEnseignCol">
+            {this.renderItem("Point de ventes", "0")}
           </Col>
-          <Col xs={12} sm={6} className="infoStoreEnseignCol">
+          <Col className="infoStoreEnseignCol">
             {this.renderItem("Enseignes" ,"1")}
           </Col>
         </Row>

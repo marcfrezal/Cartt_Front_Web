@@ -1,0 +1,77 @@
+.addFunctionBrandAdmContainer {
+    height: 10%;
+    width: 100%;
+    color: #FFBDBB;
+    font-family: 'Montserrat';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1vh;
+    border : 3px #FFBDBB solid;
+}
+
+.addFunctionBrandAdmContainer:hover {
+    transform: scale(1.01);
+    cursor: pointer;
+    background-color: #FFBDBB;
+    color: white;
+    transition: all 0.2s;
+}
+
+.addFunctionBrandAdmContainer:active {
+    background-color: whitesmoke;
+}
+
+.closeModalBtnAdmin {
+    background-color: #E47C78;
+    color: white;
+    font-family: 'Montserrat';
+    border : 2px #E47C78 solid;
+
+}
+
+.saveModalBtnAdmin {
+    background-color: white;
+    color: #E47C78;
+    font-family: 'Montserrat';
+    border : 2px #E47C78 solid;
+}
+
+.closeModalBtnAdmin:hover {
+    background-color: #c26a66;
+    color: white;
+    font-family: 'Montserrat';
+    border : 2px #c26a66 solid;
+    cursor: pointer;
+
+}
+
+.saveModalBtnAdmin:hover {
+    background-color: whitesmoke;
+    color: #E47C78;
+    font-family: 'Montserrat';
+    border : 2px #E47C78 solid;
+    cursor: pointer;
+
+}
+
+/*Phones*/
+@media (min-width: 576px) { 
+
+}
+
+/*Tablet*/
+@media (min-width: 768px) and (max-width: 992px)  {
+    
+
+}
+
+/*Desktop*/
+@media (min-width: 992px) {  
+
+}
+
+/*Large Desktops*/
+@media (min-width: 1200px) {  
+
+}

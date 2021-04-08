@@ -12,3 +12,15 @@ export const ME = gql`
                     phone,
                 }
             }`
+
+export const UPDATEUSER = gql`
+            mutation updateUser($user : UserUpdateSchema!) {
+                updateUser(user : $user) {
+                _id, 
+                role, 
+                email, 
+                firstname,
+                lastname,
+                phone
+                } 
+            }`

@@ -1,0 +1,11 @@
+.brandListAdmContainer {
+    height: 100%;
+    color: lightgrey;
+    font-family: 'Montserrat';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1vh;
+    background-color: white;
+    margin-top: 2vh;
+}

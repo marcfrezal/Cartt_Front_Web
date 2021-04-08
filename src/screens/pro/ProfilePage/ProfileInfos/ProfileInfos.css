@@ -1,8 +1,9 @@
 .profileInfosContainer {
     background-color: white !important;
-    border-radius: 20px;
-    margin-top: 20px;
+    border-radius: 2vh;
+    height: 45vh;
     padding: 10px;
+    z-index: 992;
 }
 
 .profileInfosTitle {
@@ -25,27 +26,33 @@
     width: 25px;
 
 }
+
 .profileInfosPictureCol {
     justify-content: center;
     display: flex;
 }
 
-
 .profileInfosPicture {
-    background-image: url('../../../../assets/pro/card-background/card-bg-pink.png');
-    border-radius: 15px;
-    height: 175px;
-    width: 175px;
-    /* align-self: center;
-    justify-self: center;
-    justify-content: center;
-    align-items: center; */
+    background-image: url('../../../../assets/launch-page/marc.png');
+    border-radius: 2vh;
+    height: 20vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    width: 100%;
+    border: 5px solid #0E3570;
 }
 
+.profileInfosUser {
+    height: 20vh;
+    width: 100%;
+    margin-top: 2vh;
+}
 
 .profileName {
     color: #0E3570 !important;
-    font-size: 25px;
+    font-size: 3vh;
     font-weight: 400;
     display: flex;
     font-family: Montserrat;
@@ -59,3 +66,59 @@
     font-family: Montserrat;
 }
 
+.profileInfosCol {
+    background-color: red;
+    font-size: 2vh;
+}
+
+.infoTitleUser {
+    font-weight: 900;
+    color: lightgrey;
+}
+
+.fieldUser {
+    display: flex;
+    height: 4vh;
+
+}
+
+.fieldUserTitle {
+    color: darkgrey !important;
+    font-size: 2vh;
+    font-weight: 900;
+    display: flex;
+    font-family: Montserrat;
+}
+
+.fieldUserInfo {
+    margin-left: 2vh;
+    color: #0E3570 !important;
+    font-size: 2vh;
+    font-weight: 400;
+    font-family: Montserrat;
+}
+
+/*Phones*/
+@media (min-width: 576px) { 
+
+}
+
+/*Tablet*/
+@media (min-width: 768px) and (max-width: 992px)  {
+
+}
+
+/*Desktop*/
+@media (min-width: 992px) {  
+    
+    .profileInfosPicture {
+        background-image: url('../../../../assets/launch-page/marc.png');
+        height: 42vh;
+        width: 100%;
+    }
+}
+
+/*Large Desktops*/
+@media (min-width: 1200px) {  
+
+}
