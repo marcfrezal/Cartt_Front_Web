@@ -20,17 +20,17 @@ class PointsOfSaleAdm extends React.Component {
     return (
       <Container fluid style={{ height : "100vh", backgroundColor: "#fff7f7" }}>
         <SidebarAdm />
-        <Row style={{ height : "100%"}}>
-          <Col xs={1} lg={1}></Col>
-          <Col xs={11} lg={11}>
+        <Row style={{ height : "100%", backgroundColor: "#fff7f7"}}>
+          <Col xs={1} lg={1} style={{backgroundColor: "#fff7f7"}}></Col>
+          <Col xs={11} lg={11} style={{backgroundColor: "#fff7f7"}}>
             <HeaderAdm title="Points de vente et marques"/>
-            <Container fluid style={{ height : "90%"}}>
-              <Row style={{ height : "100%"}}>
-                <Col style={{ height : "100%", padding : "5vh", display : "flex", alignItems : "center", flexDirection : "column"}}>
+            <Container fluid style={{ height : "90%", backgroundColor: "#fff7f7"}}>
+              <Row style={{ height : "100%", backgroundColor: "#fff7f7"}}>
+                <Col style={{ height : "100%", padding : "5vh", display : "flex", alignItems : "center", flexDirection : "column", backgroundColor: "#fff7f7"}}>
                   <CreateBrand/>
                   <BrandListAndManagement/>
                 </Col>
-                <Col style={{ height : "100%", padding : "5vh", display : "flex", alignItems : "center", flexDirection : "column"}}>
+                <Col style={{ height : "100%", padding : "5vh", display : "flex", alignItems : "center", flexDirection : "column", backgroundColor: "#fff7f7"}}>
                   <CreateStore/>
                   <BrandListAndManagement/>
                 </Col>
@@ -76,6 +76,7 @@ function CreateBrand(){
             <Form.Label>Mail</Form.Label>
             <Form.Control type="email" style={{color : "red !important"}}/>
           </Form.Group>
+          
         </Modal.Body>
         <Modal.Footer>
           <Button className="closeModalBtnAdmin" onClick={handleClose}>

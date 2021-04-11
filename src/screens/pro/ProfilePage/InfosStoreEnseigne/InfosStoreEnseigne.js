@@ -89,7 +89,7 @@ class InfosStoreEnseigne extends React.Component {
   render() {
     return (
       <Container fluid className="infosStoreEnseigneContainer">
-        <Row className="rowProfilInfosItemsPro">
+        <Row className="rowProfilInfosItems">
           <Col className="infoStoreEnseignCol">
             <GetStores/>
           </Col>
