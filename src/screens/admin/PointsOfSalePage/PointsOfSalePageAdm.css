@@ -23,35 +23,35 @@
 }
 
 .closeModalBtnAdmin {
-    background-color: #E47C78;
-    color: white;
-    font-family: 'Montserrat';
-    border : 2px #E47C78 solid;
+    background-color: #E47C78 !important;
+    color: white !important;
+    font-family: 'Montserrat' !important;
+    border : 2px #E47C78 solid !important;
 
 }
 
 .saveModalBtnAdmin {
-    background-color: white;
-    color: #E47C78;
-    font-family: 'Montserrat';
-    border : 2px #E47C78 solid;
+    background-color: white !important;
+    color: #E47C78 !important;
+    font-family: 'Montserrat' !important;
+    border : 2px #E47C78 solid !important;
 }
 
 .closeModalBtnAdmin:hover {
-    background-color: #c26a66;
-    color: white;
-    font-family: 'Montserrat';
-    border : 2px #c26a66 solid;
-    cursor: pointer;
+    background-color: #c26a66 !important;
+    color: white !important;
+    font-family: 'Montserrat' !important;
+    border : 2px #c26a66 solid !important;
+    cursor: pointer !important;
 
 }
 
 .saveModalBtnAdmin:hover {
-    background-color: whitesmoke;
-    color: #E47C78;
-    font-family: 'Montserrat';
-    border : 2px #E47C78 solid;
-    cursor: pointer;
+    background-color: whitesmoke !important;
+    color: #E47C78 !important;
+    font-family: 'Montserrat' !important;
+    border : 2px #E47C78 solid !important;
+    cursor: pointer !important;
 
 }
 

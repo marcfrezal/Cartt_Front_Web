@@ -15,7 +15,7 @@ class InfosStoreEnseigne extends React.Component {
   render() {
     return (
       <Container fluid className="infosStoreEnseigneContainer">
-        <Row className="rowProfilInfosItemsPro">
+        <Row className="rowProfilInfosItems">
           <Col className="infoStoreEnseignCol">
             {this.renderItem("Point de ventes", "0")}
           </Col>
