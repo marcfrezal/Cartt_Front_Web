@@ -32,10 +32,10 @@ const GetMe = () => {
     return (
       <Container fluid>
         <Row>
-          <Col xs={12} sm={5}>
+          <Col xs={12} sm={12} md={5}>
             <div className="profileInfosPicture"/>
           </Col>
-          <Col xs={12} sm={7}>
+          <Col xs={12} sm={12} md={7}>
             <div className="profileInfosUser">
               <div className="fieldUser">
                 <div className="fieldUserTitle">Nom de famille : </div>
