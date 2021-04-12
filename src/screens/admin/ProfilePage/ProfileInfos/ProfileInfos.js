@@ -42,7 +42,7 @@ function ValidateInfosUser(props)  {
     return (
       <div className="errorLogin">
         <div className="btnCol">
-          <Button style={{backgroundColor : "#0E3670", border : "none"}}>Patientez...</Button>
+          <Button className="saveModalBtnAdmin">Patientez...</Button>
         </div>
       </div>
     )
@@ -51,9 +51,9 @@ function ValidateInfosUser(props)  {
     return (
       <div className="errorLogin">
         <div className="btnCol">
-          <Button onClick={() => updateUser({variables : {user : {_id : props.data.me._id, firstname : firstname, lastname : lastname, phone : phone}}}).catch(err => console.log(err))} style={{backgroundColor : "#0E3670", border : "none"}}>Valider</Button>
+          <Button className="saveModalBtnAdmin" onClick={() => updateUser({variables : {user : {_id : props.data.me._id, firstname : firstname, lastname : lastname, phone : phone}}}).catch(err => console.log(err))}>Valider</Button>
         </div>
-        <p className="errorMess">Erreur. Mauvais username/e-mail ou mot de passe.</p>
+        <p className="errorMess">Erreur.</p>
       </div>
     )
   }
@@ -61,7 +61,7 @@ function ValidateInfosUser(props)  {
     window.location.reload();
   }
   return (
-    <Button onClick={() => updateUser({variables : {user : {_id : props.data.me._id, firstname : firstname, lastname : lastname, phone : phone}}}).catch(err => console.log(err))} style={{backgroundColor : "#0E3670", border : "none"}} >Valider</Button>
+    <Button className="saveModalBtnAdmin" onClick={() => updateUser({variables : {user : {_id : props.data.me._id, firstname : firstname, lastname : lastname, phone : phone}}}).catch(err => console.log(err))}>Valider</Button>
   )
 }
 
@@ -112,7 +112,7 @@ const UpdateInfosUser = (props) => {
           <Form.Control type="email" style={{color : "red !important"}} placeholder={data.me.email} onChange={e => setMail(e.target.value)}/>
         </Form.Group>
         <Modal.Footer>
-          <Button style={{backgroundColor : "#E50815", border : "none"}} onClick={props.handleClose}>
+          <Button className="closeModalBtnAdmin" onClick={props.handleClose}>
             Fermer
           </Button>
           <ValidateInfosUser data={data} newmail={mail} newfirstname={firstName} newlastname={lastName} newphone={tel}/>

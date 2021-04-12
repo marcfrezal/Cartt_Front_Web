@@ -38,7 +38,7 @@ function LogoutFunction () {
   }
 
   return (
-    <Button style={{backgroundColor : "#0E3670", border : "none"}} onClick={() => updateLogout().catch(err => console.log(err))} >
+    <Button className="saveModalBtnAdmin" onClick={() => updateLogout().catch(err => console.log(err))} >
       Valider
     </Button>
   )
@@ -62,7 +62,7 @@ function LogoutModal () {
         </Modal.Header>
         <Modal.Body>Vous vous appretez à vous déconnecter, etes-vous sur de vouloir poursuivre?</Modal.Body>
         <Modal.Footer>
-          <Button style={{backgroundColor : "#E50815", border : "none"}} onClick={handleClose}>
+          <Button className="closeModalBtnAdmin" onClick={handleClose}>
             Fermer
           </Button>
           <LogoutFunction/>

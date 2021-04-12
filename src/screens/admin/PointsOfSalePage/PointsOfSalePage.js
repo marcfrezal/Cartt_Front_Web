@@ -7,7 +7,10 @@ import SidebarAdm from '../../../components/common/SidebarAdmin/SidebarAdm';
 import { Modal, Button, Form } from "react-bootstrap";
 import HeaderAdm from '../../../components/admin/Header/HeaderAdm';
 import BrandListAndManagement from '../../../components/admin/BrandListAndManagement/BrandListAndManagement';
+import StoreListAndManagement from '../../../components/admin/StoreListAndManagement/StoreListAndManagement';
 import { useState } from "react";
+import { CREATEBRAND } from '../../../API/brands/brands';
+import { useQuery, useMutation } from '@apollo/react-hooks';
 
 
 class PointsOfSaleAdm extends React.Component {
@@ -20,10 +23,10 @@ class PointsOfSaleAdm extends React.Component {
     return (
       <Container fluid style={{ height : "100vh", backgroundColor: "#fff7f7" }}>
         <SidebarAdm />
-        <Row style={{ height : "100%", backgroundColor: "#fff7f7"}}>
-          <Col xs={1} lg={1} style={{backgroundColor: "#fff7f7"}}></Col>
-          <Col xs={11} lg={11} style={{backgroundColor: "#fff7f7"}}>
-            <HeaderAdm title="Points de vente et marques"/>
+        <Row style={{ height : "100%", backgroundColor: "red"}}>
+          <Col xs={1} lg={1} style={{height : "100%", backgroundColor: "#fff7f7"}}></Col>
+          <Col xs={11} lg={11} style={{ height : "100%", backgroundColor: "#fff7f7"}}>
+            <HeaderAdm title="Points de ventes et marques"/>
             <Container fluid style={{ height : "90%", backgroundColor: "#fff7f7"}}>
               <Row style={{ height : "100%", backgroundColor: "#fff7f7"}}>
                 <Col style={{ height : "100%", padding : "5vh", display : "flex", alignItems : "center", flexDirection : "column", backgroundColor: "#fff7f7"}}>
@@ -32,10 +35,10 @@ class PointsOfSaleAdm extends React.Component {
                 </Col>
                 <Col style={{ height : "100%", padding : "5vh", display : "flex", alignItems : "center", flexDirection : "column", backgroundColor: "#fff7f7"}}>
                   <CreateStore/>
-                  <BrandListAndManagement/>
+                  <StoreListAndManagement/>
                 </Col>
               </Row>
-            </Container>
+            </Container> 
           </Col>
         </Row>
       </Container>
@@ -43,8 +46,42 @@ class PointsOfSaleAdm extends React.Component {
   }
 }
 
-function CreateBrand(){
+
+function ValidateCreaBrand(props)  {
+  const [ creaBrand, {data, error : mutationError, loading : mutationLoading} ] = useMutation(CREATEBRAND);
+
+  if (mutationLoading) {
+    return (
+      <div className="errorLogin">
+        <div className="btnCol">
+          <Button className="saveModalBtnAdmin">Patientez...</Button>
+        </div>
+      </div>
+    )
+  }
+  if (mutationError) {
+    console.log(mutationError)
+    return (
+      <div className="errorLogin">
+        <div className="btnCol">
+          <Button className="saveModalBtnAdmin" onClick={() => creaBrand({variables : {myBrand : {name : props.name, description : props.desc}}}).catch(err => console.log(err))}>Valider</Button>
+        </div>
+        <p className="errorMess">Erreur.</p>
+      </div>
+    )
+  }
+  if (data) {
+    window.location.reload();
+  }
+  return (
+    <Button className="saveModalBtnAdmin" onClick={() => creaBrand({variables : {myBrand : {name : props.name, description : props.desc}}}).catch(err => console.log(err))}>Valider</Button>
+  )
+}
+
+function CreateBrand(props){
   const [show, setShow] = useState(false);
+  const [name, setName] = useState('');
+  const [desc, setDesc] = useState('');
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -57,34 +94,24 @@ function CreateBrand(){
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>Créer une nouvelle marque.</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form.Group>
             <Form.Label>Nom</Form.Label>
-            <Form.Control type="email"  />
+            <Form.Control type="email" placeholder="Nom de la marque"  onChange={e => setName(e.target.value)}/>
           </Form.Group>
           <Form.Group>
-            <Form.Label>Prénom</Form.Label>
-            <Form.Control type="email"  />
+            <Form.Label>Description</Form.Label>
+            <Form.Control as="textarea" type="email" placeholder="Description de la marque" onChange={e => setDesc(e.target.value)}/>
           </Form.Group>
-          <Form.Group>
-            <Form.Label>Téléphone</Form.Label>
-            <Form.Control type="email"/>
-          </Form.Group>
-          <Form.Group>
-            <Form.Label>Mail</Form.Label>
-            <Form.Control type="email" style={{color : "red !important"}}/>
-          </Form.Group>
-          
+
         </Modal.Body>
         <Modal.Footer>
           <Button className="closeModalBtnAdmin" onClick={handleClose}>
             Fermer
           </Button>
-          <Button className="saveModalBtnAdmin" onClick={handleClose}>
-            Créer
-          </Button>
+          <ValidateCreaBrand name={name} desc={desc} />
         </Modal.Footer>
       </Modal>
     </Row>
