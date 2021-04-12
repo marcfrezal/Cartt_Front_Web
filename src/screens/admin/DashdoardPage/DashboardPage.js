@@ -9,7 +9,7 @@ import LastTransactions from '../../../components/pro/LastTransactions/LastTrans
 import Growth from '../../../components/pro/Growth/Growth'
 // import HeadBand from "./HeadBand/HeadBand";
 import './DashboardPage.css'
-import Header from '../../../components/pro/Header/Header'
+import Header from '../../../components/admin/Header/HeaderAdm'
 
 class Dashboard extends React.Component {
     render() {

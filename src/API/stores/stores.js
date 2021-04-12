@@ -12,3 +12,10 @@ export const GETALLSTORES = gql`
                         },
                         }
                     }`
+
+export const GETALLSTORESFORCOUNTING = gql`
+query getStores {
+    getStores {
+        _id
+    }
+}`

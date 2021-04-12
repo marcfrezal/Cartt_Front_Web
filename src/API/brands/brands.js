@@ -31,3 +31,10 @@ export const CREATEBRAND = gql`
                                     name
                                     }
                                 }`
+
+export const GETALLBRANDSFORCOUNTING = gql`
+query getBrands {
+    getBrands {
+        _id
+    }
+}`
