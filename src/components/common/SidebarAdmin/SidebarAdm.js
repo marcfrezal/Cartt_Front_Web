@@ -10,6 +10,7 @@ import { FaChartLine } from 'react-icons/fa';
 import { FaCog } from 'react-icons/fa';
 import { FaSignOutAlt } from 'react-icons/fa';
 import { FaStoreAlt } from 'react-icons/fa';
+import { FaUser } from 'react-icons/fa';
 import { Link, Redirect } from "react-router-dom";
 import { LOGOUT } from '../../../API/authentication/authentication';
 import { useMutation, useQuery } from '@apollo/react-hooks';
@@ -125,6 +126,15 @@ class SidebarAdm extends React.Component {
                     <div className="sideBarIcon">
                       <FaStoreAlt />
                     </div>
+                  </Link>
+                </Col>
+              </Row>
+              <Row className="sideBarRow">
+                <Col className="sideBarColAdm">
+                  <Link to="/adm/users" className={this.state.settings ? 'sideBarItemActiveAdm' : 'sideBarItemAdm'} >
+                      <div className="sideBarIcon">
+                        <FaUser className="fa-spin"/>
+                      </div>
                   </Link>
                 </Col>
               </Row>
