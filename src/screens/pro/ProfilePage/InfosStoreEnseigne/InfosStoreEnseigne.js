@@ -26,10 +26,10 @@ const GetStores = () => {
   } else if (data && data.getStores.length !== 0) {
     console.log(data.getStores);
     return (
-      <div className="shadow infoStoreEnseignCard">
-        <div className="infosStoreEnsigneCenter">
-          <div className="infosItemTitle">Points de vente</div>
-          <div className="infosItemNumber">{data.getStores.length}</div>
+      <div className="shadow pro-infoStoreEnseignCard">
+        <div className="pro-infosStoreEnsigneCenter">
+          <div className="pro-infosItemTitle">Points de vente</div>
+          <div className="pro-infosItemNumber">{data.getStores.length}</div>
         </div>
       </div>
     )
@@ -61,10 +61,10 @@ const GetBrands = () => {
   } else if (data && data.getBrands.length !== 0) {
     console.log(data.getBrands);
     return (
-      <div className="shadow infoStoreEnseignCard">
-        <div className="infosStoreEnsigneCenter">
-          <div className="infosItemTitle">Enseignes</div>
-          <div className="infosItemNumber">{data.getBrands.length}</div>
+      <div className="shadow pro-infoStoreEnseignCard">
+        <div className="pro-infosStoreEnsigneCenter">
+          <div className="pro-infosItemTitle">Enseignes</div>
+          <div className="pro-infosItemNumber">{data.getBrands.length}</div>
         </div>
       </div>
     )
@@ -88,12 +88,12 @@ class InfosStoreEnseigne extends React.Component {
 
   render() {
     return (
-      <Container fluid className="infosStoreEnseigneContainer">
-        <Row className="rowProfilInfosItems">
-          <Col className="infoStoreEnseignCol">
+      <Container fluid className="pro-infosStoreEnseigneContainer">
+        <Row className="pro-rowProfilInfosItems">
+          <Col className="pro-infoStoreEnseignCol">
             <GetStores/>
           </Col>
-          <Col className="infoStoreEnseignCol">
+          <Col className="pro-infoStoreEnseignCol">
             <GetBrands/>
           </Col>
         </Row>
@@ -103,10 +103,10 @@ class InfosStoreEnseigne extends React.Component {
 
   renderItem(title, number) {
     return (
-      <div className="shadow infoStoreEnseignCard">
-        <div className="infosStoreEnsigneCenter">
-          <div className="infosItemTitle">{title}</div>
-          <div className="infosItemNumber">{number}</div>
+      <div className="shadow pro-infoStoreEnseignCard">
+        <div className="pro-infosStoreEnsigneCenter">
+          <div className="pro-infosItemTitle">{title}</div>
+          <div className="pro-infosItemNumber">{number}</div>
         </div>
       </div>
     )
