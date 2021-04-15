@@ -4,6 +4,9 @@ export const GETALLSTORES = gql`
                     query getStores {
                         getStores {
                         name,
+                        brand {
+                            name
+                        }
                         location {
                             country,
                             city,

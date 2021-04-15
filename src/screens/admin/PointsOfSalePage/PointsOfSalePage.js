@@ -9,7 +9,7 @@ import HeaderAdm from '../../../components/admin/Header/HeaderAdm';
 import BrandListAndManagement from '../../../components/admin/BrandListAndManagement/BrandListAndManagement';
 import StoreListAndManagement from '../../../components/admin/StoreListAndManagement/StoreListAndManagement';
 import { useState } from "react";
-import { CREATEBRAND } from '../../../API/brands/brands';
+import { CREATEBRAND, GETALLBRANDS } from '../../../API/brands/brands';
 import { useQuery, useMutation } from '@apollo/react-hooks';
 
 
@@ -119,6 +119,39 @@ function CreateBrand(props){
 
 };
 
+const SelectBrand = () => {
+  const { data, error, loading} = useQuery(GETALLBRANDS);
+
+  if (loading) {
+    return (
+      <div >
+        Patientez...
+      </div>
+    )
+  } else if (error) {
+    return (
+      <div className="errorContainer">
+        <p>Une erreur s'est produite lors du chargement des données.</p>
+      </div>
+    )
+  } else if (data && data.getBrands.length !== 0) {
+    return (
+      <Form.Control as="select">
+        {data.getBrands.map((pos, index) => (
+          <option>{pos.name}</option>
+        ))}
+      </Form.Control>
+    )
+  }
+  else {
+    return (
+      <div className="errorContainer">
+        <option>Pas de marques enregistrées.</option>
+      </div>
+    )
+  }
+};
+
 function CreateStore(){
 
   const [show, setShow] = useState(false);
@@ -134,7 +167,7 @@ function CreateStore(){
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>Créez votre magasin</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form.Group>
@@ -142,16 +175,8 @@ function CreateStore(){
             <Form.Control type="email"  />
           </Form.Group>
           <Form.Group>
-            <Form.Label>Prénom</Form.Label>
-            <Form.Control type="email"  />
-          </Form.Group>
-          <Form.Group>
-            <Form.Label>Téléphone</Form.Label>
-            <Form.Control type="email"/>
-          </Form.Group>
-          <Form.Group>
-            <Form.Label>Mail</Form.Label>
-            <Form.Control type="email" style={{color : "red !important"}}/>
+            <Form.Label>Marque associée</Form.Label>
+            <SelectBrand/>
           </Form.Group>
         </Modal.Body>
         <Modal.Footer>

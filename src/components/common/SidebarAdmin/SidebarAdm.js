@@ -131,7 +131,7 @@ class SidebarAdm extends React.Component {
               </Row>
               <Row className="sideBarRow">
                 <Col className="sideBarColAdm">
-                  <Link to="/adm/users" className={this.state.settings ? 'sideBarItemActiveAdm' : 'sideBarItemAdm'} >
+                  <Link to="/adm/users" className="sideBarItemAdm" >
                       <div className="sideBarIcon">
                         <FaUser className="fa-spin"/>
                       </div>
@@ -149,10 +149,6 @@ class SidebarAdm extends React.Component {
               </Row>
               <Row className="sideBarRow">
                 <Col className="sideBarColAdm">                  
-                </Col>
-              </Row>
-              <Row className="sideBarRow">
-                <Col className="sideBarColAdm">
                 </Col>
               </Row>
               <Row className="sideBarRowAdm">
