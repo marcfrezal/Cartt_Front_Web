@@ -1,0 +1,76 @@
+.userListAdmContainer {
+    height: 80vh;
+    color: lightgrey;
+    font-family: 'Montserrat';
+    display: flex;
+    justify-content: center;
+    border-radius: 1vh;
+    background-color: white;
+    margin-top: 2vh;
+    padding: 2vh;
+    padding-left: 2vh;
+    overflow-y: scroll;
+}
+
+.containeruserItem {
+    height: 15vh;
+    border : solid 2px #E47C78;
+    margin-bottom: 2vh;
+    border-radius: 1vh;
+    padding: 1vh;
+    padding-left: 2vh;
+}
+
+.userIdText {
+    color: #E47C78;
+    font-weight: 700;
+    font-family: 'Montserrat';
+    font-size: 1.7vh;
+    overflow-y: scroll;
+
+}
+
+.userNameText {
+    color: #E47C78;
+    font-weight: 700;
+    font-family: 'Montserrat';
+    font-size: 1.7vh;
+
+}
+
+.userDescriptionText {
+    font-weight: 100;
+    font-size: 1.7vh;
+    font-family: 'Montserrat';  
+    color: #E47C78;
+    font-weight: 700;
+}
+
+.userIllustration {
+    background-color: lightsalmon;
+}
+
+.userInfos {
+    color : black;
+    font-weight: 100;
+
+}
+
+.userInfosDesc {
+    color : grey;
+    font-weight: 100;
+    width: 350px;
+    height: 5vh;
+    overflow-y: scroll;
+    word-wrap: break-word;
+}
+
+.updateuserInfoIconAdm {
+    font-size: 1.5vh;
+    color: #E47C78 !important;
+}
+
+.updateuserInfoIconAdm:hover {
+    cursor : pointer;
+    transform: scale(1.1);
+}

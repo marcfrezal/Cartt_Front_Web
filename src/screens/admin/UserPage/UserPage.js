@@ -8,6 +8,8 @@ import SidebarAdm from '../../../components/common/SidebarAdmin/SidebarAdm';
 import { Modal, Form, Button } from "react-bootstrap";
 import { useQuery, useMutation } from '@apollo/react-hooks';
 import { CREATEUSER, GETALLUSERS } from '../../../API/users/users';
+import UserListAndManagement from "../../../components/admin/UserListAndManagement/UserListAndManagement";
+import DashboardManagement from "../../../components/admin/DashboardManagement/DashboardManagement";
 
 
 class User extends React.Component {
@@ -23,38 +25,34 @@ class User extends React.Component {
 
   render() {
     return (
-        <Container fluid className="containerUserInfosAdm">
-        <SidebarAdm />
-        <Row>
-          <Col xs={1} lg={1}/>
-          <Col xs={10} lg={10}>
-            <Container fluid>
-              <Row className="rowHeaderProfil">
-                <HeaderAdm
-                title='Users'
-                // actionTitle='Modifier mon mot de passe'
-                // onPress={() => this._showModifyPasswordModal()}
-                />
-              </Row>
-              <Row>
+      <Container fluid style={{ height : "100vh", backgroundColor: "#fff7f7" }}>
+      <SidebarAdm />
+      <Row style={{ height : "100%", backgroundColor: "red"}}>
+        <Col xs={1} lg={1} style={{height : "100%", backgroundColor: "#fff7f7"}}></Col>
+        <Col xs={11} lg={11} style={{ height : "100%", backgroundColor: "#fff7f7"}}>
+          <HeaderAdm title="Users"/>
+          <Container fluid style={{ height : "90%", backgroundColor: "#fff7f7"}}>
+            <Row style={{ height : "100%", backgroundColor: "#fff7f7"}}>
+              <Col style={{ height : "100%", padding : "5vh", display : "flex", alignItems : "center", flexDirection : "column", backgroundColor: "#fff7f7"}}>
                   <CreateUser/>
-              </Row>
-           
-            </Container>
-          </Col>
-          <Col xs={1} lg={1} />
-        </Row>
-        {/* <this.ModifyPasswordModal
-          show={this.state.modify_password_show}
-          onHide={() => this._hideModifyPasswordModal()} /> */}
-      </Container>
+                  <UserListAndManagement/>
+              </Col>
+              <Col style={{ height : "100%", padding : "5vh", display : "flex", alignItems : "center", flexDirection : "column", backgroundColor: "#fff7f7"}}>
+                <DashboardManagement/>
+              </Col>
+            </Row>
+          </Container> 
+        </Col>
+      </Row>
+    </Container>
+       
     );
   }
 }
 
 function ValidateCreaUser(props)  {
     const [ creaUser, {data, error : mutationError, loading : mutationLoading} ] = useMutation(CREATEUSER);
-  
+    console.log(props)
     if (mutationLoading) {
       return (
         <div className="errorLogin">
@@ -69,7 +67,7 @@ function ValidateCreaUser(props)  {
       return (
         <div className="errorLogin">
           <div className="btnCol">
-            <Button className="saveModalBtnAdmin" onClick={() => creaUser({variables : {myBrand : {name : props.name, description : props.desc}}}).catch(err => console.log(err))}>Valider</Button>
+            <Button className="saveModalBtnAdmin" onClick={() => creaUser({variables : {user : {firstname : props.firstname, lastname : props.lastname, birthDate: props.birthDate, role: props.role, email: props.email, password: props.password, phone: props.phone}}}).catch(err => console.log(err))}>Valider</Button>
           </div>
           <p className="errorMess">Erreur.</p>
         </div>
@@ -79,7 +77,7 @@ function ValidateCreaUser(props)  {
       window.location.reload();
     }
     return (
-      <Button className="saveModalBtnAdmin" onClick={() => creaUser({variables : {myBrand : {name : props.name, description : props.desc}}}).catch(err => console.log(err))}>Valider</Button>
+      <Button className="saveModalBtnAdmin" onClick={() => creaUser({variables : {user : {firstname : props.firstname, lastname : props.lastname, birthDate: props.birthDate, role: props.role, email: props.email, password: props.password, phone: props.phone}}}).catch(err => console.log(err))}>Valider</Button>
     )
   }
 
@@ -91,6 +89,7 @@ function CreateUser(props){
     const [role, setRole]= useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
+    const [password, setPassword] = useState('');
   
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -120,9 +119,10 @@ function CreateUser(props){
             </Form.Group>
             <Form.Group>
               <Form.Label>Role</Form.Label>
-              <Form.Control as="select"  onChange={e => setRole(e.target.value)}>
-                <option>PRO</option>
-                <option>CUSTOMER</option>
+              <Form.Control as="select" defaultValue="LAMBDA"  onChange={e => setRole(e.target.value)}>
+                <option>SELLER</option>
+                <option>LAMBDA</option>
+                <option>ADMIN</option>
               </Form.Control>
             </Form.Group>
             <Form.Group>
@@ -135,16 +135,16 @@ function CreateUser(props){
             </Form.Group>
             <Form.Group>
               <Form.Label>Mot de passe</Form.Label>
-              <Form.Control type="password" placeholder="Mot de passe"  onChange={e => setPhone(e.target.value)}/>
+              <Form.Control type="password" placeholder="Mot de passe"  onChange={e => setPassword(e.target.value)}/>
             </Form.Group>
             
-  
+          
           </Modal.Body>
           <Modal.Footer>
             <Button className="closeModalBtnAdmin" onClick={handleClose}>
               Fermer
             </Button>
-            <ValidateCreaUser firstname={firstname} lastname={lastname} birthDate={birthDate} role={role} email={email} phone={phone} />
+            <ValidateCreaUser firstname={firstname} lastname={lastname} birthDate={birthDate} role={role} email={email} password={password} phone={phone} />
           </Modal.Footer>
         </Modal>
       </Row>
