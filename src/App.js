@@ -8,6 +8,7 @@ import Profile from '../src/screens/pro/ProfilePage/ProfilePage';
 import DashboardAdm from '../src/screens/admin/DashdoardPage/DashboardPage';
 import PointsOfSaleAdm from '../src/screens/admin/PointsOfSalePage/PointsOfSalePage';
 import ProfileAdm from '../src/screens/admin/ProfilePage/ProfilePage';
+import UserAdm from '../src/screens/admin/UserPage/UserPage'
 import React from "react";
 import {
   BrowserRouter,
@@ -42,6 +43,7 @@ function App() {
             <Route exact path="/adm/dashboard" component={DashboardAdm} />
             <Route exact path="/adm/points-of-sale" component={PointsOfSaleAdm} />
             <Route exact path="/adm/profile" component={ProfileAdm} />
+            <Route exact path="/adm/users" component={UserAdm} />
           </Switch>
       </BrowserRouter>
     </ApolloProvider>

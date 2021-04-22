@@ -7,7 +7,7 @@ import { FaEdit, FaSyncAlt } from "react-icons/fa";
 import { Modal, Form, Button } from "react-bootstrap";
 import { Formik } from 'formik';
 import * as yup from 'yup';
-import { ME } from '../../../../API/user/user'
+import { ME } from '../../../../API/users/users'
 import { useQuery } from "@apollo/client";
 import dateFormat from 'dateformat';
 

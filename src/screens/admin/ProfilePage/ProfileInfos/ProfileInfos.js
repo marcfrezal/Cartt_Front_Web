@@ -5,8 +5,8 @@ import Col from 'react-bootstrap/Col';
 import './ProfileInfos.css'
 import { FaPen, FaSyncAlt } from "react-icons/fa";
 import { Modal, Form, Button } from "react-bootstrap";
-import { ME } from '../../../../API/user/user';
-import { UPDATEUSER } from '../../../../API/user/user';
+import { ME } from '../../../../API/users/users';
+import { UPDATEUSER } from '../../../../API/users/users';
 import { useQuery, useMutation } from "@apollo/client";
 import dateFormat from 'dateformat';
 import { useState } from "react";

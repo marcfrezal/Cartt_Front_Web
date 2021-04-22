@@ -1,0 +1,15 @@
+.containerUserInfosAdm {
+    height: 100vh;
+    background-color: #fff7f7;
+}
+.addFunctionBrandAdmContainer {
+    height: 5vh;
+    width: 100%;
+    color: #FFBDBB;
+    font-family: 'Montserrat';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1vh;
+    border : 3px #FFBDBB solid;
+}
