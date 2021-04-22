@@ -3,12 +3,22 @@ import { gql } from "apollo-boost";
 export const GETALLBRANDS = gql`
                                 query getBrands {
                                     getBrands {
-                                    _id,
-                                    name,
-                                    description,
-                                    stores {
-                                            name
-                                    },
+                                        _id,
+                                        name,
+                                        description,
+                                        stores {
+                                                _id,
+                                                name,
+                                                location {
+                                                    country,
+                                                    city,
+                                                    adress1,
+                                                    postcode
+                                                },
+                                                brand {
+                                                    name
+                                                }
+                                        },
                                     }
                                 }`
 
