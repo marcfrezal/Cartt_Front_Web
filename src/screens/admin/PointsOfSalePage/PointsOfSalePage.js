@@ -10,6 +10,7 @@ import BrandListAndManagement from '../../../components/admin/BrandListAndManage
 import StoreListAndManagement from '../../../components/admin/StoreListAndManagement/StoreListAndManagement';
 import { useState } from "react";
 import { CREATEBRAND, GETALLBRANDS } from '../../../API/brands/brands';
+import { CREATESTORE } from '../../../API/stores/stores';
 import { useQuery, useMutation } from '@apollo/react-hooks';
 
 
@@ -17,6 +18,16 @@ class PointsOfSaleAdm extends React.Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      stores : []
+    }
+    this.getBrand = this.getBrand.bind(this);
+  }
+
+  getBrand = (props) => {
+    this.setState({
+      stores : props.stores
+    })
   }
 
   render() {
@@ -31,11 +42,11 @@ class PointsOfSaleAdm extends React.Component {
               <Row style={{ height : "100%", backgroundColor: "#fff7f7"}}>
                 <Col style={{ height : "100%", padding : "5vh", display : "flex", alignItems : "center", flexDirection : "column", backgroundColor: "#fff7f7"}}>
                   <CreateBrand/>
-                  <BrandListAndManagement/>
+                  <BrandListAndManagement getMyStoreCallBack={this.getBrand}/>
                 </Col>
                 <Col style={{ height : "100%", padding : "5vh", display : "flex", alignItems : "center", flexDirection : "column", backgroundColor: "#fff7f7"}}>
                   <CreateStore/>
-                  <StoreListAndManagement/>
+                  <StoreListAndManagement stores={this.state.stores}/>
                 </Col>
               </Row>
             </Container> 
@@ -119,7 +130,7 @@ function CreateBrand(props){
 
 };
 
-const SelectBrand = () => {
+const SelectBrand = (props) => {
   const { data, error, loading} = useQuery(GETALLBRANDS);
 
   if (loading) {
@@ -136,9 +147,9 @@ const SelectBrand = () => {
     )
   } else if (data && data.getBrands.length !== 0) {
     return (
-      <Form.Control as="select">
+      <Form.Control as="select" onChange={e => props.selectBrand(e.target.value)}>
         {data.getBrands.map((pos, index) => (
-          <option>{pos.name}</option>
+          <option value={pos._id}>{pos.name}</option>
         ))}
       </Form.Control>
     )
@@ -152,9 +163,44 @@ const SelectBrand = () => {
   }
 };
 
+function ValidateCreaStore(props)  {
+  const [ creaStore, {data, error : mutationError, loading : mutationLoading} ] = useMutation(CREATESTORE);
+
+  var idBrand = parseFloat(props.idBrand);
+  if (mutationLoading) {
+    return (
+      <div className="errorLogin">
+        <div className="btnCol">
+          <Button className="saveModalBtnAdmin">Patientez...</Button>
+        </div>
+      </div>
+    )
+  }
+  if (mutationError) {
+    console.log(mutationError)
+    return (
+      <div className="errorLogin">
+        <div className="btnCol">
+          <Button className="saveModalBtnAdmin" onClick={() => creaStore({variables : {mystore : {name : props.name, idBrand : props.idBrand}}}).catch(err => console.log(err))}>Valider</Button>
+        </div>
+        <p className="errorMess">Erreur.</p>
+      </div>
+    )
+  }
+  if (data) {
+    window.location.reload();
+  }
+  return (
+    <Button className="saveModalBtnAdmin" onClick={() => creaStore({variables : {mystore : {name : props.name, idBrand : idBrand}}}).catch(err => console.log(err))}>Valider</Button>
+  )
+}
+
 function CreateStore(){
 
   const [show, setShow] = useState(false);
+  const [name, setName] = useState();
+  const [brandId, setBrandId] = useState();
+
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -172,20 +218,18 @@ function CreateStore(){
         <Modal.Body>
           <Form.Group>
             <Form.Label>Nom</Form.Label>
-            <Form.Control type="email"  />
+            <Form.Control type="email" onChange={e => setName(e.target.value)} />
           </Form.Group>
           <Form.Group>
             <Form.Label>Marque associée</Form.Label>
-            <SelectBrand/>
+            <SelectBrand selectBrand={setBrandId}/>
           </Form.Group>
         </Modal.Body>
         <Modal.Footer>
         <Button className="closeModalBtnAdmin" onClick={handleClose}>
             Fermer
           </Button>
-          <Button className="saveModalBtnAdmin" onClick={handleClose}>
-            Créer 
-          </Button>
+        <ValidateCreaStore name={name} idBrand={brandId}/>
         </Modal.Footer>
       </Modal>
     </Row>

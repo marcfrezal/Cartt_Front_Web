@@ -49,7 +49,7 @@ const SuppBrandModal = (props) => {
 
   return (
     <div>
-      <FaTrash className="updateBrandInfoIconAdm"  onClick={handleShow}/>
+      <FaTrash className="updateStoreInfoIconAdm"  onClick={handleShow}/>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
@@ -111,7 +111,7 @@ const UpdBrandModal = (props) => {
 
   return (
     <div>
-      <FaPen className="updateBrandInfoIconAdm"  onClick={handleShow}/>
+      <FaPen className="updateStoreInfoIconAdm"  onClick={handleShow}/>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
@@ -139,41 +139,31 @@ const UpdBrandModal = (props) => {
   );
 }
 
-const StoreList = () => {
-  const { data, error, loading} = useQuery(GETALLSTORES);
-
-  if (loading) {
-    return (
-      <div >
-        <FaSyncAlt className="loadContainer"/>
-      </div>
-    )
-  } else if (error) {
-    return (
-      <div className="errorContainer">
-        <p>Une erreur s'est produite lors du chargement des données.</p>
-      </div>
-    )
-  } else if (data && data.getStores.length !== 0) {
+const StoreList = (props) => {
+  if (props && props.stores.length !== 0) {
     return (
       <div>
-        {data.getStores.map((pos, index) => (
-          <Container className="containerBrandItem" fluid>
+        {props.stores.map((pos, index) => (
+          <Container className="containerStoreItem" fluid>
             <Row style={{height : "100%"}}>
               <Col xs={12} md={2}>
               </Col>
               <Col xs={12} md={9}>
-                <Row className="brandIdText">
-                  <div>ID :&nbsp;</div>
+                <Row className="storeIdText">
+                  <div>ID MAGASIN:&nbsp;</div>
                   <div className="brandInfos" >{pos._id}</div>
                 </Row>
-                <Row className="brandNameText">
+                <Row className="storeNameText">
                   <div>Nom :&nbsp;</div>
                   <div className="brandInfos" >{pos.name}</div>
                 </Row>
-                <Row className="brandDescriptionText">
+                <Row className="storeDescriptionText">
                   <div>Adresse :&nbsp;</div>
-                  <div className="brandInfos" >{pos.location.adress1} {pos.location.postcode} {pos.location.city}</div>
+                  {/* <div className="brandInfos" >{pos.location.adress1} {pos.location.postcode} {pos.location.city}</div> */}
+                </Row>
+                <Row className="storeDescriptionText">
+                  <div>Marque associée :&nbsp;</div>
+                  <div className="brandInfos" >{pos.brand.name}</div>
                 </Row>
               </Col>
               <Col xs={12} md={1}>
@@ -189,18 +179,16 @@ const StoreList = () => {
         ))}
       </div>
     )
-  }
-  else {
+  } else {
     return (
-      <div className="errorContainer">
-        <p>Pas de magasins enregistrés.</p>
+      <div className="errorContainerStoreList">
+        <p>Veuillez sélectionner une marque ayant des points de vente.</p>
       </div>
     )
   }
 };
 
 class StoreListAndManagement extends React.Component {
-
   constructor(props) {
     super(props);
   }
@@ -210,7 +198,7 @@ class StoreListAndManagement extends React.Component {
       <Container fluid className="storeListAdmContainer shadow">
         <Row style={{width : "100%"}}>
           <Col>
-            <StoreList/>
+            <StoreList stores={this.props.stores}/>
           </Col>
         </Row>
       </Container>

@@ -22,3 +22,15 @@ query getStores {
         _id
     }
 }`
+
+export const CREATESTORE = gql`
+                    mutation createStore($mystore : StoreCreateSchema!) {
+                        createStore (store : $mystore) {
+                            _id, 
+                            name,
+                            brand {
+                                name,
+                                _id
+                            },
+                        }
+                    }`

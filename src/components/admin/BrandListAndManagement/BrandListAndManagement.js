@@ -138,7 +138,7 @@ const UpdBrandModal = (props) => {
   );
 }
 
-const BrandList = () => {
+const BrandList = (props) => {
   const { data, error, loading} = useQuery(GETALLBRANDS);
 
   if (loading) {
@@ -157,7 +157,7 @@ const BrandList = () => {
     return (
       <div>
         {data.getBrands.map((pos, index) => (
-          <Container className="containerBrandItem" fluid>
+          <Container className="containerBrandItem" fluid onClick={(e) => props.getMyStoreCallBack(pos)}>
             <Row style={{height : "100%"}}>
               <Col xs={12} md={2}>
               </Col>
@@ -209,7 +209,7 @@ class BrandListAndManagement extends React.Component {
       <Container fluid className="brandListAdmContainer shadow">
         <Row style={{width : "100%"}}>
           <Col>
-            <BrandList/>
+            <BrandList getMyStoreCallBack={this.props.getMyStoreCallBack}/>
           </Col>
         </Row>
       </Container>

@@ -12,17 +12,17 @@
     overflow-y: scroll;
 }
 
-.containerBrandItem {
+.containerStoreItem {
     height: 15vh;
-    border : solid 2px #E47C78;
+    border : solid 2px #BAC9FF;
     margin-bottom: 2vh;
     border-radius: 1vh;
     padding: 1vh;
     padding-left: 2vh;
 }
 
-.brandIdText {
-    color: #E47C78;
+.storeIdText {
+    color: #BAC9FF;
     font-weight: 700;
     font-family: 'Montserrat';
     font-size: 1.7vh;
@@ -30,19 +30,19 @@
 
 }
 
-.brandNameText {
-    color: #E47C78;
+.storeNameText {
+    color: #BAC9FF;
     font-weight: 700;
     font-family: 'Montserrat';
     font-size: 1.7vh;
 
 }
 
-.brandDescriptionText {
+.storeDescriptionText {
     font-weight: 100;
     font-size: 1.7vh;
     font-family: 'Montserrat';  
-    color: #E47C78;
+    color: #BAC9FF;
     font-weight: 700;
 }
 
@@ -65,12 +65,20 @@
     word-wrap: break-word;
 }
 
-.updateBrandInfoIconAdm {
+.updateStoreInfoIconAdm {
     font-size: 1.5vh;
-    color: #E47C78 !important;
+    color: #BAC9FF !important;
 }
 
-.updateBrandInfoIconAdm:hover {
+.updateStoreInfoIconAdm:hover {
     cursor : pointer;
     transform: scale(1.1);
+}
+
+.errorContainerStoreList{
+    text-align: center;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
