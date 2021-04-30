@@ -17,11 +17,17 @@ class User extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      stores: [],
+      brands: [],
     };
   }
 
-
+  getDashboard = (props) => {
+    this.setState({
+      stores: props.stores,
+      brands: props.brands
+    })
+  }
 
   render() {
     return (
@@ -35,10 +41,10 @@ class User extends React.Component {
             <Row style={{ height : "100%", backgroundColor: "#fff7f7"}}>
               <Col style={{ height : "100%", padding : "5vh", display : "flex", alignItems : "center", flexDirection : "column", backgroundColor: "#fff7f7"}}>
                   <CreateUser/>
-                  <UserListAndManagement/>
+                  <UserListAndManagement getDashboardCallback={this.getDashboard}/>
               </Col>
               <Col style={{ height : "100%", padding : "5vh", display : "flex", alignItems : "center", flexDirection : "column", backgroundColor: "#fff7f7"}}>
-                <DashboardManagement/>
+                <DashboardManagement stores={this.state.stores} brands={this.state.brands}/>
               </Col>
             </Row>
           </Container> 

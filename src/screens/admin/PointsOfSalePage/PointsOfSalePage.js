@@ -25,6 +25,7 @@ class PointsOfSaleAdm extends React.Component {
   }
 
   getBrand = (props) => {
+    console.log(props)
     this.setState({
       stores : props.stores
     })
