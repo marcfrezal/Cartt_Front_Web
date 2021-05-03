@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import Col from 'react-bootstrap/Col'; 
 import './UserPage.css'
 import HeaderAdm from '../../../components/admin/Header/HeaderAdm'
 import SidebarAdm from '../../../components/common/SidebarAdmin/SidebarAdm';
@@ -14,43 +14,42 @@ import DashboardManagement from "../../../components/admin/DashboardManagement/D
 
 class User extends React.Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      stores: [],
-      brands: [],
-    };
-  }
-
-  getDashboard = (props) => {
-    this.setState({
-      stores: props.stores,
-      brands: props.brands
-    })
-  }
 
   render() {
     return (
-      <Container fluid style={{ height : "100vh", backgroundColor: "#fff7f7" }}>
+    <Container fluid style={{ height : "100vh", backgroundColor: "red" }}>
       <SidebarAdm />
       <Row style={{ height : "100%", backgroundColor: "red"}}>
         <Col xs={1} lg={1} style={{height : "100%", backgroundColor: "#fff7f7"}}></Col>
         <Col xs={11} lg={11} style={{ height : "100%", backgroundColor: "#fff7f7"}}>
-          <HeaderAdm title="Users"/>
-          <Container fluid style={{ height : "90%", backgroundColor: "#fff7f7"}}>
-            <Row style={{ height : "100%", backgroundColor: "#fff7f7"}}>
-              <Col style={{ height : "100%", padding : "5vh", display : "flex", alignItems : "center", flexDirection : "column", backgroundColor: "#fff7f7"}}>
-                  <CreateUser/>
-                  <UserListAndManagement getDashboardCallback={this.getDashboard}/>
-              </Col>
-              <Col style={{ height : "100%", padding : "5vh", display : "flex", alignItems : "center", flexDirection : "column", backgroundColor: "#fff7f7"}}>
-                <DashboardManagement stores={this.state.stores} brands={this.state.brands}/>
+          <HeaderAdm title="User"/>
+          <Container fluid >
+            <Row style={{ backgroundColor: "#fff7f7"}}>
+              <Col style={{ padding : "5vh", display : "flex", alignItems : "center", flexDirection : "column"}}>
+                <CreateUser/>
+                <UserListAndManagement getMyStoreCallBack={this.getBrand}/>
               </Col>
             </Row>
           </Container> 
         </Col>
       </Row>
     </Container>
+    //   <Container fluid style={{ height: '100vh', backgroundColor: "#fff7f7" }}>
+    //   <SidebarAdm />
+    //   <Row style={{ height : "100vh"}}>
+    //     <Col xs={1} lg={1} style={{height : "100%", backgroundColor: "#fff7f7"}}></Col>
+    //     <Col xs={11} lg={11} style={{ height : "100%", backgroundColor: "#fff7f7"}}>
+    //       <HeaderAdm title="Users"/>
+    //       <Container fluid style={{ height : "80vh", backgroundColor: "#fff7f7"}}>
+    //         <Row style={{ height : "80vh", backgroundColor: "#fff7f7"}}>
+
+    //               <CreateUser/>
+    //               <UserListAndManagement/>
+    //         </Row>
+    //       </Container> 
+    //     </Col>
+    //   </Row>
+    // </Container>
        
     );
   }
@@ -101,7 +100,7 @@ function CreateUser(props){
     const handleShow = () => setShow(true);
   
     return (
-      <Row className="addFunctionBrandAdmContainer" >
+      <Row className="addFunctionUserAdmContainer">
         <div style={{width : "100%", height : "100%", display : "flex", alignItems : "center" , justifyContent : "center"}} onClick={handleShow}>
           Créer un user
         </div>
@@ -125,7 +124,7 @@ function CreateUser(props){
             </Form.Group>
             <Form.Group>
               <Form.Label>Role</Form.Label>
-              <Form.Control as="select" defaultValue="LAMBDA"  onChange={e => setRole(e.target.value)}>
+              <Form.Control as="select" defaulValue="LAMBDA"  onChange={e => setRole(e.target.value)}>
                 <option>SELLER</option>
                 <option>LAMBDA</option>
                 <option>ADMIN</option>

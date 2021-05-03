@@ -6,7 +6,6 @@ export const ME = gql`
                     _id,
                     firstname,
                     lastname,
-                    role,
                     email,
                     birthDate,
                     phone,
@@ -17,7 +16,6 @@ export const GETALLUSERS = gql`
             query users {
                 users {
                 _id, 
-                role, 
                 email, 
                 firstname,
                 lastname,
@@ -29,7 +27,6 @@ export const UPDATEUSER = gql`
             mutation updateUser($user : UserUpdateSchema!) {
                 updateUser(user : $user) {
                 _id, 
-                role, 
                 email, 
                 firstname,
                 lastname,

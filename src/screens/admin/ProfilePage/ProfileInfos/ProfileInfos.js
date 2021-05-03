@@ -154,7 +154,7 @@ const GetMe = () => {
         <FaSyncAlt className="loadContainer"/>
       </div>
     )
-  } else if (error || data.me.role !== "ADMIN") {
+  } else if (error /*|| data.me.role !== "ADMIN"*/) {
     console.log(error);
     return (
       <div style={{display : "flex", justifyContent : "center", alignItems : "center", width : "100%", color : "lightgray"}}>
@@ -162,13 +162,13 @@ const GetMe = () => {
       </div>
     )
   } else if (data) {
-    if (data.me.role !== "ADMIN") {
-      return (
-        <div style={{display : "flex", justifyContent : "center", alignItems : "center", width : "100%", color : "lightgray"}}>
-          <p>Vous n'avez pas accès à ces informations.</p>
-        </div>
-      )
-    }
+    // if (data.me.role !== "ADMIN") {
+    //   return (
+    //     <div style={{display : "flex", justifyContent : "center", alignItems : "center", width : "100%", color : "lightgray"}}>
+    //       <p>Vous n'avez pas accès à ces informations.</p>
+    //     </div>
+    //   )
+    // }
     let date = dateFormat(data.me.birthDate, "dd/mm/yyyy")
     return (
       <Container fluid>

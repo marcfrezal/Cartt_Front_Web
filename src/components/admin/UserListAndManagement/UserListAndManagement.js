@@ -9,64 +9,6 @@ import { FaSyncAlt, FaPen, FaTrash } from "react-icons/fa";
 import { useState } from "react";
 import { Modal, Form, Button } from "react-bootstrap";
 
-function ValidateSuppUser(props) {
-  const [suppUser, { data, error: mutationError, loading: mutationLoading }] = useMutation(SUPPUSER);
-
-  if (mutationLoading) {
-    return (
-      <div className="errorLogin">
-        <div className="btnCol">
-          <Button className="saveModalBtnAdmin">Patientez...</Button>
-        </div>
-      </div>
-    )
-  }
-  if (mutationError) {
-    console.log(mutationError)
-    return (
-      <div className="errorLogin">
-        <div className="btnCol">
-          <Button className="saveModalBtnAdmin" onClick={() => suppUser({ variables: { idUser: props.User._id } }).catch(err => console.log(err))}>Valider</Button>
-        </div>
-        <p className="errorMess">Erreur.</p>
-      </div>
-    )
-  }
-  if (data) {
-    window.location.reload();
-  }
-  return (
-    <Button className="saveModalBtnAdmin" onClick={() => suppUser({ variables: { idUser: props.User._id } }).catch(err => console.log(err))}>Valider</Button>
-  )
-}
-
-const SuppUserModal = (props) => {
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
-  return (
-    <div>
-      <FaTrash className="updateUserInfoIconAdm" onClick={handleShow} />
-
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Supression du user {props.User.name}.</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          Souhaitez-vous vraiment supprimer le user <strong> {props.User.name} </strong> ?
-        </Modal.Body>
-        <Modal.Footer>
-          <Button className="closeModalBtnAdmin" onClick={props.handleClose}>
-            Fermer
-          </Button>
-          <ValidateSuppUser User={props.User} />
-        </Modal.Footer>
-      </Modal>
-    </div>
-  );
-}
 
 function ValidateUpdUser(props) {
   const [updUser, { data, error: mutationError, loading: mutationLoading }] = useMutation(UPDATEUSER);
@@ -194,11 +136,11 @@ const UserList = (props) => {
       </div>
     )
   } else if (data && data.users.length !== 0) {
-    // console.log(data.getUsers)
+    console.log(data.getUsers)
     return (
       <div>
         {data.users.map((user, index) => (
-          <Container className="containerUserItem" fluid onClick={(e) => props.getDashboardCallBack(user._id)}>
+          <Container className="containerUserItem" fluid >
             <Row style={{ height: "100%" }}>
               <Col xs={12} md={2}>
               </Col>
@@ -224,9 +166,9 @@ const UserList = (props) => {
                 <Row style={{ display: "flex", alignItems: "center", height: "50%" }}>
                   <UpdUserModal User={user} />
                 </Row>
-                <Row style={{ display: "flex", alignItems: "center", height: "50%" }}>
+                {/* <Row style={{ display: "flex", alignItems: "center", height: "50%" }}>
                   <SuppUserModal User={user} />
-                </Row>
+                </Row> */}
               </Col>
             </Row>
           </Container>
@@ -243,6 +185,8 @@ const UserList = (props) => {
   }
 };
 
+
+
 class UserListAndManagement extends React.Component {
 
   constructor(props) {
@@ -251,10 +195,10 @@ class UserListAndManagement extends React.Component {
 
   render() {
     return (
-      <Container fluid className="userListAdmContainer shadow">
+      <Container fluid className="UserListAdmContainer shadow">
         <Row style={{ width: "100%" }}>
           <Col>
-            <UserList getDashboardCallBack={this.props.getDashboardCallBack} />
+            <UserList />
           </Col>
         </Row>
       </Container>
