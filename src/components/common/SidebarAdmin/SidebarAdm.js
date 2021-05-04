@@ -113,15 +113,6 @@ class SidebarAdm extends React.Component {
               </Row>
               <Row className="sideBarRow">
                 <Col className="sideBarColAdm">
-                  <Link to="/adm/dashboard" className={this.state.dashboard ? 'sideBarItemActiveAdm' : 'sideBarItemAdm'} >
-                    <div className="sideBarIcon">
-                      <FaChartLine />
-                    </div>
-                  </Link>
-                </Col>
-              </Row>
-              <Row className="sideBarRow">
-                <Col className="sideBarColAdm">
                   <Link to="/adm/points-of-sale" className={this.state.shops ? 'sideBarItemActiveAdm' : 'sideBarItemAdm'} >
                     <div className="sideBarIcon">
                       <FaStoreAlt />
@@ -149,6 +140,15 @@ class SidebarAdm extends React.Component {
               </Row>
               <Row className="sideBarRow">
                 <Col className="sideBarColAdm">                  
+                </Col>
+              </Row>
+              <Row className="sideBarRow">
+                <Col className="sideBarColAdm">
+                  {/* <Link to="/adm/dashboard" className={this.state.dashboard ? 'sideBarItemActiveAdm' : 'sideBarItemAdm'} >
+                    <div className="sideBarIcon">
+                      <FaChartLine />
+                    </div>
+                  </Link> */}
                 </Col>
               </Row>
               <Row className="sideBarRowAdm">

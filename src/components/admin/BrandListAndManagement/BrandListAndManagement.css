@@ -21,6 +21,16 @@
     padding-left: 2vh;
 }
 
+.containerBrandItemActive {
+    height: 15vh;
+    border : solid 2px #E47C78;
+    margin-bottom: 2vh;
+    border-radius: 1vh;
+    padding: 1vh;
+    padding-left: 2vh;
+    background-color: #ffcecd;
+}
+
 .containerBrandItem:hover {
     cursor: pointer;
     background-color: #ffcecd;

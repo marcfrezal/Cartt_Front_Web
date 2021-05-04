@@ -34,3 +34,10 @@ export const CREATESTORE = gql`
                             },
                         }
                     }`
+
+export const SUPPSTORE = gql`
+                    mutation removeStore ($idStore : Float! ) {
+                        removeStore (idStore : $idStore) {
+                        name
+                        }
+                    }`

@@ -93,7 +93,7 @@ class BlockLeft extends React.Component {
     if (data && data.login.role === "SELLER") {
       return <Redirect to='/dashboard'/>;
     } else if (data && data.login.role === "ADMIN") {
-      return <Redirect to='/adm/profile'/>;
+      return <Redirect to='/adm/points-of-sale'/>;
     }
 
     return (
