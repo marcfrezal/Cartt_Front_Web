@@ -6,18 +6,27 @@ export const ME = gql`
                     _id,
                     firstname,
                     lastname,
-                    role,
                     email,
                     birthDate,
                     phone,
                 }
             }`
 
+export const GETALLUSERS = gql`
+            query users {
+                users {
+                _id, 
+                email, 
+                firstname,
+                lastname,
+                phone
+                } 
+            }`
+
 export const UPDATEUSER = gql`
             mutation updateUser($user : UserUpdateSchema!) {
                 updateUser(user : $user) {
                 _id, 
-                role, 
                 email, 
                 firstname,
                 lastname,
@@ -26,23 +35,12 @@ export const UPDATEUSER = gql`
             }`
 
 export const CREATEUSER = gql`
-            mutation createUser($user : UserUpdateSchema!) {
-                updateUser(user : $user) {
+            mutation createUser($user : UserCreateSchema!) {
+                createUser(user : $user) {
                 _id, 
                 role, 
                 email, 
-                firstname,
-                lastname,
-                phone
-                } 
-            }`
-
-export const GETALLUSER = gql`
-            mutation createUser($user : UserUpdateSchema!) {
-                updateUser(user : $user) {
-                _id, 
-                role, 
-                email, 
+                birthDate,
                 firstname,
                 lastname,
                 phone
@@ -50,7 +48,7 @@ export const GETALLUSER = gql`
             }`
 
 export const SUPPUSER = gql`
-            mutation createUser($user : UserUpdateSchema!) {
+            mutation createUser($user : UserSchema) {
                 updateUser(user : $user) {
                 _id, 
                 role, 

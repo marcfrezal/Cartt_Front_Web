@@ -1,0 +1,82 @@
+.UserListAdmContainer {
+    height: 75vh;
+    color: lightgrey;
+    font-family: 'Montserrat';
+    display: flex;
+    justify-content: center;
+    border-radius: 1vh;
+    background-color: white;
+    margin-top: 2vh;
+    padding: 2vh;
+    padding-left: 2vh;
+    overflow-y: scroll;
+}
+
+.containerUserItem {
+    height: 15vh;
+    border : solid 2px #E47C78;
+    margin-bottom: 2vh;
+    border-radius: 1vh;
+    padding: 1vh;
+    padding-left: 2vh;
+}
+
+.containerUserItem:hover {
+    cursor: pointer;
+    background-color: #ffcecd;
+}
+
+.UserIdText {
+    color: #E47C78;
+    font-weight: 700;
+    font-family: 'Montserrat';
+    font-size: 1.7vh;
+    overflow-y: scroll;
+
+}
+
+.UserNameText {
+    color: #E47C78;
+    font-weight: 700;
+    font-family: 'Montserrat';
+    font-size: 1.7vh;
+
+}
+
+.UserDescriptionText {
+    font-weight: 100;
+    font-size: 1.7vh;
+    font-family: 'Montserrat';  
+    color: #E47C78;
+    font-weight: 700;
+}
+
+.UserIllustration {
+    background-color: lightsalmon;
+}
+
+.UserInfos {
+    color : black;
+    font-weight: 100;
+
+}
+
+.UserInfosDesc {
+    color : grey;
+    font-weight: 100;
+    width: 350px;
+    height: 5vh;
+    overflow-y: scroll;
+    word-wrap: break-word;
+}
+
+.updateUserInfoIconAdm {
+    font-size: 1.5vh;
+    color: #E47C78 !important;
+}
+
+.updateUserInfoIconAdm:hover {
+    cursor : pointer;
+    transform: scale(1.3);
+    color: white!important;
+}
