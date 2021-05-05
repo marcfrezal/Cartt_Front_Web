@@ -111,7 +111,7 @@ class SidebarAdm extends React.Component {
                   </div>
                 </Col>
               </Row>
-              <Row className="sideBarRow">
+              {/* <Row className="sideBarRow">
                 <Col className="sideBarColAdm">
                   <Link to="/adm/dashboard" className={this.state.dashboard ? 'sideBarItemActiveAdm' : 'sideBarItemAdm'} >
                     <div className="sideBarIcon">
@@ -119,7 +119,7 @@ class SidebarAdm extends React.Component {
                     </div>
                   </Link>
                 </Col>
-              </Row>
+              </Row> */}
               <Row className="sideBarRow">
                 <Col className="sideBarColAdm">
                   <Link to="/adm/points-of-sale" className={this.state.shops ? 'sideBarItemActiveAdm' : 'sideBarItemAdm'} >
