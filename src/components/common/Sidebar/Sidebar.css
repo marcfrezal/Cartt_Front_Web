@@ -4,8 +4,8 @@
     width: 5vw !important;
     position: fixed;
     left: 0 !important;
-    height: 100% !important;
-    background-color: red;
+    height: 100vh !important;
+    /* background-color:; */
 }
 
 .sideBarCol {

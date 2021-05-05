@@ -110,7 +110,7 @@ class Sidebar extends React.Component {
                   </div>
                 </Col>
               </Row>
-              <Row className="sideBarRow">
+              {/* <Row className="sideBarRow">
                 <Col className="sideBarCol">
                   <Link to="/dashboard" className={this.state.dashboard ? 'sideBarItemActive' : 'sideBarItem'} >
                     <div className="sideBarIcon">
@@ -118,7 +118,7 @@ class Sidebar extends React.Component {
                     </div>
                   </Link>
                 </Col>
-              </Row>
+              </Row> */}
               <Row className="sideBarRow">
                 <Col className="sideBarCol">
                   <Link to="/points-of-sale" className={this.state.shops ? 'sideBarItemActive' : 'sideBarItem'} >
