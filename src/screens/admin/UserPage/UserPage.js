@@ -120,7 +120,7 @@ function CreateUser(props){
             </Form.Group>
             <Form.Group>
               <Form.Label>Date de naissance</Form.Label>
-              <Form.Control type="date" placeholder="Date de naissance"  onChange={e => setBirthDate(e.target.value)}/>
+              <Form.Control type="date" placeholder="JJ/MM/AAAA"  onChange={e => setBirthDate(e.target.value)}/>
             </Form.Group>
             <Form.Group>
               <Form.Label>Role</Form.Label>

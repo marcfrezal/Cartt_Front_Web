@@ -79,16 +79,16 @@ class SidebarAdm extends React.Component {
     super(props);
     this.state = {
       dashboard: false,
-      customers: false,
+      users: false,
       shops : false,
       settings : false
     };
   }
 
   componentDidMount() {
-    if (window.location.pathname === "/adm/dashboard") {
+    if (window.location.pathname === "/adm/users") {
       this.setState({
-        dashboard : true
+        users : true
       })
     } else if (window.location.pathname === "/adm/points-of-sale") {
       this.setState({
@@ -122,7 +122,7 @@ class SidebarAdm extends React.Component {
               </Row>
               <Row className="sideBarRow">
                 <Col className="sideBarColAdm">
-                  <Link to="/adm/users" className="sideBarItemAdm" >
+                  <Link to="/adm/users" className={this.state.users ? 'sideBarItemActiveAdm' : 'sideBarItemAdm'}  >
                       <div className="sideBarIcon">
                         <FaUser className="fa-spin"/>
                       </div>

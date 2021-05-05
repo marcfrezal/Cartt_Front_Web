@@ -51,7 +51,7 @@ function ValidateInfosUser(props)  {
     return (
       <div className="errorLogin">
         <div className="btnCol">
-          <Button className="saveModalBtnAdmin" onClick={() => updateUser({variables : {user : {_id : props.data.me._id, firstname : firstname, lastname : lastname, phone : phone}}}).catch(err => console.log(err))}>Valider</Button>
+          <Button className="saveModalBtnAdmin" onClick={() => updateUser({variables : {user : {_id : props.data._id, firstname : firstname, lastname : lastname, phone : phone}}}).catch(err => console.log(err))}>Valider</Button>
         </div>
         <p className="errorMess">Erreur.</p>
       </div>
@@ -61,68 +61,69 @@ function ValidateInfosUser(props)  {
     window.location.reload();
   }
   return (
-    <Button className="saveModalBtnAdmin" onClick={() => updateUser({variables : {user : {_id : props.data.me._id, firstname : firstname, lastname : lastname, phone : phone}}}).catch(err => console.log(err))}>Valider</Button>
+    <Button className="saveModalBtnAdmin" onClick={() => updateUser({variables : {user : {_id : props.data._id, firstname : firstname, lastname : lastname, phone : phone}}}).catch(err => console.log(err))}>Valider</Button>
   )
 }
 
 const UpdateInfosUser = (props) => {
-  const { data, error, loading} = useQuery(ME);
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [tel, setTel] = useState('');
-  const [mail, setMail] = useState('');
+  // const { data, error, loading} = useQuery(ME);
+  const [firstName, setFirstName] = useState(props.me.firstname);
+  const [lastName, setLastName] = useState(props.me.lastname);
+  const [tel, setTel] = useState(props.me.phone);
+  const [mail, setMail] = useState(props.me.email);
 
 
-  if (loading) {
-    return (
-      <div style={{display : "flex", justifyContent : "center", alignItems : "center", width : "100%", color : "lightgray"}}>
-        <FaSyncAlt className="loadContainer"/>
-      </div>
-    )
-  } else if (error || data.me.role !== "ADMIN") {
-    return (
-      <div style={{display : "flex", justifyContent : "center", alignItems : "center", width : "100%", color : "lightgray"}}>
-        <p>Une erreur s'est produite lors du chargement des données ou alors vous n'avez pas les droits nécessaires.</p>
-      </div>
-    )
-  } else if (data) {
-    if (data.me.role !== "ADMIN") {
-      return (
-        <div style={{display : "flex", justifyContent : "center", alignItems : "center", width : "100%", color : "lightgray"}}>
-          <p>Vous n'avez pas accès à ces informations.</p>
-        </div>
-      )
-    }
+  // if (loading) {
+  //   return (
+  //     <div style={{display : "flex", justifyContent : "center", alignItems : "center", width : "100%", color : "lightgray"}}>
+  //       <FaSyncAlt className="loadContainer"/>
+  //     </div>
+  //   )
+  // } else if (error || data.me.role !== "ADMIN") {
+  //   console.log(error);
+  //   return (
+  //     <div style={{display : "flex", justifyContent : "center", alignItems : "center", width : "100%", color : "lightgray"}}>
+  //       <p>Une erreur s'est produite lors du chargement des données ou alors vous n'avez pas les droits nécessaires.</p>
+  //     </div>
+  //   )
+  // } else if (data) {
+  //   if (data.me.role !== "ADMIN") {
+  //     return (
+  //       <div style={{display : "flex", justifyContent : "center", alignItems : "center", width : "100%", color : "lightgray"}}>
+  //         <p>Vous n'avez pas accès à ces informations.</p>
+  //       </div>
+  //     )
+  //   }
     return (
       <Container fluid>
         <Form.Group>
           <Form.Label>Nom</Form.Label>
-          <Form.Control type="email" placeholder={data.me.firstname} onChange={e => setFirstName(e.target.value)} />
+          <Form.Control type="email" placeholder={props.me.firstname} onChange={e => setFirstName(e.target.value)} />
         </Form.Group>
         <Form.Group>
           <Form.Label>Prénom</Form.Label>
-          <Form.Control type="email" placeholder={data.me.lastname} onChange={e => setLastName(e.target.value)}/>
+          <Form.Control type="email" placeholder={props.me.lastname} onChange={e => setLastName(e.target.value)}/>
         </Form.Group>
         <Form.Group>
           <Form.Label>Téléphone</Form.Label>
-          <Form.Control type="email" placeholder={data.me.phone} onChange={e => setTel(e.target.value)} />
+          <Form.Control type="email" placeholder={props.me.phone} onChange={e => setTel(e.target.value)} />
         </Form.Group>
         <Form.Group>
           <Form.Label>Mail</Form.Label>
-          <Form.Control type="email" style={{color : "red !important"}} placeholder={data.me.email} onChange={e => setMail(e.target.value)}/>
+          <Form.Control type="email" style={{color : "red !important"}} placeholder={props.me.email} onChange={e => setMail(e.target.value)}/>
         </Form.Group>
         <Modal.Footer>
           <Button className="closeModalBtnAdmin" onClick={props.handleClose}>
             Fermer
           </Button>
-          <ValidateInfosUser data={data} newmail={mail} newfirstname={firstName} newlastname={lastName} newphone={tel}/>
+          <ValidateInfosUser data={props.me} newmail={mail} newfirstname={firstName} newlastname={lastName} newphone={tel}/>
         </Modal.Footer>
       </Container>
     )
-  }
+  // }
 };
 
-function LogoutModal () {
+function LogoutModal  (props)  {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -138,7 +139,7 @@ function LogoutModal () {
         <Modal.Header closeButton>
           <Modal.Title>Modifiez vos informations personnelles.</Modal.Title>
         </Modal.Header>
-          <UpdateInfosUser handleClose={handleClose}/>
+          <UpdateInfosUser me={props.me} handleClose={handleClose}/>
       </Modal>
     </div>
   );
@@ -201,7 +202,7 @@ const GetMe = () => {
             </div>
           </Col>
           <Col xs={12} sm={2}>
-            <LogoutModal/>
+            <LogoutModal me={data.me}/>
           </Col>
         </Row>
       </Container>

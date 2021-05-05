@@ -13,7 +13,7 @@
 }
 
 .containerUserItem {
-    height: 15vh;
+    height: 19vh;
     border : solid 2px #E47C78;
     margin-bottom: 2vh;
     border-radius: 1vh;
@@ -62,12 +62,13 @@
 }
 
 .UserInfosDesc {
-    color : grey;
     font-weight: 100;
     width: 350px;
-    height: 5vh;
+    height: 4vh;
     overflow-y: scroll;
     word-wrap: break-word;
+    border: 1px solid pink;
+
 }
 
 .updateUserInfoIconAdm {

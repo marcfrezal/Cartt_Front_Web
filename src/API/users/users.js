@@ -15,11 +15,19 @@ export const ME = gql`
 export const GETALLUSERS = gql`
             query users {
                 users {
-                _id, 
-                email, 
-                firstname,
-                lastname,
-                phone
+                    _id, 
+                    email, 
+                    firstname,
+                    lastname,
+                    phone,
+                    currentBrand {
+                        _id, 
+                        name
+                    },
+                    brands {
+                        _id, 
+                        name
+                    }
                 } 
             }`
 
@@ -58,3 +66,17 @@ export const SUPPUSER = gql`
                 phone
                 } 
             }`
+
+export const LINKUSER = gql 
+                            `mutation linkUserWithBrand($idUser : String!, $idBrand : Float!) {
+                                linkUserWithBrand (idUser : $idUser, idBrand : $idBrand) {
+                                    _id
+                                }
+                            }`
+
+export const SWITCHUSER = gql
+                        `mutation switch($idUser : String!, $idBrand : Float!) {
+                            switchBrand(idUser : $idUser, idBrand : $idBrand) {
+                              email,
+                            }
+                          }`
