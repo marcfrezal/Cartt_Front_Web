@@ -146,6 +146,12 @@ class Sidebar extends React.Component {
               <Row className="sideBarRow">
                 <Col className="sideBarCol">
                   <div>{this.state.dashboard}</div>
+                  
+                </Col>
+              </Row>
+              <Row className="sideBarRow">
+                <Col className="sideBarCol">
+                  <div>{this.state.dashboard}</div>
                 
                 </Col>
               </Row>

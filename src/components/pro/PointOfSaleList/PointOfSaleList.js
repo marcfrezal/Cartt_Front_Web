@@ -55,7 +55,7 @@ const PosList = () => {
                 <div className="posItemTitle">{pos.name}</div>
               </Row>
               <Row className="colListText">
-                <div className="posItemAddress">{pos.location.adress1} {pos.location.postcode} {pos.location.city}</div>
+                <div className="posItemAddress">{pos.location !== null ? <div>{pos.location.adress1} {pos.location.postcode} {pos.location.city}</div> : <div>Pas d'adresses enregistrée.</div> }</div>
               </Row>
             </Col>
           </Row>
