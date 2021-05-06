@@ -1,0 +1,3 @@
+[submodule "src/CadeoModels"]
+	path = src/CadeoModels
+	url = https://github.com/FlorianMarcon/CadeoModels.git

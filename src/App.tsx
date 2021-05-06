@@ -1,11 +1,11 @@
 import './App.css';
-import Home from '../src/screens/launch-page/HomePage/HomePage';
-import Login from '../src/screens/launch-page/LoginPage/LoginPage';
-import Register from '../src/screens/launch-page/RegisterPage/RegisterPage';
-import Dashboard from '../src/screens/pro/DashdoardPage/DashboardPage';
-import PointsOfSale from '../src/screens/pro/PointsOfSalePage/PointsOfSalePage';
-import Profile from '../src/screens/pro/ProfilePage/ProfilePage';
-import React from "react";
+import Home from './screens/launch-page/HomePage/HomePage';
+import Login from './screens/launch-page/LoginPage/LoginPage';
+import Register from './screens/launch-page/RegisterPage/RegisterPage';
+import Dashboard from './screens/pro/DashdoardPage/DashboardPage';
+import PointsOfSale from './screens/pro/PointsOfSalePage/PointsOfSalePage';
+import Profile from './screens/pro/ProfilePage/ProfilePage';
+import React, { Suspense } from 'react';
 import {
   BrowserRouter,
   Switch,
@@ -27,7 +27,8 @@ const client = new ApolloClient({
 
 function App() {
   return (
-    <ApolloProvider client={client}>
+	  	<Suspense fallback={true}>
+      <ApolloProvider client={client}>
       <BrowserRouter>
           <Switch>
             <Route exact path="/" component={Home} />
@@ -39,6 +40,7 @@ function App() {
           </Switch>
       </BrowserRouter>
     </ApolloProvider>
+    </Suspense>
   );
 }
 
