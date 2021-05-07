@@ -148,7 +148,6 @@ function LogoutModal  (props)  {
 const GetMe = () => {
   const { data, error, loading} = useQuery(ME);
 
-  console.log(data);
   if (loading) {
     return (
       <div style={{display : "flex", justifyContent : "center", alignItems : "center", width : "100%", color : "lightgray"}}>
@@ -175,7 +174,7 @@ const GetMe = () => {
       <Container fluid>
         <Row>
           <Col xs={12} sm={5}>
-            <div className="profileInfosPictureAdm"/>
+            <div className="profileInfosPictureAdm"></div>
           </Col>
           <Col xs={12} sm={5}>
             <div className="profileInfosUserAdm">

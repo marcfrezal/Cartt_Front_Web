@@ -2,7 +2,7 @@
     margin-bottom: 5vh;
     align-content: center;
     height: 15vh;
-    background-color: #bac9ff88;
+    /* background-color: #bac9ff88; */
     border : solid 3px #aab8e8;
     border-top-right-radius: 1vh;
     border-bottom-right-radius: 1vh;
@@ -20,9 +20,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('../../../assets/common/Cartt.png');
+    /* background-image: url('../../../assets/common/Cartt.png'); */
     background-size: cover;
     background-position: center center;
+    background-color: #bac9ff88;
+    border-right: solid 3px #aab8e8;
+
 }
 
 .posList {
@@ -48,17 +51,15 @@
 }
 
 .posItemTitle {
-    font-size: 20px !important;
-    color: white !important;
+    font-size: 1.7vh !important;
+    color: black!important;
     font-family: Montserrat;
-    font-weight: 600;
 }
 
 .posItemAddress {
-    font-size: 13px;
-    color: white;
+    font-size: 1.5vh;
+    color: black;
     font-family: Montserrat;
-    margin-bottom: 10px;
 }
 
 .posItemIcon {
@@ -102,6 +103,17 @@
     width : 150vh; 
     height : 70vh;
     overflow : auto;
+}
+
+.storesIcons {
+    color: white;
+    font-size: 5vh;
+}
+
+.infosStoresCol {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 /*Phones*/

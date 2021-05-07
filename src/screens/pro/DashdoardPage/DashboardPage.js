@@ -22,14 +22,14 @@ class Dashboard extends React.Component {
             </Col>
           </Row>
           <Row className="rowDashboard1">
-            {/* <Col sm={12} md={6} lg={6}>
+            <Col sm={12} md={6} lg={6}>
               <LastTransactions/>
             </Col>
-            <Col sm={12} md={6} lg={6}> */}
+            <Col sm={12} md={6} lg={6}>
             <Col>
               <MounthlyNumbers/>
               </Col>
-            {/* </Col> */}
+            </Col>
           </Row>
           <Row className="rowDashboard2">
             {/* <Col sm={12} md={6} lg={6}>

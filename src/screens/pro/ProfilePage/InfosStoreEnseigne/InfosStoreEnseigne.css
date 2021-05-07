@@ -1,5 +1,5 @@
 .pro-infosStoreEnseigneContainer {
-    background-color: #f9fafd;
+    height: 35vh;
 }
 
 .pro-infoStoreEnseignCard {
@@ -13,20 +13,17 @@
     align-items: center
 }
 
-.pro-rowProfilInfosItemsPro {
+
+.pro-infoStoreCol {
     display: flex;
-    justify-content: center;
-    background-color: #f9fafd;
+    justify-content: flex-start;
+    align-items: center;
 }
 
-.pro-infoStoreEnseignCol {
+.pro-infosEnseigneCol  {
     display: flex;
-    justify-content: center;
-    align-items: center
-}
-
-.pro-infosStoreEnsigneCenter  {
-    justify-content: center;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .pro-infosItemTitle {

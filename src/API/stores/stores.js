@@ -41,3 +41,18 @@ export const SUPPSTORE = gql`
                         name
                         }
                     }`
+
+export const SETSTORELOCATION = gql`
+                                    mutation setStoreLocation($location : LocationCreateSchema, $idStore : Float!) {
+                                        setStoreLocation (location : $location, idStore : $idStore) {
+                                        _id,
+                                        location {
+                                            _id,
+                                            city, 
+                                            adress1, 
+                                            country, 
+                                            postcode
+                                        }, 
+                                        name
+                                        }
+                                    }` 

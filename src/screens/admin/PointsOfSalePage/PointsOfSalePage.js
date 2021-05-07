@@ -10,7 +10,7 @@ import BrandListAndManagement from '../../../components/admin/BrandListAndManage
 import StoreListAndManagement from '../../../components/admin/StoreListAndManagement/StoreListAndManagement';
 import { useState } from "react";
 import { CREATEBRAND, GETALLBRANDS } from '../../../API/brands/brands';
-import { CREATESTORE } from '../../../API/stores/stores';
+import { CREATESTORE, SETSTORELOCATION } from '../../../API/stores/stores';
 import { useQuery, useMutation } from '@apollo/react-hooks';
 
 
@@ -164,10 +164,13 @@ const SelectBrand = (props) => {
   }
 };
 
+
 function ValidateCreaStore(props)  {
   const [ creaStore, {data, error : mutationError, loading : mutationLoading} ] = useMutation(CREATESTORE);
 
   var idBrand = parseFloat(props.idBrand);
+  
+  console.log(idBrand)
   if (mutationLoading) {
     return (
       <div className="errorLogin">
@@ -195,6 +198,7 @@ function ValidateCreaStore(props)  {
     <Button className="saveModalBtnAdmin" onClick={() => creaStore({variables : {mystore : {name : props.name, idBrand : idBrand}}}).catch(err => console.log(err))}>Valider</Button>
   )
 }
+
 
 function CreateStore(){
 
@@ -227,10 +231,10 @@ function CreateStore(){
           </Form.Group>
         </Modal.Body>
         <Modal.Footer>
+        <ValidateCreaStore name={name} idBrand={brandId} handleShow={handleClose}/>
         <Button className="closeModalBtnAdmin" onClick={handleClose}>
             Fermer
           </Button>
-        <ValidateCreaStore name={name} idBrand={brandId}/>
         </Modal.Footer>
       </Modal>
     </Row>

@@ -33,15 +33,19 @@
 }
 
 .profileInfosPicture {
-    background-image: url('../../../../assets/launch-page/marc.png');
+    background-color: #BAC9FF;
+    color: white;
+    /* background-image: url('../../../../assets/launch-page/marc.png'); */
     border-radius: 2vh;
     height: 20vh;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     width: 100%;
-    border: 5px solid #0E3570;
 }
 
 .profileInfosUser {
@@ -112,7 +116,7 @@
 @media (min-width: 992px) {  
     
     .profileInfosPicture {
-        background-image: url('../../../../assets/launch-page/marc.png');
+        /* background-image: url('../../../../assets/launch-page/marc.png'); */
         height: 47vh;
         width: 100%;
     }

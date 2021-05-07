@@ -9,6 +9,13 @@ export const ME = gql`
                     email,
                     birthDate,
                     phone,
+                    brands {
+                        _id,
+                        name
+                    },
+                    currentBrand {
+                        _id, name
+                    }
                 }
             }`
 
@@ -16,6 +23,7 @@ export const GETALLUSERS = gql`
             query users {
                 users {
                     _id, 
+                    role,
                     email, 
                     firstname,
                     lastname,
@@ -27,7 +35,8 @@ export const GETALLUSERS = gql`
                     brands {
                         _id, 
                         name
-                    }
+                    },
+
                 } 
             }`
 

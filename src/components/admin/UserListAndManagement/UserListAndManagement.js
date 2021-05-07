@@ -3,10 +3,10 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import './UserListAndManagement.css';
-import { GETALLUSERS, LINKUSER, UPDATEUSER, SWITCHUSER } from '../../../API/users/users';
+import { GETALLUSERS, LINKUSER, UPDATEUSER, SWITCHUSER, SUPPUSER } from '../../../API/users/users';
 import { GETALLBRANDS } from '../../../API/brands/brands';
 import { useQuery, useMutation } from '@apollo/react-hooks';
-import { FaSyncAlt, FaPen, FaRandom, FaLink } from "react-icons/fa";
+import { FaSyncAlt, FaPen, FaRandom, FaLink, FaTrash } from "react-icons/fa";
 import { useState } from "react";
 import { Modal, Form, Button } from "react-bootstrap";
 
@@ -78,7 +78,7 @@ const UpdUserModal = (props) => {
           <Form.Group>
             <Form.Label>Role</Form.Label>
             <Form.Control as="select" defaultValue={role} onChange={e => setRole(e.target.value)}>
-              <option>PRO</option>
+              <option>ADMIN</option>
               <option>SELLER</option>
               <option>LAMBDA</option>
             </Form.Control>
@@ -178,14 +178,6 @@ const SwitchUserModal = (props) => {
           <ValidateSwitchUser
             idBrand={brandId}
             idUser={props.User._id} />
-          {/* <ValidateUpdUser
-            firstname={firstname}
-            lastname={lastname}
-            birthDate={birthDate}
-            role={role}
-            // email={email}
-            phone={phone}
-            id={props.User._id} /> */}
         </Modal.Footer>
       </Modal>
     </div>
@@ -292,6 +284,65 @@ const LinkUserModal = (props) => {
   );
 }
 
+// function ValidateSuppUser(props)  {
+//   const [ suppUser, {data, error : mutationError, loading : mutationLoading} ] = useMutation(SUPPUSER);
+
+//   if (mutationLoading) {
+//     return (
+//       <div className="errorLogin">
+//         <div className="btnCol">
+//           <Button className="saveModalBtnAdmin">Patientez...</Button>
+//         </div>
+//       </div>
+//     )
+//   }
+//   if (mutationError) {
+//     console.log(mutationError)
+//     return (
+//       <div className="errorLogin">
+//         <div className="btnCol">
+//           <Button className="saveModalBtnAdmin" onClick={() => suppUser({variables : { idBrand : props.brand._id}}).catch(err => console.log(err))}>Valider</Button>
+//         </div>
+//         <p className="errorMess">Erreur.</p>
+//       </div>
+//     )
+//   }
+//   if (data) {
+//     window.location.reload();
+//   }
+//   return (
+//     <Button className="saveModalBtnAdmin" onClick={() => suppUser({variables : { idBrand: props.brand._id}}).catch(err => console.log(err))}>Valider</Button>
+//   )
+// }
+
+const SuppUserModal = (props) => {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  return (
+    <div>
+      <FaTrash className="updateUserInfoIconAdm"  onClick={handleShow}/>
+
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Supression de l'user {props.user.firstname} {props.user.lastname}.</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          Impossible de supprimer l'user <strong> {props.user.firstname} {props.user.lastname}</strong>.
+        </Modal.Body>
+        <Modal.Footer>
+          <Button className="closeModalBtnAdmin" onClick={handleClose}>
+            Fermer
+          </Button>
+          <Button className="saveModalBtnAdmin"onClick={handleClose}>Valider</Button>
+        </Modal.Footer>
+      </Modal>
+    </div>
+  );
+}
+
 const UserList = (props) => {
   const { data, error, loading } = useQuery(GETALLUSERS);
 
@@ -347,20 +398,26 @@ const UserList = (props) => {
                     {user.currentBrand !== null ? <div>{user.currentBrand.name}</div> : <div>Pas de marques associée.</div> }
                   </div>
                 </Row>
+                <Row className="UserNameText">
+                  <div>Role:&nbsp;</div>
+                  <div className="UserInfos" >
+                    {user.role !== null ? <div>{user.role}</div> : <div>Pas de role spécifique.</div> }
+                  </div>
+                </Row>
               </Col>
               <Col xs={12} md={1}>
-                <Row style={{ display: "flex", alignItems: "center", height: "33%" }}>
+                <Row style={{ display: "flex", alignItems: "center", height: "25%" }}>
                   <UpdUserModal User={user} />
                 </Row>
-                <Row style={{ display: "flex", alignItems: "center", height: "33%" }}>
+                <Row style={{ display: "flex", alignItems: "center", height: "25%" }}>
                   <LinkUserModal User={user} />
                 </Row>
-                <Row style={{ display: "flex", alignItems: "center", height: "33%" }}>
+                <Row style={{ display: "flex", alignItems: "center", height: "25%" }}>
                   <SwitchUserModal User={user} />
                 </Row>
-                {/* <Row style={{ display: "flex", alignItems: "center", height: "50%" }}>
-                  <SuppUserModal User={user} />
-                </Row> */}
+                <Row style={{ display: "flex", alignItems: "center", height: "25%" }}>
+                  <SuppUserModal user={user} />
+                </Row>
               </Col>
             </Row>
           </Container>

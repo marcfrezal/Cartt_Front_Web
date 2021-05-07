@@ -1,14 +1,49 @@
-.posHeaderTitle {
+.posHeaderTitlePro {
     font-size: 5vh;
     font-weight: bold;
     color: #183D76;
     font-family: Montserrat;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
 }
+
+.posHeaderPro {
+    font-size: 2vh;
+    color: #183D76;
+    font-family: Montserrat;
+    font-weight: lighter;
+    font-style: italic;
+}
+
 
 .posHeaderAction {
     margin-top: 5px;  
 }
 
+.headerSwitch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.headerSwithIcon {
+    font-size: 1.5vh;
+    margin-left : 1vh;
+    color : darkgrey !important;
+}
+
+.headerSwithBrand {
+    font-size: 2vh;
+    font-family : Montserrat;
+    color : darkgrey !important;
+}
+
+.headerSwithIcon:hover {
+    transform: scale(1.1);
+    color : white!important;
+    cursor : pointer
+}
 
 /*Phones*/
 @media (max-width: 768px) { 

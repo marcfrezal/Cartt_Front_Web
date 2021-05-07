@@ -34,14 +34,15 @@ class Profile extends React.Component {
         <Sidebar />
         <Row>
           <Col xs={1} lg={1}/>
+          
           <Col xs={10} lg={10}>
             <Container fluid>
               <Row className="rowHeaderProfil">
                 <Header
-                title='Profil'
-                actionTitle='Modifier mon mot de passe'
-                onPress={() => this._showModifyPasswordModal()}
-                />
+                  title='Profil'
+                  actionTitle='Modifier mon mot de passe'
+                  onPress={() => this._showModifyPasswordModal()}
+                  />
               </Row>
               <Row className="rowUserInfos">
                 <ProfileInfos />

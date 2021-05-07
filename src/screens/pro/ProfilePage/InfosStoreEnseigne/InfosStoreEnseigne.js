@@ -6,6 +6,7 @@ import './InfosStoreEnseigne.css'
 import { useMutation, useQuery } from '@apollo/react-hooks';
 import {GETALLSTORESFORCOUNTING} from '../../../../API/stores/stores'
 import {GETALLBRANDSFORCOUNTING} from '../../../../API/brands/brands'
+import {ME} from '../../../../API/users/users'
 import { FaSyncAlt} from 'react-icons/fa';
 
 const GetStores = () => {
@@ -24,7 +25,6 @@ const GetStores = () => {
       </div>
     )
   } else if (data && data.getStores.length !== 0) {
-    console.log(data.getStores);
     return (
       <div className="shadow pro-infoStoreEnseignCard">
         <div className="pro-infosStoreEnsigneCenter">
@@ -44,7 +44,7 @@ const GetStores = () => {
 };
 
 const GetBrands = () => {
-  const { data, error, loading} = useQuery(GETALLBRANDSFORCOUNTING);
+  const { data, error, loading} = useQuery(ME);
 
   if (loading) {
     return (
@@ -58,21 +58,23 @@ const GetBrands = () => {
         <p>Une erreur s'est produite lors du chargement des données.</p>
       </div>
     )
-  } else if (data && data.getBrands.length !== 0) {
-    console.log(data.getBrands);
+  } else if (data && data.me.brands.length !== 0) {
     return (
       <div className="shadow pro-infoStoreEnseignCard">
         <div className="pro-infosStoreEnsigneCenter">
           <div className="pro-infosItemTitle">Enseignes</div>
-          <div className="pro-infosItemNumber">{data.getBrands.length}</div>
+          <div className="pro-infosItemNumber">{data.me.brands.length}</div>
         </div>
       </div>
     )
   }
   else {
     return (
-      <div className="errorContainer">
-        <p>Vous n'avez aucuns magasins enregistrés.</p>
+      <div className="shadow pro-infoStoreEnseignCard">
+        <div className="pro-infosStoreEnsigneCenter">
+          <div className="pro-infosItemTitle">Enseignes</div>
+          <div className="pro-infosItemNumber">0</div>
+        </div>
       </div>
     )
   }
@@ -89,12 +91,12 @@ class InfosStoreEnseigne extends React.Component {
   render() {
     return (
       <Container fluid className="pro-infosStoreEnseigneContainer">
-        <Row className="pro-rowProfilInfosItems">
-          <Col className="pro-infoStoreEnseignCol">
+        <Row>
+          <Col className="pro-infoStoreCol">
             <GetStores/>
           </Col>
-          <Col className="pro-infoStoreEnseignCol">
-            <GetBrands/>
+          <Col className="pro-infosEnseigneCol ">
+            <GetBrands/> 
           </Col>
         </Row>
       </Container>
