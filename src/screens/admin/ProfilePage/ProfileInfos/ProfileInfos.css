@@ -29,7 +29,7 @@
     display: flex;
 }
 
-.profileInfosPictureAdm {
+/* .profileInfosPictureAdm {
     background-image: url('../../../../assets/launch-page/marc.png');
     border-radius: 2vh;
     height: 20vh;
@@ -38,6 +38,21 @@
     background-repeat: no-repeat;
     width: 100%;
     border: 3px solid #e47c78;
+} */
+
+.profileInfosPictureAdm {
+    background-color: #fad8d8;
+    color: white;
+    /* background-image: url('../../../../assets/launch-page/marc.png'); */
+    border-radius: 2vh;
+    height: 20vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 .profileInfosUserAdm {
@@ -122,7 +137,7 @@
     }
 
     .profileInfosPictureAdm {
-        background-image: url('../../../../assets/launch-page/marc.png');
+        /* background-image: url('../../../../assets/launch-page/marc.png'); */
         height: 47vh;
         width: 100%;
     }

@@ -21,6 +21,7 @@ const GetMe = () => {
       </div>
     )
   } else if (error) {
+    console.log(error)
     return (
       <div style={{display : "flex", justifyContent : "center", alignItems : "center", width : "100%", color : "lightgray"}}>
         <p>Une erreur s'est produite lors du chargement des données.</p>

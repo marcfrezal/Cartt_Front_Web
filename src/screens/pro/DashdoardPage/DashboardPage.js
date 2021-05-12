@@ -21,52 +21,6 @@ class Dashboard extends React.Component {
               <Header title="Dashboard" />
             </Col>
           </Row>
-          <Row className="rowDashboard1">
-            <Col sm={12} md={6} lg={6}>
-              <LastTransactions/>
-            </Col>
-            <Col sm={12} md={6} lg={6}>
-            <Col>
-              <MounthlyNumbers/>
-              </Col>
-            </Col>
-          </Row>
-          <Row className="rowDashboard2">
-            {/* <Col sm={12} md={6} lg={6}>
-              <Growth/>
-            </Col>
-            <Col sm={12} md={6} lg={6}> */}
-            <Col>
-              <SalesHistory/>
-              </Col>
-            {/* </Col> */}
-          </Row>
-         {/*
-          <Row>
-            <Col md={1} xs={1} lg={1} sm={1} style={{backgroundColor :  "#f9fafd"}}></Col>
-           
-            <Col style={{backgroundColor :  "#f9fafd"}}>
-            <Header title="Dashboard"/>
-              <Container fluid>
-                <Row className='topRow'>
-                  <Col className='topRowLeftColumn'>
-                    <LastTransactions/>
-                  </Col>
-                  <Col className='topRowRightColumn'>
-                    <MounthlyNumbers/>
-                  </Col>
-                </Row>
-                <Row className='bottomRow'>
-                  <Col className='bottomLeftCol'>
-                    <SalesHistory/>
-                  </Col>
-                  <Col className='bottomRightCol'>
-                    <Growth/>
-                  </Col>
-                </Row>
-              </Container>
-            </Col>
-         </Row>*/}
         </Container>
       );
     }

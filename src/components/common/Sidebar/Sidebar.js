@@ -19,7 +19,7 @@ function LogoutFunction () {
     
   if (mutationLoading) {
     return (
-      <Button style={{backgroundColor : "#0E3670", border : "none"}}>
+      <Button className="saveModalBtn">
         Patientez...
       </Button>
     )
@@ -27,7 +27,7 @@ function LogoutFunction () {
   if (mutationError) {
     console.log(mutationError)
     return (
-      <Button style={{backgroundColor : "#0E3670", border : "none"}} onClick={() => updateLogout().catch(err => console.log(err))} >
+      <Button className="saveModalBtn" onClick={() => updateLogout().catch(err => console.log(err))} >
         Valider
       </Button>
     )
@@ -38,7 +38,7 @@ function LogoutFunction () {
   }
 
   return (
-    <Button style={{backgroundColor : "#0E3670", border : "none"}} onClick={() => updateLogout().catch(err => console.log(err))} >
+    <Button className="saveModalBtn" onClick={() => updateLogout().catch(err => console.log(err))} >
       Valider
     </Button>
   )
@@ -62,7 +62,7 @@ function LogoutModal () {
         </Modal.Header>
         <Modal.Body>Vous vous appretez à vous déconnecter, etes-vous sur de vouloir poursuivre?</Modal.Body>
         <Modal.Footer>
-          <Button style={{backgroundColor : "#E50815", border : "none"}} onClick={handleClose}>
+          <Button className="closeModalBtn" onClick={handleClose}>
             Fermer
           </Button>
           <LogoutFunction/>
@@ -143,12 +143,6 @@ class Sidebar extends React.Component {
                   
                 </Col>
               </Row>
-              {/* <Row className="sideBarRow">
-                <Col className="sideBarCol">
-                  <div>{this.state.dashboard}</div>
-                  
-                </Col> */}
-              {/* </Row> */}
               <Row className="sideBarRow">
                 <Col className="sideBarCol">
                   <div>{this.state.dashboard}</div>

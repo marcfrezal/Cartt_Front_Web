@@ -17,9 +17,7 @@ import {
 } from "react-router-dom";
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink  } from '@apollo/client';
 
-
-const url = 'http://api.dev.cartt.fr/'
-
+const url = process.env.REACT_APP_API_URL;
 const httpLink = createHttpLink({ uri : url,  credentials: 'include'});
 
 const client = new ApolloClient({

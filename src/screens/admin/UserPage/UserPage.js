@@ -91,7 +91,7 @@ function CreateUser(props){
     const [firstname, setFirstname] = useState('');
     const [lastname, setLastname] = useState('');
     const [birthDate, setBirthDate] = useState('');
-    const [role, setRole]= useState('');
+    const [role, setRole]= useState('SELLER');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
     const [password, setPassword] = useState('');

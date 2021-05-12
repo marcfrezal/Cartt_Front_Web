@@ -48,7 +48,6 @@ const UpdUserModal = (props) => {
   const [lastname, setLastname] = useState(props.User.lastname);
   const [birthDate, setBirthDate] = useState(props.User.birthDate);
   const [role, setRole] = useState(props.User.role);
-  // const [email, setEmail] = useState('');
   const [phone, setPhone] = useState(props.User.phone);
 
   const handleClose = () => setShow(false);
@@ -71,10 +70,6 @@ const UpdUserModal = (props) => {
             <Form.Label>Nom</Form.Label>
             <Form.Control type="textarea" defaultValue={lastname} onChange={e => setLastname(e.target.value)} />
           </Form.Group>
-          {/* <Form.Group>
-            <Form.Label>Date de naissance</Form.Label>
-            <Form.Control type="date" defaultValue={birthDate} onChange={e => setBirthDate(e.target.value)} />
-          </Form.Group> */}
           <Form.Group>
             <Form.Label>Role</Form.Label>
             <Form.Control as="select" defaultValue={role} onChange={e => setRole(e.target.value)}>
@@ -87,15 +82,6 @@ const UpdUserModal = (props) => {
             <Form.Label>Téléphone</Form.Label>
             <Form.Control type="phone" defaultValue={phone} onChange={e => setPhone(e.target.value)} />
           </Form.Group>
-          {/* <Form.Group>
-              <Form.Label>Email</Form.Label>
-              <Form.Control type="email" defaultValue={props.User.email}  onChange={e => setEmail(e.target.value)}/>
-            </Form.Group> */}
-          {/* <Form.Group>
-              <Form.Label>Mot de passe</Form.Label>
-              <Form.Control type="password" defaultValue={props.User.password}  onChange={e => setPhone(e.target.value)}/>
-            </Form.Group> */}
-
         </Modal.Body>
         <Modal.Footer>
           <Button className="closeModalBtnAdmin" onClick={props.handleClose}>
@@ -106,7 +92,6 @@ const UpdUserModal = (props) => {
             lastname={lastname}
             birthDate={birthDate}
             role={role}
-            // email={email}
             phone={phone}
             id={props.User._id} />
         </Modal.Footer>
@@ -315,33 +300,33 @@ const LinkUserModal = (props) => {
 //   )
 // }
 
-const SuppUserModal = (props) => {
-  const [show, setShow] = useState(false);
+// const SuppUserModal = (props) => {
+//   const [show, setShow] = useState(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+//   const handleClose = () => setShow(false);
+//   const handleShow = () => setShow(true);
 
-  return (
-    <div>
-      <FaTrash className="updateUserInfoIconAdm"  onClick={handleShow}/>
+//   return (
+//     <div>
+//       <FaTrash className="updateUserInfoIconAdm"  onClick={handleShow}/>
 
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Supression de l'user {props.user.firstname} {props.user.lastname}.</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          Impossible de supprimer l'user <strong> {props.user.firstname} {props.user.lastname}</strong>.
-        </Modal.Body>
-        <Modal.Footer>
-          <Button className="closeModalBtnAdmin" onClick={handleClose}>
-            Fermer
-          </Button>
-          <Button className="saveModalBtnAdmin"onClick={handleClose}>Valider</Button>
-        </Modal.Footer>
-      </Modal>
-    </div>
-  );
-}
+//       <Modal show={show} onHide={handleClose}>
+//         <Modal.Header closeButton>
+//           <Modal.Title>Supression de l'user {props.user.firstname} {props.user.lastname}.</Modal.Title>
+//         </Modal.Header>
+//         <Modal.Body>
+//           Impossible de supprimer l'user <strong> {props.user.firstname} {props.user.lastname}</strong>.
+//         </Modal.Body>
+//         <Modal.Footer>
+//           <Button className="closeModalBtnAdmin" onClick={handleClose}>
+//             Fermer
+//           </Button>
+//           <Button className="saveModalBtnAdmin"onClick={handleClose}>Valider</Button>
+//         </Modal.Footer>
+//       </Modal>
+//     </div>
+//   );
+// }
 
 const UserList = (props) => {
   const { data, error, loading } = useQuery(GETALLUSERS);
@@ -406,18 +391,18 @@ const UserList = (props) => {
                 </Row>
               </Col>
               <Col xs={12} md={1}>
-                <Row style={{ display: "flex", alignItems: "center", height: "25%" }}>
+                <Row style={{ display: "flex", alignItems: "center", height: "33%" }}>
                   <UpdUserModal User={user} />
                 </Row>
-                <Row style={{ display: "flex", alignItems: "center", height: "25%" }}>
+                <Row style={{ display: "flex", alignItems: "center", height: "33%" }}>
                   <LinkUserModal User={user} />
                 </Row>
-                <Row style={{ display: "flex", alignItems: "center", height: "25%" }}>
+                <Row style={{ display: "flex", alignItems: "center", height: "33%" }}>
                   <SwitchUserModal User={user} />
                 </Row>
-                <Row style={{ display: "flex", alignItems: "center", height: "25%" }}>
+                {/* <Row style={{ display: "flex", alignItems: "center", height: "25%" }}>
                   <SuppUserModal user={user} />
-                </Row>
+                </Row> */}
               </Col>
             </Row>
           </Container>

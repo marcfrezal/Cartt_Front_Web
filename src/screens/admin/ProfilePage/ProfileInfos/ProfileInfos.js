@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import './ProfileInfos.css'
-import { FaPen, FaSyncAlt } from "react-icons/fa";
+import { FaPen, FaSyncAlt, FaUser } from "react-icons/fa";
 import { Modal, Form, Button } from "react-bootstrap";
 import { ME } from '../../../../API/users/users';
 import { UPDATEUSER } from '../../../../API/users/users';
@@ -66,34 +66,12 @@ function ValidateInfosUser(props)  {
 }
 
 const UpdateInfosUser = (props) => {
-  // const { data, error, loading} = useQuery(ME);
+
   const [firstName, setFirstName] = useState(props.me.firstname);
   const [lastName, setLastName] = useState(props.me.lastname);
   const [tel, setTel] = useState(props.me.phone);
   const [mail, setMail] = useState(props.me.email);
 
-
-  // if (loading) {
-  //   return (
-  //     <div style={{display : "flex", justifyContent : "center", alignItems : "center", width : "100%", color : "lightgray"}}>
-  //       <FaSyncAlt className="loadContainer"/>
-  //     </div>
-  //   )
-  // } else if (error || data.me.role !== "ADMIN") {
-  //   console.log(error);
-  //   return (
-  //     <div style={{display : "flex", justifyContent : "center", alignItems : "center", width : "100%", color : "lightgray"}}>
-  //       <p>Une erreur s'est produite lors du chargement des données ou alors vous n'avez pas les droits nécessaires.</p>
-  //     </div>
-  //   )
-  // } else if (data) {
-  //   if (data.me.role !== "ADMIN") {
-  //     return (
-  //       <div style={{display : "flex", justifyContent : "center", alignItems : "center", width : "100%", color : "lightgray"}}>
-  //         <p>Vous n'avez pas accès à ces informations.</p>
-  //       </div>
-  //     )
-  //   }
     return (
       <Container fluid>
         <Form.Group>
@@ -120,7 +98,7 @@ const UpdateInfosUser = (props) => {
         </Modal.Footer>
       </Container>
     )
-  // }
+
 };
 
 function LogoutModal  (props)  {
@@ -162,19 +140,15 @@ const GetMe = () => {
       </div>
     )
   } else if (data) {
-    // if (data.me.role !== "ADMIN") {
-    //   return (
-    //     <div style={{display : "flex", justifyContent : "center", alignItems : "center", width : "100%", color : "lightgray"}}>
-    //       <p>Vous n'avez pas accès à ces informations.</p>
-    //     </div>
-    //   )
-    // }
+
     let date = dateFormat(data.me.birthDate, "dd/mm/yyyy")
     return (
       <Container fluid>
         <Row>
-          <Col xs={12} sm={5}>
-            <div className="profileInfosPictureAdm"></div>
+        <Col xs={12} sm={12} md={5}>
+            <div className="profileInfosPictureAdm">
+              <FaUser style={{fontSize : "20vh"}}/>
+            </div>
           </Col>
           <Col xs={12} sm={5}>
             <div className="profileInfosUserAdm">

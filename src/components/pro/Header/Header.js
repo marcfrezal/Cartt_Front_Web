@@ -19,10 +19,9 @@ const SelectBrand = (props) => {
       </div>
     )
   } else if (error) {
-
     return (
       <div className="errorContainer">
-        <p>Une erreur s'est produite lors du chargement des données.</p>
+        Pas de marques enregistrées.
       </div>
     )
   } else if (data && data.me.brands.length !== 0) {
@@ -37,7 +36,7 @@ const SelectBrand = (props) => {
   else {
     return (
       <div className="errorContainer">
-        <option>Pas de marques enregistrées.</option>
+        Pas de marques enregistrées.
       </div>
     )
   }
@@ -62,7 +61,7 @@ function ValidateSwitchUser(props) {
     return (
       <div className="errorLogin">
         <div className="btnCol">
-          <Button className="saveModalBtnAdmin" onClick={() => linkUser({ variables: { idUser: props.idUser, idBrand: idBrand }}).catch(err => console.log(err))}>Switch</Button>
+          <Button className="saveModalBtn" onClick={() => linkUser({ variables: { idUser: props.idUser, idBrand: idBrand }}).catch(err => console.log(err))}>Switch</Button>
         </div>
         <p className="errorMess">Erreur.</p>
       </div>
@@ -72,7 +71,7 @@ function ValidateSwitchUser(props) {
     window.location.reload();
   }
   return (
-    <Button className="saveModalBtnAdmin" onClick={() => linkUser({ variables: { idUser: props.idUser, idBrand: idBrand }}).catch(err => console.log(err))}>Switch</Button>
+    <Button className="saveModalBtn" onClick={() => linkUser({ variables: { idUser: props.idUser, idBrand: idBrand }}).catch(err => console.log(err))}>Switch</Button>
   )
 }
 
@@ -93,7 +92,7 @@ const SwitchUserModal = (props) => {
   } else if (error) {
     return (
       <div className="errorContainer">
-        <p>Une erreur s'est produite lors du chargement des données.</p>
+        Pas de marques enregistrées.
       </div>
     )
   } else if (data && data.me.brands.length !== 0) {
@@ -111,7 +110,7 @@ const SwitchUserModal = (props) => {
               <SelectBrand selectBrand={selectBrand}/>
             </Modal.Body>
             <Modal.Footer>
-              <Button className="closeModalBtnAdmin" onClick={props.handleClose}>
+              <Button className="closeModalBtn" onClick={props.handleClose}>
                 Fermer
               </Button>
               <ValidateSwitchUser

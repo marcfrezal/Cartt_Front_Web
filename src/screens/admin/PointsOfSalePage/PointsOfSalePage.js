@@ -147,6 +147,7 @@ const SelectBrand = (props) => {
       </div>
     )
   } else if (data && data.getBrands.length !== 0) {
+    props.selectBrandIfNull(data.getBrands[0]._id);
     return (
       <Form.Control as="select" onChange={e => props.selectBrand(e.target.value)}>
         {data.getBrands.map((pos, index) => (
@@ -168,9 +169,13 @@ const SelectBrand = (props) => {
 function ValidateCreaStore(props)  {
   const [ creaStore, {data, error : mutationError, loading : mutationLoading} ] = useMutation(CREATESTORE);
 
-  var idBrand = parseFloat(props.idBrand);
-  
-  console.log(idBrand)
+  var idBrand = 0;
+  console.log(props.idBrand)
+  if (props.idBrand === undefined) {
+    idBrand =  parseFloat(props.idBrandIfNull)
+  } else {
+    idBrand =  parseFloat(props.idBrand)
+  }
   if (mutationLoading) {
     return (
       <div className="errorLogin">
@@ -203,8 +208,9 @@ function ValidateCreaStore(props)  {
 function CreateStore(){
 
   const [show, setShow] = useState(false);
-  const [name, setName] = useState();
+  const [name, setName] = useState('');
   const [brandId, setBrandId] = useState();
+  const [brandIdIfNull, setBrandIdIfNull] = useState();
 
 
   const handleClose = () => setShow(false);
@@ -227,14 +233,14 @@ function CreateStore(){
           </Form.Group>
           <Form.Group>
             <Form.Label>Marque associée</Form.Label>
-            <SelectBrand selectBrand={setBrandId}/>
+            <SelectBrand selectBrand={setBrandId} selectBrandIfNull={setBrandIdIfNull} />
           </Form.Group>
         </Modal.Body>
         <Modal.Footer>
-        <ValidateCreaStore name={name} idBrand={brandId} handleShow={handleClose}/>
         <Button className="closeModalBtnAdmin" onClick={handleClose}>
             Fermer
           </Button>
+        <ValidateCreaStore name={name} idBrand={brandId} idBrandIfNull={brandIdIfNull} handleShow={handleClose}/>
         </Modal.Footer>
       </Modal>
     </Row>

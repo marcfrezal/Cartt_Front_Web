@@ -45,6 +45,20 @@
     cursor : pointer
 }
 
+.closeModalBtn {
+    background-color: #183D76 !important;
+    color: white !important;
+    font-family: 'Montserrat' !important;
+    border : 2px #183D76 solid !important;
+}
+
+.saveModalBtn {
+    background-color: white !important;
+    color: #183D76 !important;
+    font-family: 'Montserrat' !important;
+    border : 2px #183D76 solid !important;
+}
+
 /*Phones*/
 @media (max-width: 768px) { 
     .posHeaderTitle {

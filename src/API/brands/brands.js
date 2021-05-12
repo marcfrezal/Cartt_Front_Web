@@ -19,12 +19,13 @@ export const GETALLBRANDS = gql`
                                                     name
                                                 }
                                         },
+                                        status
                                     }
                                 }`
 
 export const UPDATEBRAND = gql`
                                 mutation updateBrand ($myBrand : BrandUpdateSchema!) {
-                                    updateBrand (brand : $myBrand) {_id, name, description}
+                                    updateBrand (brand : $myBrand) {_id, name, description, status}
                                 }`
 
 export const SUPPBRAND = gql`

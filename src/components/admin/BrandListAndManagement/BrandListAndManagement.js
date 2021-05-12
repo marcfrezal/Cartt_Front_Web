@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col';
 import './BrandListAndManagement.css';
 import { GETALLBRANDS, SUPPBRAND, UPDATEBRAND } from '../../../API/brands/brands';
 import { useQuery, useMutation } from '@apollo/react-hooks';
-import { FaSyncAlt, FaPen, FaTrash } from "react-icons/fa";
+import { FaSyncAlt, FaPen, FaTrash, FaLock } from "react-icons/fa";
 import { useState } from "react";
 import { Modal, Form, Button } from "react-bootstrap";
 
@@ -85,7 +85,7 @@ function ValidateUpdBrand(props)  {
     return (
       <div className="errorLogin">
         <div className="btnCol">
-          <Button className="saveModalBtnAdmin" onClick={() => updBrand({variables : {myBrand : {_id : props.id, name : props.name, description : props.desc}}}).catch(err => console.log(err))}>Valider</Button>
+          <Button className="saveModalBtnAdmin" onClick={() => updBrand({variables : {myBrand : {_id : props.id, name : props.name, description : props.desc, status : props.status}}}).catch(err => console.log(err))}>Valider</Button>
         </div>
         <p className="errorMess">Erreur.</p>
       </div>
@@ -95,7 +95,7 @@ function ValidateUpdBrand(props)  {
     window.location.reload();
   }
   return (
-    <Button className="saveModalBtnAdmin" onClick={() => updBrand({variables : {myBrand : {_id : props.id, name : props.name, description : props.desc}}}).catch(err => console.log(err))}>Valider</Button>
+    <Button className="saveModalBtnAdmin" onClick={() => updBrand({variables : {myBrand : {_id : props.id, name : props.name, description : props.desc, status : props.status}}}).catch(err => console.log(err))}>Valider</Button>
   )
 }
 
@@ -104,6 +104,7 @@ const UpdBrandModal = (props) => {
   const [show, setShow] = useState(false);
   const [name, setName] = useState(props.brand.name);
   const [desc, setDesc] = useState(props.brand.description);
+  const [status, setStatus] = useState(props.brand.status);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -125,18 +126,25 @@ const UpdBrandModal = (props) => {
             <Form.Label>Description</Form.Label>
             <Form.Control as="textarea" type="email" placeholder={props.brand.description} onChange={e => setDesc(e.target.value)}/>
           </Form.Group>
-
+          <Form.Group>
+            <Form.Label>Status</Form.Label>
+            <Form.Control onChange={e => setStatus(e.target.value)} as="select" defaultValue={props.brand.status}>
+              <option value="AVAILABLE">PUBLIQUE</option>
+              <option value="NOT_AVAILABLE">PRIVEE</option>
+            </Form.Control>
+          </Form.Group>
         </Modal.Body>
         <Modal.Footer>
           <Button className="closeModalBtnAdmin" onClick={props.handleClose}>
             Fermer
           </Button>
-          <ValidateUpdBrand name={name} desc={desc} id={props.brand._id}/>
+          <ValidateUpdBrand name={name} desc={desc} id={props.brand._id} status={status}/>
         </Modal.Footer>
       </Modal>
     </div>
   );
 }
+
 
 const BrandList = (props) => {
   const { data, error, loading} = useQuery(GETALLBRANDS);
@@ -173,6 +181,10 @@ const BrandList = (props) => {
                 <Row className="brandDescriptionText">
                   <div>Description :&nbsp;</div>
                   <div className="brandInfosDesc" >{pos.description}</div>
+                </Row>
+                <Row className="brandNameText">
+                  <div>Status :&nbsp;</div>
+                  <div className="brandInfos" >{pos.status === "AVAILABLE" ? "PUBLIQUE" : "PRIVEE"}</div>
                 </Row>
               </Col>
               <Col xs={12} md={1}>

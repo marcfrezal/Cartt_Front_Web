@@ -22,7 +22,7 @@ const SelectBrand = (props) => {
 
     return (
       <div className="errorContainer">
-        <p>Une erreur s'est produite lors du chargement des données.</p>
+        <p>Pas de marques enregistrées.</p>
       </div>
     )
   } else if (data && data.me.brands.length !== 0) {
@@ -104,7 +104,7 @@ const SwitchUserModal = (props) => {
   } else if (error) {
     return (
       <div className="errorContainer">
-        <p>Une erreur s'est produite lors du chargement des données.</p>
+        <p>Pas de marques liées.</p>
       </div>
     )
   } else if (data && data.me.brands.length  !== 0) {
