@@ -1,25 +1,20 @@
 import React from "react";
 import './BlockLeft.css';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
-import { useMutation, useLazyQuery } from '@apollo/react-hooks';
+import { useLazyQuery } from '@apollo/client';
 import { Link, Redirect} from "react-router-dom";
-import { LOGIN } from "../../../../API/authentication/authentication";
+import { RESETPWD } from "../../../../API/authentication/authentication";
 
 
 class BlockLeft extends React.Component {
 
   state = {
     username : "",
-    password : "",
   }
 
   _handleUsername = (e) => {
       this.setState({username : e.target.value})
     }
-
-  _handlePassword = (e) => {
-      this.setState({password : e.target.value})
-  }
 
     render() {
       return (
@@ -38,26 +33,17 @@ class BlockLeft extends React.Component {
                </Col>
                <Col/>
              </Row>
-             <Row>
-               <Col/>
-                <Col md={8}>
-                 <Form.Group className="userNamePassword">
-                   <Form.Control className="test" onChange={this._handlePassword} type="password" placeholder="Mot de passe" />
-                 </Form.Group>
-                </Col>
-               <Col/>
-             </Row>
              <Row >
                <Col/>
                <Col md={8} >
-                 <LogMe username={this.state.username} password={this.state.password}/>
+                 <ResetPassword username={this.state.username}/>
                </Col>
                <Col/>
              </Row>
              <Row>
                <Col/>
                <Col md={8} className="signInCol forgetCol" >
-                 <Link to='/forgot-password'> Mot de passe oublié?</Link>
+                 <Link to='/login'>Retour au login</Link>
                </Col>
                <Col/>
              </Row>
@@ -66,12 +52,11 @@ class BlockLeft extends React.Component {
     }
   }
 
-
-  function LogMe(props) {
-
-    const [ updateLogin, {data, error : mutationError, loading : mutationLoading} ] = useMutation(LOGIN);
+  function ResetPassword(props) {
+    console.log(props)
+    const [resetPwd, {data, error, loading}] = useLazyQuery(RESETPWD);
     
-    if (mutationLoading) {
+    if (loading) {
       return (
         <div className="errorLogin">
           <div className="btnCol">
@@ -80,25 +65,24 @@ class BlockLeft extends React.Component {
         </div>
       )
     }
-    if (mutationError) {
+    if (error) {
       return (
         <div className="errorLogin">
           <div className="btnCol">
-            <Button onClick={() => updateLogin({variables : {login : {email : props.username , password : props.password}}}).catch(err => console.log(err))} className="loginBtn">connexion</Button>
+            <Button onClick={() => resetPwd({variables : {email : props.username}}).catch(err => console.log(err))} className="loginBtn">Réinitialiser le mdp</Button>
           </div>
-          <p className="errorMess">Erreur. Mauvais username/e-mail ou mot de passe.</p>
+          <p className="errorMess">Erreur. Mauvais username/e-mail</p>
         </div>
       )
     }
-    if (data && data.login.role === "SELLER") {
-      return <Redirect to='/profile'/>;
-    } else if (data && data.login.role === "ADMIN") {
-      return <Redirect to='/adm/points-of-sale'/>;
+    console.log(data)
+    if (data) {
+      return <Redirect to='/login'/>;
     }
 
     return (
       <div className="btnCol">
-        <Button onClick={() => updateLogin({variables : {login : {email : props.username , password : props.password}}}).catch(err => console.log(err))} className="loginBtn">connexion</Button>
+        <Button onClick={() => resetPwd({variables : {email : props.username}}).catch(err => console.log(err))} className="loginBtn">Réinitialiser le mdp</Button>
       </div>
     )
     
