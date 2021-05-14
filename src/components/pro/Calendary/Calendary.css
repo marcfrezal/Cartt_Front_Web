@@ -1,0 +1,42 @@
+.calendaryContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+}
+
+.calendaryCard {
+    height: 35vh;
+    width: 40vh !important;
+    background-color:  #183D76;
+    border-radius: 2vh;
+    color: white;
+    font-family: 'Montserrat';
+}
+
+.calendaryRow {
+    height: 33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Montserrat';
+}
+
+.calendaryColDay {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    color: red;
+    font-weight: 500;
+}
+
+.calendaryColNumber {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin-top: -6vh;
+    font-weight: 900;
+    font-size: 15vh;
+}
