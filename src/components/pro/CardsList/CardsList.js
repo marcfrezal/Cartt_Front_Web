@@ -29,54 +29,51 @@ const RenderAllowedsBrand = (props) => {
 //FUNCTION TO RENDER ARRAY OF CARDS
 const RenderCards = () => {
 
-//   const { data, error, loading} = useQuery(GETMYCARDS);
+  const { data, error, loading} = useQuery(GETMYCARDS);
 
-//   if (loading) {
-//     return (
-//       <div >
-//         <FaSyncAlt className="loadContainer"/>
-//       </div>
-//     )
-//   } else if (error) {
-//     return (
-//       <div className="errorContainer">
-//         <p>Une erreur s'est produite lors du chargement des données.</p>
-//       </div>
-//     )
-//   } else  {
-//     return (
-//         <div>hy</div>
-//     )
-//   }
+  if (loading) {
     return (
-        <div>
-            {cardModel.map((item, index) => (
-                <Container fluid className="cardObject shadow">
-                    <Row className="cardObjectRow">
-                        <Col md={4}>
-                            <div className="cardImage"></div>
-                        </Col>
-                        <Col>
-                            <Container className="cardObjectContainer" fluid>
-                                <Row className="cardObjectContainerRow">
-                                    <div><strong>ID :</strong> {item.id}</div>
-                                </Row>
-                                <Row className="cardObjectContainerRow">
-                                    <div><strong>MONTANT DISP : </strong> {item.amountRemainding}/{item.amount}</div>
-                                </Row>
-                                <Row className="cardObjectContainerRow">
-                                    <div style={{display : "flex", flexDirection : "row"}}><strong>MARQUES : </strong><RenderAllowedsBrand allowedBrands={item.allowedBrands}/> </div>
-                                </Row>
-                                {/* <Row className="cardObjectContainerRow">
-                                    <div><strong>MAGASINS UTILSABLES : </strong> </div>
-                                </Row> */}
-                            </Container>
-                        </Col>
-                    </Row>
-                </Container>
-            ))}
-        </div>
+      <div >
+        <FaSyncAlt className="loadContainer"/>
+      </div>
     )
+  } else if (error) {
+    return (
+      <div className="errorContainer">
+        <p>Une erreur s'est produite lors du chargement des données.</p>
+      </div>
+    )
+  } else  {
+    return (
+            <div>
+                {cardModel.map((item, index) => (
+                    <Container fluid className="cardObject shadow">
+                        <Row className="cardObjectRow">
+                            <Col md={4}>
+                                <div className="cardImage"></div>
+                            </Col>
+                            <Col>
+                                <Container className="cardObjectContainer" fluid>
+                                    <Row className="cardObjectContainerRow">
+                                        <div><strong>ID :</strong> {item.id}</div>
+                                    </Row>
+                                    <Row className="cardObjectContainerRow">
+                                        <div><strong>MONTANT DISP : </strong> {item.amountRemainding}/{item.amount}</div>
+                                    </Row>
+                                    <Row className="cardObjectContainerRow">
+                                        <div style={{display : "flex", flexDirection : "row"}}><strong>MARQUES : </strong><RenderAllowedsBrand allowedBrands={item.allowedBrands}/> </div>
+                                    </Row>
+                                    {/* <Row className="cardObjectContainerRow">
+                                        <div><strong>MAGASINS UTILSABLES : </strong> </div>
+                                    </Row> */}
+                                </Container>
+                            </Col>
+                        </Row>
+                    </Container>
+                ))}
+            </div>
+        )
+    }
 }
 
 //MAIN CARD LIST COMPONENT
