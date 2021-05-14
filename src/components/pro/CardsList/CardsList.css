@@ -1,0 +1,57 @@
+.cardsListContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+.cardsListCard {
+    height: 85vh;
+    background-color:  white;
+    border-radius: 2vh;
+    font-family: 'Montserrat';
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+
+}
+
+.cardsListRow {
+    height: 95%;
+    width: 80vh !important;
+    background-color:  white;
+    font-family: 'Montserrat';
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; 
+    overflow: scroll;
+}
+
+.cardObject {
+    border-radius: 2vh;
+    background-color: white;
+    width: 75vh !important;
+    height: 20vh !important;
+    margin-bottom: 5vh !important;
+}
+
+.cardObjectRow {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.cardObjectContainerRow {
+    height: 25%;
+    display: flex;
+    align-items: center;
+    padding-left: 2vh;
+    font-size: 1.6vh !important;
+}
+
+.cardImage {
+    background-image: url('../../../assets/pro/card-background/CardIcon.png');
+    height: 18vh;
+    background-size: cover;
+    background-position: center center;
+}
