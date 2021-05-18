@@ -31,6 +31,7 @@ const RenderCards = () => {
 
   const { data, error, loading} = useQuery(GETMYCARDS);
 
+  console.log(data)
   if (loading) {
     return (
       <div >
@@ -43,10 +44,10 @@ const RenderCards = () => {
         <p>Une erreur s'est produite lors du chargement des données.</p>
       </div>
     )
-  } else  {
+  } else if(data && data.getCards.length !== 0) {
     return (
             <div>
-                {cardModel.map((item, index) => (
+                {data.getCards.map((item, index) => (
                     <Container fluid className="cardObject shadow">
                         <Row className="cardObjectRow">
                             <Col md={4}>
@@ -55,10 +56,10 @@ const RenderCards = () => {
                             <Col>
                                 <Container className="cardObjectContainer" fluid>
                                     <Row className="cardObjectContainerRow">
-                                        <div><strong>ID :</strong> {item.id}</div>
+                                        <div><strong>ID :</strong> {item._id}</div>
                                     </Row>
                                     <Row className="cardObjectContainerRow">
-                                        <div><strong>MONTANT DISP : </strong> {item.amountRemainding}/{item.amount}</div>
+                                        <div><strong>MONTANT DISP : </strong> {item.amountRemainding}/{item.amount} €</div>
                                     </Row>
                                     <Row className="cardObjectContainerRow">
                                         <div style={{display : "flex", flexDirection : "row"}}><strong>MARQUES : </strong><RenderAllowedsBrand allowedBrands={item.allowedBrands}/> </div>
@@ -74,6 +75,9 @@ const RenderCards = () => {
             </div>
         )
     }
+    return(
+        <div>Pas de cartes disponibles pour cette marque.</div>
+    )
 }
 
 //MAIN CARD LIST COMPONENT
