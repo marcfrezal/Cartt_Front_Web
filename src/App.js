@@ -2,6 +2,7 @@ import './App.css';
 import Home from '../src/screens/launch-page/HomePage/HomePage';
 import Login from '../src/screens/launch-page/LoginPage/LoginPage';
 import Register from '../src/screens/launch-page/RegisterPage/RegisterPage';
+import ForgotPassword from '../src/screens/launch-page/ForgotPassword/ForgotPassword'
 import Dashboard from '../src/screens/pro/DashdoardPage/DashboardPage';
 import PointsOfSale from '../src/screens/pro/PointsOfSalePage/PointsOfSalePage';
 import Profile from '../src/screens/pro/ProfilePage/ProfilePage';
@@ -35,6 +36,7 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
+            <Route exact path="/forgot-password" component={ForgotPassword} />
             <Route exact path="/dashboard" component={Dashboard} />
             <Route exact path="/points-of-sale" component={PointsOfSale} />
             <Route exact path="/profile" component={Profile} />

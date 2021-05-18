@@ -15,3 +15,10 @@ export const LOGIN = gql`
             }
         }
     `
+export const RESETPWD = gql`
+    query forgottenPasword($email : String!) {
+        forgottenPasword (email : $email) {
+                forgottenPasword
+            }
+        }
+    `
