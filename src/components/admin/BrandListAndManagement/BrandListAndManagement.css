@@ -90,3 +90,22 @@
     transform: scale(1.3);
     color: white!important;
 }
+
+.uploadImgArea {
+    height: 30vh;
+    border : 0.3vh lightgray dashed;
+    border-radius: 2vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: lightgrey;
+    font-family: 'Montserrat';
+}
+
+.uploadImgArea:hover {
+    background-color: lightgray;
+    color : grey;
+    cursor: pointer;
+    border : 0.3vh darkgray dashed;
+
+}

@@ -19,6 +19,7 @@ export const GETALLBRANDS = gql`
                                                     name
                                                 }
                                         },
+                                        image,
                                         status
                                     }
                                 }`
@@ -36,8 +37,8 @@ export const SUPPBRAND = gql`
                             }`
 
 export const CREATEBRAND = gql`
-                                mutation createBrand($myBrand : BrandCreateSchema!) {
-                                    createBrand (brand : $myBrand) {
+                                mutation createBrand($myImg : Upload, $myBrand : BrandCreateSchema!) {
+                                    createBrand (content : $myImg, brand : $myBrand) {
                                     _id, 
                                     name
                                     }
@@ -47,5 +48,15 @@ export const GETALLBRANDSFORCOUNTING = gql`
                             query getBrands {
                                 getBrands {
                                     _id
+                                }
+                            }`
+
+                            
+                        
+export const UPLOADIMG = gql`
+                            mutation uploadBrandImage ($content: Upload, $idBrand: Float!) {
+                                uploadBrandImage(content: $content, idBrand: $idBrand) {
+                                    _id
+                                    image
                                 }
                             }`

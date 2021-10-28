@@ -81,6 +81,7 @@ function ValidateLocationStore(props)  {
   const [ creaStore, {data, error : mutationError, loading : mutationLoading} ] = useMutation(SETSTORELOCATION);
 
   var idStore = parseFloat(props.store._id);
+  console.log(props)
   if (mutationLoading) {
     return (
       <div className="errorLogin">

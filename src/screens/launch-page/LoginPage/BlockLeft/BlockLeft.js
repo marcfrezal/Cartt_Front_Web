@@ -71,6 +71,7 @@ class BlockLeft extends React.Component {
 
     const [ updateLogin, {data, error : mutationError, loading : mutationLoading} ] = useMutation(LOGIN);
     
+    console.log(props)
     if (mutationLoading) {
       return (
         <div className="errorLogin">

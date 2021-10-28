@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -83,10 +83,12 @@ function ValidateCreaBrand(props)  {
     )
   }
   if (data) {
-    window.location.reload();
+    console.log(props.img)
+    // window.location.reload();
   }
+
   return (
-    <Button className="saveModalBtnAdmin" onClick={() => creaBrand({variables : {myBrand : {name : props.name, description : props.desc}}}).catch(err => console.log(err))}>Valider</Button>
+    <Button className="saveModalBtnAdmin" onClick={() => creaBrand({variables : {myImg : props.img, myBrand : {name : props.name, description : props.desc}}}).catch(err => console.log(err))}>Valider</Button>
   )
 }
 
@@ -94,9 +96,16 @@ function CreateBrand(props){
   const [show, setShow] = useState(false);
   const [name, setName] = useState('');
   const [desc, setDesc] = useState('');
+  const [img, setImg] = useState('');
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const inputRef = useRef();
+
+  const getImg = e => {
+    inputRef.current?.click();
+  }
 
   return (
     <Row className="addFunctionBrandAdmContainer" >
@@ -117,13 +126,26 @@ function CreateBrand(props){
             <Form.Label>Description</Form.Label>
             <Form.Control as="textarea" type="email" placeholder="Description de la marque" onChange={e => setDesc(e.target.value)}/>
           </Form.Group>
-
+          <Form.Group>
+            <Form.Label>Image</Form.Label>
+              {
+                img ? 
+                <div>
+                  <img className="uploadImgArea" src={URL.createObjectURL(img)}></img>
+                </div> 
+                :
+                <div className="uploadImgArea" onClick={getImg}>
+                  <input ref={inputRef} type="file" style={{display : 'none'}} onChange={e => setImg(e.target.files[0])}></input>
+                  Cliquez pour upload une image
+                </div> 
+              }
+          </Form.Group>
         </Modal.Body>
         <Modal.Footer>
           <Button className="closeModalBtnAdmin" onClick={handleClose}>
             Fermer
           </Button>
-          <ValidateCreaBrand name={name} desc={desc} />
+          <ValidateCreaBrand name={name} desc={desc} img={img}/>
         </Modal.Footer>
       </Modal>
     </Row>

@@ -10,8 +10,8 @@ export const LOGOUT= gql`
 export const LOGIN = gql`
     mutation login($login : UserLoginSchema!) {
       login (authentication : $login) {
-            _id,
-            role
+                _id,
+                role
             }
         }
     `

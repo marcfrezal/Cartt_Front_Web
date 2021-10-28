@@ -11,6 +11,7 @@ import PointsOfSaleAdm from '../src/screens/admin/PointsOfSalePage/PointsOfSaleP
 import ProfileAdm from '../src/screens/admin/ProfilePage/ProfilePage';
 import UserAdm from '../src/screens/admin/UserPage/UserPage'
 import React from "react";
+import { createUploadLink } from 'apollo-upload-client'
 import {
   BrowserRouter,
   Switch,
@@ -19,7 +20,7 @@ import {
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink  } from '@apollo/client';
 
 const url = process.env.REACT_APP_API_URL;
-const httpLink = createHttpLink({ uri : url,  credentials: 'include'});
+const httpLink = createUploadLink({ uri : url,  credentials: 'include'});
 
 const client = new ApolloClient({
   link : httpLink, 
@@ -33,7 +34,7 @@ function App() {
     <ApolloProvider client={client}>
       <BrowserRouter>
           <Switch>
-            <Route exact path="/" component={Home} />
+            <Route exact path="/" component={Login} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/forgot-password" component={ForgotPassword} />
