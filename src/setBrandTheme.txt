@@ -1,0 +1,29 @@
+mutation setBrandTheme($theme: ObjectAny, $idBrand: Float!) {
+  setBrandTheme(theme: $theme, idBrand: $idBrand) {
+    _id name description categories status domain theme image
+  }
+}
+
+{
+  "theme": {
+    "primary": "#FF0000",
+    "secondary": "00FF00",
+    "secondaryLight": "0000FF",
+    "background": "FFFFFF"
+  },
+  "idBrand": 55
+}
+
+query getBrandByDomain($domain: String!) {
+  getBrandByDomain(domain: $domain) {
+    _id
+    name
+    description
+    status
+    theme
+    stores {
+      _id
+      name
+    }
+  }
+}
