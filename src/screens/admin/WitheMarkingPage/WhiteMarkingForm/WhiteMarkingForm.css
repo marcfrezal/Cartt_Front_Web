@@ -1,0 +1,78 @@
+.WMFormCol {
+    align-items: flex-start;
+    /* background-color: aliceblue; */
+    width: 100%;
+    height: 75vh;
+}
+
+.WMFormContainer {
+    margin-top: 40px;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFF;
+    border-radius: 2vh;
+}
+
+.WMFormRow {
+    /* background-color: green; */
+    width: 100%;
+    height: 75vh;
+}
+
+.WMFormFrom {
+    /* background-color: aquamarine; */
+    height: 75vh !important;
+    overflow-y: scroll;
+}
+
+.uploadLogoArea {
+    height: 120px;
+    width: 120px;
+    border : 0.3vh lightgray dashed;
+    border-radius: 2vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: lightgrey;
+    font-family: 'Montserrat';
+    margin-bottom: 10px;
+}
+.uploadLogoArea:hover {
+    background-color: lightgray;
+    color : grey;
+    cursor: pointer;
+    border : 0.3vh darkgray dashed;
+
+}
+
+.uploadImgArea {
+    height: 30vh;
+    width: 100%;
+    border : 0.3vh lightgray dashed;
+    border-radius: 2vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: lightgrey;
+    font-family: 'Montserrat';
+    margin-bottom: 10px;
+}
+
+.uploadImgArea:hover {
+    background-color: lightgray;
+    color : grey;
+    cursor: pointer;
+    border : 0.3vh darkgray dashed;
+
+}
+
+.space {
+    height: 25px;
+}
+
+.WMFSubmitBtn {
+    background-color: #183D76 !important;
+    border-color: #183D76 !important;
+}

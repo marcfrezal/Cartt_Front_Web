@@ -1,51 +1,59 @@
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import {Button, Modal} from 'react-bootstrap';
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import { Button, Modal } from "react-bootstrap";
 import React from "react";
 import { useState } from "react";
-import './SidebarAdm.css';
-import { FaBars } from 'react-icons/fa';
-import { FaChartLine } from 'react-icons/fa';
-import { FaCog } from 'react-icons/fa';
-import { FaSignOutAlt } from 'react-icons/fa';
-import { FaStoreAlt } from 'react-icons/fa';
-import { FaUser } from 'react-icons/fa';
+import "./SidebarAdm.css";
+import { FaBars, FaDesktop } from "react-icons/fa";
+import { FaChartLine } from "react-icons/fa";
+import { FaCog } from "react-icons/fa";
+import { FaSignOutAlt } from "react-icons/fa";
+import { FaStoreAlt } from "react-icons/fa";
+import { FaUser } from "react-icons/fa";
 import { Link, Redirect } from "react-router-dom";
-import { LOGOUT } from '../../../API/authentication/authentication';
-import { useMutation, useQuery } from '@apollo/react-hooks';
+import { LOGOUT } from "../../../API/authentication/authentication";
+import { useMutation, useQuery } from "@apollo/react-hooks";
 
-function LogoutFunction () {
-  const [ updateLogout, {data, error : mutationError, loading : mutationLoading} ] = useMutation(LOGOUT);
-    
+function LogoutFunction() {
+  const [
+    updateLogout,
+    { data, error: mutationError, loading: mutationLoading },
+  ] = useMutation(LOGOUT);
+
   if (mutationLoading) {
     return (
-      <Button style={{backgroundColor : "#0E3670", border : "none"}}>
+      <Button style={{ backgroundColor: "#0E3670", border: "none" }}>
         Patientez...
       </Button>
-    )
+    );
   }
   if (mutationError) {
-    console.log(mutationError)
+    console.log(mutationError);
     return (
-      <Button style={{backgroundColor : "#0E3670", border : "none"}} onClick={() => updateLogout().catch(err => console.log(err))} >
+      <Button
+        style={{ backgroundColor: "#0E3670", border: "none" }}
+        onClick={() => updateLogout().catch((err) => console.log(err))}
+      >
         Valider
       </Button>
-    )
+    );
   }
   if (data) {
-    if (data.logout === true)
-      return <Redirect to='/login'/>;
+    if (data.logout === true) return <Redirect to="/login" />;
   }
 
   return (
-    <Button className="saveModalBtnAdmin" onClick={() => updateLogout().catch(err => console.log(err))} >
+    <Button
+      className="saveModalBtnAdmin"
+      onClick={() => updateLogout().catch((err) => console.log(err))}
+    >
       Valider
     </Button>
-  )
-};
+  );
+}
 
-function LogoutModal () {
+function LogoutModal() {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -53,7 +61,7 @@ function LogoutModal () {
 
   return (
     <div>
-      <div className="sideBarItemAdm" onClick={handleShow} >
+      <div className="sideBarItemAdm" onClick={handleShow}>
         <FaSignOutAlt className="sideBarIcon" alt="logout" />
       </div>
 
@@ -61,12 +69,15 @@ function LogoutModal () {
         <Modal.Header closeButton>
           <Modal.Title>Voulez-vous vraiment vous déconnecter?</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Vous vous appretez à vous déconnecter, etes-vous sur de vouloir poursuivre?</Modal.Body>
+        <Modal.Body>
+          Vous vous appretez à vous déconnecter, etes-vous sur de vouloir
+          poursuivre?
+        </Modal.Body>
         <Modal.Footer>
           <Button className="closeModalBtnAdmin" onClick={handleClose}>
             Fermer
           </Button>
-          <LogoutFunction/>
+          <LogoutFunction />
         </Modal.Footer>
       </Modal>
     </div>
@@ -74,44 +85,46 @@ function LogoutModal () {
 }
 
 class SidebarAdm extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
       dashboard: false,
       users: false,
-      shops : false,
-      settings : false
+      shops: false,
+      settings: false,
+      whiteMarking: false,
     };
   }
 
   componentDidMount() {
     if (window.location.pathname === "/adm/users") {
       this.setState({
-        users : true
-      })
+        users: true,
+      });
     } else if (window.location.pathname === "/adm/points-of-sale") {
       this.setState({
-        shops : true
-      })
+        shops: true,
+      });
     } else if (window.location.pathname === "/adm/profile") {
       this.setState({
-        settings : true
-      })
+        settings: true,
+      });
+    } else if (window.location.pathname === "/adm/white-marking") {
+      this.setState({ whiteMarking: true });
     }
   }
 
-    render() {
-      return (
-          <Container className="sideBarBodyAdm ">
-              <Row  className="sideBarRowAdm">
-                <Col className="sideBarColAdm">
-                  <div className="sideBarBurger">
-                    <FaBars className="sideBarIconBurger"/>
-                  </div>
-                </Col>
-              </Row>
-              {/* <Row className="sideBarRow">
+  render() {
+    return (
+      <Container className="sideBarBodyAdm ">
+        <Row className="sideBarRowAdm">
+          <Col className="sideBarColAdm">
+            <div className="sideBarBurger">
+              <FaBars className="sideBarIconBurger" />
+            </div>
+          </Col>
+        </Row>
+        {/* <Row className="sideBarRow">
                 <Col className="sideBarColAdm">
                   <Link to="/adm/dashboard" className={this.state.dashboard ? 'sideBarItemActiveAdm' : 'sideBarItemAdm'} >
                     <div className="sideBarIcon">
@@ -120,56 +133,83 @@ class SidebarAdm extends React.Component {
                   </Link>
                 </Col>
               </Row> */}
-              <Row className="sideBarRow">
-                <Col className="sideBarColAdm">
-                  <Link to="/adm/points-of-sale" className={this.state.shops ? 'sideBarItemActiveAdm' : 'sideBarItemAdm'} >
-                    <div className="sideBarIcon">
-                      <FaStoreAlt />
-                    </div>
-                  </Link>
-                </Col>
-              </Row>
-              <Row className="sideBarRow">
-                <Col className="sideBarColAdm">
-                  <Link to="/adm/users" className={this.state.users ? 'sideBarItemActiveAdm' : 'sideBarItemAdm'}  >
-                      <div className="sideBarIcon">
-                        <FaUser className="fa-spin"/>
-                      </div>
-                  </Link>
-                </Col>
-              </Row>
-              <Row className="sideBarRow">
-                <Col className="sideBarColAdm">
-                  <Link to="/adm/profile" className={this.state.settings ? 'sideBarItemActiveAdm' : 'sideBarItemAdm'} >
-                      <div className="sideBarIcon">
-                        <FaCog className="fa-spin"/>
-                      </div>
-                  </Link>
-                </Col>
-              </Row>
-              <Row className="sideBarRow">
-                <Col className="sideBarColAdm">                  
-                </Col>
-              </Row>
-              <Row className="sideBarRow">
-                <Col className="sideBarColAdm">
-                  {/* <Link to="/adm/dashboard" className={this.state.dashboard ? 'sideBarItemActiveAdm' : 'sideBarItemAdm'} >
+        <Row className="sideBarRow">
+          <Col className="sideBarColAdm">
+            <Link
+              to="/adm/points-of-sale"
+              className={
+                this.state.shops ? "sideBarItemActiveAdm" : "sideBarItemAdm"
+              }
+            >
+              <div className="sideBarIcon">
+                <FaStoreAlt />
+              </div>
+            </Link>
+          </Col>
+        </Row>
+        <Row className="sideBarRow">
+          <Col className="sideBarColAdm">
+            <Link
+              to="/adm/users"
+              className={
+                this.state.users ? "sideBarItemActiveAdm" : "sideBarItemAdm"
+              }
+            >
+              <div className="sideBarIcon">
+                <FaUser className="fa-spin" />
+              </div>
+            </Link>
+          </Col>
+        </Row>
+        <Row className="sideBarRow">
+          <Col className="sideBarColAdm">
+            <Link
+              to="/adm/white-marking"
+              className={
+                this.state.whiteMarking ? "sideBarItemActiveAdm" : "sideBarItemAdm"
+              }
+            >
+              <div className="sideBarIcon">
+                <FaDesktop className="fa-spin" />
+              </div>
+            </Link>
+          </Col>
+        </Row>
+
+        <Row className="sideBarRow">
+          <Col className="sideBarColAdm">
+            <Link
+              to="/adm/profile"
+              className={
+                this.state.settings ? "sideBarItemActiveAdm" : "sideBarItemAdm"
+              }
+            >
+              <div className="sideBarIcon">
+                <FaCog className="fa-spin" />
+              </div>
+            </Link>
+          </Col>
+        </Row>
+        {/* <Row className="sideBarRow">
+          <Col className="sideBarColAdm"></Col>
+        </Row> */}
+        <Row className="sideBarRow">
+          <Col className="sideBarColAdm">
+            {/* <Link to="/adm/dashboard" className={this.state.dashboard ? 'sideBarItemActiveAdm' : 'sideBarItemAdm'} >
                     <div className="sideBarIcon">
                       <FaChartLine />
                     </div>
                   </Link> */}
-                </Col>
-              </Row>
-              <Row className="sideBarRowAdm">
-                <Col className="sideBarColAdm">
-                  <LogoutModal/>
-                </Col>
-              </Row>
-          </Container>
-      );
-    }
+          </Col>
+        </Row>
+        <Row className="sideBarRowAdm">
+          <Col className="sideBarColAdm">
+            <LogoutModal />
+          </Col>
+        </Row>
+      </Container>
+    );
   }
-
-
+}
 
 export default SidebarAdm;
