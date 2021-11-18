@@ -21,7 +21,6 @@ const GetMe = () => {
       </div>
     )
   } else if (error) {
-    console.log(error)
     return (
       <div style={{display : "flex", justifyContent : "center", alignItems : "center", width : "100%", color : "lightgray"}}>
         <p>Une erreur s'est produite lors du chargement des données.</p>
@@ -35,7 +34,7 @@ const GetMe = () => {
         <Row>
           <Col xs={12} sm={12} md={5}>
             <div className="profileInfosPicture">
-              <FaUser style={{fontSize : "20vh"}}/>
+              <FaUser style={{fontSize : "10vh"}}/>
             </div>
           </Col>
           <Col xs={12} sm={12} md={7}>

@@ -19,7 +19,6 @@ export default function Calendary() {
     let realMonth = monthArray[month];
     let realDay = dayArray[day];
 
-    console.log(day);
     return(
         <Col className="calendaryContainer">
             <Container className="calendaryCard shadow">

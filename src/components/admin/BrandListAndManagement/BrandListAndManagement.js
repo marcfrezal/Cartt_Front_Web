@@ -69,7 +69,6 @@ const SuppBrandModal = (props) => {
 }
 
 function ValidateUpdBrand(props)  {
-  console.log(props.img)
   const [ updBrand, {data, error : mutationError, loading : mutationLoading} ] = useMutation(UPDATEBRAND);
 
   if (mutationLoading) {
@@ -100,51 +99,6 @@ function ValidateUpdBrand(props)  {
   )
 }
 
-// function UploadImageBrand(props)  {
-//   const [ updBrand, {data, error : mutationError, loading : mutationLoading} ] = useMutation(UPLOADIMG);
-//   const inputRef = useRef();
-
-//   const getImg = e => {
-//     inputRef.current?.click();
-//   }
-
-//   const getImgTrue = e => {
-//     console.log(e.target.files)
-//   }
-
-//   if (mutationLoading) {
-//     return (
-//       <div>lol</div>
-//       // <div className="errorLogin">
-//       //   <div className="btnCol">
-//       //     <Button className="saveModalBtnAdmin">Patientez...</Button>
-//       //   </div>
-//       // </div>
-//     )
-//   }
-//   if (mutationError) {
-//     console.log(mutationError)
-//     return (
-//       <div>lol</div>
-//       // <div className="errorLogin">
-//       //   <div className="btnCol">
-//       //     <Button className="saveModalBtnAdmin" onClick={() => updBrand({variables : {myBrand : {_id : props.id, name : props.name, description : props.desc, status : props.status}}}).catch(err => console.log(err))}>Valider</Button>
-//       //   </div>
-//       //   <p className="errorMess">Erreur.</p>
-//       // </div>
-//     )
-//   }
-//   if (data) {
-//     window.location.reload();
-//   }
-//   return (
-//     <div className="uploadImgArea" onClick={getImg}>
-//       <input ref={inputRef} type="file" style={{display : 'none'}} onChange={getImgTrue}></input>
-//       Cliquez pour upload une image
-//     </div>
-//     // <Button className="saveModalBtnAdmin" onClick={() => updBrand({variables : {myBrand : {_id : props.id, name : props.name, description : props.desc, status : props.status}}}).catch(err => console.log(err))}>Valider</Button>
-//   )
-// }
 
 const UpdBrandModal = (props) => {
   const [show, setShow] = useState(false);
@@ -162,11 +116,6 @@ const UpdBrandModal = (props) => {
   const getImg = e => {
     inputRef.current?.click();
   }
-
-  // const getImgTrue = e => {
-  //   console.log(e.target.files)
-  // }
-
 
 
   return (
@@ -230,7 +179,6 @@ const BrandList = (props) => {
       </div>
     )
   } else if (data && data.getBrands.length !== 0) {
-    console.log(data.getBrands)
     return (
       <div>
         {data.getBrands.map((pos, index) => (
@@ -242,7 +190,6 @@ const BrandList = (props) => {
                 <Row className="brandIdText">
                   <div>ID :&nbsp;</div>
                   <div className="brandInfos" >{pos._id}</div>
-                  <img alt="imgBrand" style={{ height : "30px", width : "30px"}} src="https://api.dev.cartt.fr/brand/image/31"></img>
                 </Row>
                 <Row className="brandNameText">
                   <div>Nom :&nbsp;</div>
@@ -255,6 +202,21 @@ const BrandList = (props) => {
                 <Row className="brandNameText">
                   <div>Status :&nbsp;</div>
                   <div className="brandInfos" >{pos.status === "AVAILABLE" ? "PUBLIQUE" : "PRIVEE"}</div>
+                </Row>
+                <Row className="brandNameText">
+                  <div>Catégories :&nbsp;</div>
+                  <div className="brandInfos" >
+                  { pos.categories ?
+                    <div style={{display : "flex", flexDirection : "row"}}>        
+                      {pos.categories.map((pos, index) => (
+                        <div>{pos}&nbsp;&nbsp;</div>
+                        ))
+                      }
+                      </div>
+                      :
+                      <div>Aucune catégorie enregistrée.</div>
+                  }
+                  </div>
                 </Row>
               </Col>
               <Col xs={12} md={1}>

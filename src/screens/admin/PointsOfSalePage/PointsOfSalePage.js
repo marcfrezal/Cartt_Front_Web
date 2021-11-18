@@ -25,7 +25,6 @@ class PointsOfSaleAdm extends React.Component {
   }
 
   getBrand = (props) => {
-    console.log(props)
     this.setState({
       stores : props.stores
     })
@@ -72,23 +71,21 @@ function ValidateCreaBrand(props)  {
     )
   }
   if (mutationError) {
-    console.log(mutationError)
     return (
       <div className="errorLogin">
         <div className="btnCol">
-          <Button className="saveModalBtnAdmin" onClick={() => creaBrand({variables : {myBrand : {name : props.name, description : props.desc}}}).catch(err => console.log(err))}>Valider</Button>
+          <Button className="saveModalBtnAdmin" onClick={() => creaBrand({variables : {myImg : props.img, myBrand : {name : props.name, description : props.desc, categories : props.cat}}}).catch(err => console.log(err))}>Valider</Button>
         </div>
         <p className="errorMess">Erreur.</p>
       </div>
     )
   }
   if (data) {
-    console.log(props.img)
-    // window.location.reload();
+    window.location.reload();
   }
 
   return (
-    <Button className="saveModalBtnAdmin" onClick={() => creaBrand({variables : {myImg : props.img, myBrand : {name : props.name, description : props.desc}}}).catch(err => console.log(err))}>Valider</Button>
+    <Button className="saveModalBtnAdmin" onClick={() => creaBrand({variables : {myImg : props.img, myBrand : {name : props.name, description : props.desc, categories : props.cat}}}).catch(err => console.log(err))}>Valider</Button>
   )
 }
 
@@ -97,6 +94,7 @@ function CreateBrand(props){
   const [name, setName] = useState('');
   const [desc, setDesc] = useState('');
   const [img, setImg] = useState('');
+  const [cat, setCat] = useState([]);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -131,7 +129,7 @@ function CreateBrand(props){
               {
                 img ? 
                 <div>
-                  <img className="uploadImgArea" src={URL.createObjectURL(img)}></img>
+                  {img.name}
                 </div> 
                 :
                 <div className="uploadImgArea" onClick={getImg}>
@@ -140,12 +138,25 @@ function CreateBrand(props){
                 </div> 
               }
           </Form.Group>
+          <Form.Group>
+            <Form.Label>Catégorie</Form.Label>
+            <Form.Control  as="select" onChange={e => setCat([...cat, e.target.value])}>
+              <option>--</option>
+              <option value={"SPORT"}>SPORT</option>
+              <option value={"MODE"}>MODE</option>
+              <option value={"TECH"}>TECH</option>
+              <option value={"DECO"}>DECO</option>
+            </Form.Control>
+          </Form.Group>
+          {cat.map((pos, index) => (
+          <div>{pos}</div>
+          ))}
         </Modal.Body>
         <Modal.Footer>
           <Button className="closeModalBtnAdmin" onClick={handleClose}>
             Fermer
           </Button>
-          <ValidateCreaBrand name={name} desc={desc} img={img}/>
+          <ValidateCreaBrand name={name} desc={desc} img={img} cat={cat}/>
         </Modal.Footer>
       </Modal>
     </Row>
@@ -192,7 +203,7 @@ function ValidateCreaStore(props)  {
   const [ creaStore, {data, error : mutationError, loading : mutationLoading} ] = useMutation(CREATESTORE);
 
   var idBrand = 0;
-  console.log(props.idBrand)
+
   if (props.idBrand === undefined) {
     idBrand =  parseFloat(props.idBrandIfNull)
   } else {

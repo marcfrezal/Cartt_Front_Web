@@ -2,11 +2,8 @@ import React from "react";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import SalesHistory from '../../../components/pro/SalesHistory/SalesHistory';
+import { Line } from 'react-chartjs-2';
 import Sidebar from '../../../components/common/Sidebar/Sidebar';
-import MounthlyNumbers from '../../../components/pro/MounthlyNumbers/MounthlyNumbers'
-import LastTransactions from '../../../components/pro/LastTransactions/LastTransactions'
-import Growth from '../../../components/pro/Growth/Growth'
 // import HeadBand from "./HeadBand/HeadBand";
 
 
@@ -15,6 +12,8 @@ import './DashboardPage.css'
 import Header from '../../../components/pro/Header/Header'
 import Calendary from "../../../components/pro/Calendary/Calendary"
 import CardsList from "../../../components/pro/CardsList/CardsList"
+import Chart from "../../../components/pro/Chart/Chart"
+
 
 class Dashboard extends React.Component {
     render() {
@@ -43,8 +42,8 @@ class Dashboard extends React.Component {
                       <Row>
                         <Calendary/>
                       </Row>
-                      <Row>
-
+                      <Row style={{display : "flex", justifyContent : "center", height : "47vh", alignItems : "center"}}>
+                        <Chart/>
                       </Row>
                     </Container>
                   </Col>

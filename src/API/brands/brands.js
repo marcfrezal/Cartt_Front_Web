@@ -20,7 +20,8 @@ export const GETALLBRANDS = gql`
                                                 }
                                         },
                                         image,
-                                        status
+                                        status,
+                                        categories
                                     }
                                 }`
 
