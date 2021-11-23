@@ -69,7 +69,7 @@ class BlockLeft extends React.Component {
       return (
         <div className="errorLogin">
           <div className="btnCol">
-            <Button onClick={() => resetPwd({variables : {email : props.username}}).catch(err => console.log(err))} className="loginBtn">Réinitialiser le mdp</Button>
+            <Button onClick={() => resetPwd({variables : {email : props.username}})} className="loginBtn">Réinitialiser le mdp</Button>
           </div>
           <p className="errorMess">Erreur. Mauvais username/e-mail</p>
         </div>
@@ -82,7 +82,7 @@ class BlockLeft extends React.Component {
 
     return (
       <div className="btnCol">
-        <Button onClick={() => resetPwd({variables : {email : props.username}}).catch(err => console.log(err))} className="loginBtn">Réinitialiser le mdp</Button>
+        <Button onClick={() => resetPwd({variables : {email : props.username}})} className="loginBtn">Réinitialiser le mdp</Button>
       </div>
     )
     
