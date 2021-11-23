@@ -10,28 +10,31 @@ import { WhiteMarkingForm } from "./WhiteMarkingForm/WhiteMarkingForm";
 export default function WhiteMarkingPage() {
   const [currentBrandId, setCurrentBrandId] = useState();
   // const [getBrand, { called, loading, data }] = useLazyQuery(GET_BRAND, {variables: { idBrand: 55}})
-  const [getCurrentBrandId, { called: cbCalled, loading: cbLoading, data: cbData }] = useLazyQuery(ME);
+  const [
+    getCurrentBrandId,
+    { called: cbCalled, loading: cbLoading, data: cbData, error: cbError },
+  ] = useLazyQuery(ME);
   // const [brand, setBrand] = useState();
   // const [getBrand, { called: gbCalled, loading: gbLoading, data: gbData }] =
   //   useLazyQuery(GET_BRAND, { variables: { idBrand: currentBrandId } });
 
   useEffect(() => {
     if (!currentBrandId) {
-      getCurrentBrandId();
+      if (!cbCalled )
+          getCurrentBrandId();
       if (cbData) {
         console.log(cbData.me.currentBrand._id);
         setCurrentBrandId(cbData.me.currentBrand._id);
         // console.log(currentBrandId)
       }
-    } 
+    }
     // else if (currentBrandId && !brand) {
     //   getBrand();
     //   if (gbData) {
     //     setBrand(gbData);
     //   }
     // }
-
-  }, )
+  });
 
   return (
     <Container fluid className="containerProfileInfosAdm">
@@ -44,13 +47,17 @@ export default function WhiteMarkingPage() {
             actionTitle="Éditer mon site vitrine"
             onPress={() => console.log("Header")}
           />
-          {currentBrandId &&
-            <WhiteMarkingForm brandId={currentBrandId}/>
-          }
+          {cbError && (
+            <div style={{ paddingTop: "15%" }}>
+              {" "}
+              There was an error while loading the data.{" "}
+            </div>
+          )}
+          {currentBrandId && <WhiteMarkingForm brandId={currentBrandId} />}
           {/* <Container fluid className="WMFormContainer shadow">
             <Row className="WMFormRow">
               <Col xs={6} lg={6} className="WMFormCol"> */}
-                
+
           {/* //     </Col>
           //     <Col xs={6} lg={6} className="WMFormCol">
           //       <p>Hello I'm the preview!</p>

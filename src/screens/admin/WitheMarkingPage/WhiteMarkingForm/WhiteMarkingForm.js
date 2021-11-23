@@ -27,7 +27,7 @@ export const WhiteMarkingForm = (props) => {
   console.log("============= props => ", props);
   // const [brand, setBrand] = useState();
   const [getBrand, { called: gbCalled, loading: gbLoading, data: gbData }] =
-    useLazyQuery(GET_BRAND, { variables: { idBrand: props.brandId } });
+    useLazyQuery(GET_BRAND);
 
   const [form, setForm] = useState(undefined);
   const inputLogoRef = useRef();
@@ -86,7 +86,7 @@ export const WhiteMarkingForm = (props) => {
       },
     });
     console.log(data, mutationError);
-    console.log("[APLOADING IMG]");
+    console.log("[UPLOADING IMG]");
     console.log("brand id = ", props.brandId);
     if (imgChanged) {
       await uploadBrandImage({
@@ -286,7 +286,7 @@ export const WhiteMarkingForm = (props) => {
     );
   }
   if (!gbCalled) {
-    getBrand();
+    getBrand({ variables: { idBrand: props.brandId } });
     return (
       <Container fluid className="WMFormContainer shadow">
         <Row className="WMFormRow">
@@ -309,7 +309,7 @@ export const WhiteMarkingForm = (props) => {
     const theme = JSON.parse(gbData?.getBrand.theme);
     console.log("fetched theme = ", theme);
     console.log("gbData", gbData);
-    console.log("theme open hours = ", theme.openHours);
+    console.log("theme open hours = ", theme?.openHours);
     setForm({
       ...form,
       logo: gbData?.getBrand.logo || "",
