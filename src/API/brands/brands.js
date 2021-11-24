@@ -19,6 +19,7 @@ export const GETALLBRANDS = gql`
           name
         }
       }
+      categories
       image
       status
     }
